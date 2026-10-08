@@ -31,6 +31,13 @@ function embeddedServers(servers) {
   });
 }
 
+function dubFallbackServers(servers) {
+  return servers.map((item) => ({
+    ...item,
+    iframe: item.iframe.replace(/\/sub(?=[/?]|$)/, '/dub'),
+  }));
+}
+
 function Header({ back = false, onSearch }) {
   const [keyword, setKeyword] = useState('');
   return (
@@ -270,6 +277,7 @@ function Watch() {
           if (servers.length) groups[index === 0 ? 'sub' : 'dub'] = servers;
         }
       });
+      if (!groups.dub && groups.sub) groups.dub = dubFallbackServers(groups.sub);
       setServerGroups(groups);
       const available = groups[language] || groups.sub || groups.dub || [];
       setServer(available.find((item) => /^s-?2$/i.test(item.serverName || '')) || available[0] || null);
