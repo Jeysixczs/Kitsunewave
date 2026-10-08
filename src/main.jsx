@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import { createPortal } from "react-dom";
 import "./styles.css";
 
-const API = "https://kitsuneapi.vercel.app/api/v2";
+const API = "/api";
 
 function autoplayUrl(url) {
   if (!url) return "";
