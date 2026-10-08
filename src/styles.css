@@ -4885,3 +4885,24 @@ body.menu-open { overflow: hidden; }
     padding-inline: 14px;
   }
 }
+
+/* ---- Footer background cover ---- */
+footer {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, #0c0d14 0%, #0c0d14cc 45%, #0c0d14f2 100%),
+    radial-gradient(ellipse at 20% 0%, #b68cff33, transparent 60%),
+    radial-gradient(ellipse at 85% 100%, #ff8a5c26, transparent 55%),
+    #0c0d14;
+}
+footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: url("/kitsune-logo.png") center / cover no-repeat;
+  opacity: .12;
+  filter: blur(2px) saturate(1.2);
+}
