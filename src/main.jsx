@@ -21,6 +21,16 @@ async function request(path) {
   return body.data;
 }
 
+function embeddedServers(servers) {
+  return servers.filter((item) => {
+    try {
+      return new URL(item.iframe).hostname !== 'flixera.co';
+    } catch {
+      return false;
+    }
+  });
+}
+
 function Header({ back = false, onSearch }) {
   const [keyword, setKeyword] = useState('');
   return (
@@ -255,11 +265,14 @@ function Watch() {
       const results = await Promise.allSettled(['sub', 'dub'].map((type) => request(`/servers/${encodeURIComponent(selected.id)}?${queryFor(type)}`)));
       const groups = {};
       results.forEach((result, index) => {
-        if (result.status === 'fulfilled' && result.value.servers?.length) groups[index === 0 ? 'sub' : 'dub'] = result.value.servers;
+        if (result.status === 'fulfilled' && result.value.servers?.length) {
+          const servers = embeddedServers(result.value.servers);
+          if (servers.length) groups[index === 0 ? 'sub' : 'dub'] = servers;
+        }
       });
       setServerGroups(groups);
       const available = groups[language] || groups.sub || groups.dub || [];
-      setServer(available.find((item) => item.serverName === 's-2') || available[0] || null);
+      setServer(available.find((item) => /^s-?2$/i.test(item.serverName || '')) || available[0] || null);
     };
     loadServers().catch((err) => setError(err.message));
   }, [selected, language]);
