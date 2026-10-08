@@ -1171,6 +1171,9 @@ function Home() {
                 <span>Kitsune<b>wave</b></span>
               </a>
               <p>Follow the fox-fire to your next favorite anime. Stream, track and wander — one tail at a time.</p>
+              <a className="kf-creator" href="https://jeysidev.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="Created by Jeysi (opens portfolio in a new tab)">
+                <span>Created by</span> <strong>Jeysi</strong> <i aria-hidden="true">↗</i>
+              </a>
               <span className="kf-kanji" aria-hidden="true">狐</span>
             </div>
             <nav className="kf-col" aria-label="Footer pages">
@@ -1208,7 +1211,6 @@ function Home() {
           </div>
           <div className="kf-bottom">
             <span>© {new Date().getFullYear()} Kitsunewave · For personal use</span>
-            <span>Made with <em>🦊</em> and a little fox-fire</span>
           </div>
         </footer>
       )}
