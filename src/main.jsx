@@ -1149,25 +1149,66 @@ function Home() {
         </div>
       )}
       {!search && !filtering && !listView && !filtered && (
-        <footer>
-          <div className="footer-inner">
-            <div className="footer-heading">
-              <span className="section-kicker">Browse alphabetically</span>
-              <strong>Anime A-Z</strong>
+        <footer className="kfooter">
+          <div className="kf-torii" aria-hidden="true">
+            <svg viewBox="0 0 1200 90" preserveAspectRatio="none">
+              <path d="M0 90 V62 Q300 70 600 40 Q900 70 1200 62 V90 Z" fill="#0c0d14" />
+              <path d="M0 62 Q300 70 600 40 Q900 70 1200 62" fill="none" stroke="url(#kfLine)" strokeWidth="2" />
+              <defs>
+                <linearGradient id="kfLine" x1="0" x2="1">
+                  <stop offset="0" stopColor="#9c8cff" stopOpacity="0" />
+                  <stop offset=".5" stopColor="#f2a7ff" />
+                  <stop offset="1" stopColor="#ff9a62" stopOpacity="0" />
+                </linearGradient>
+              </defs>
+            </svg>
+            {[0, 1, 2, 3, 4].map((n) => <i className="kf-wisp" style={{ "--n": n }} key={n} />)}
+          </div>
+          <div className="kf-inner">
+            <div className="kf-brand">
+              <a className="kf-logo" href="/">
+                <img src="/kitsune-logo.png" alt="" width="46" height="48" />
+                <span>Kitsune<b>wave</b></span>
+              </a>
+              <p>Follow the fox-fire to your next favorite anime. Stream, track and wander — one tail at a time.</p>
+              <span className="kf-kanji" aria-hidden="true">狐</span>
             </div>
-            <div className="az-list">
-              {"ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("").map((letter) => (
-                <button
-                  className="az-letter"
-                  type="button"
-                  key={letter}
-                  onClick={() => setListView({ title: `Anime ${letter}`, query: `az-list/${letter.toLowerCase()}` })}
-                >
-                  {letter}
-                </button>
+            <nav className="kf-col" aria-label="Footer pages">
+              <h4>Wander</h4>
+              <a href="/">Home</a>
+              <a href="/movie.html">Movies</a>
+              <a href="/news.html">News</a>
+              <a href="/#schedule">Anime schedule</a>
+            </nav>
+            <nav className="kf-col" aria-label="Footer lists">
+              <h4>Quick lists</h4>
+              {[["Top airing", "top-airing"], ["Most popular", "most-popular"], ["New episodes", "recently-updated"], ["Just completed", "completed"]].map(([title, query]) => (
+                <a
+                  key={query}
+                  href={`/?list=${encodeURIComponent(query)}&title=${encodeURIComponent(title)}`}
+                  onClick={(event) => { event.preventDefault(); setListView({ title, query }); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+                >{title}</a>
               ))}
+            </nav>
+            <div className="kf-az">
+              <h4>Anime A-Z</h4>
+              <div className="kf-az-grid">
+                {"ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("").map((letter) => (
+                  <button
+                    className="kf-letter"
+                    type="button"
+                    key={letter}
+                    onClick={() => setListView({ title: `Anime ${letter}`, query: `az-list/${letter.toLowerCase()}` })}
+                  >
+                    {letter}
+                  </button>
+                ))}
+              </div>
             </div>
-            <p>Powered by Kitsunewave · For personal use</p>
+          </div>
+          <div className="kf-bottom">
+            <span>© {new Date().getFullYear()} Kitsunewave · For personal use</span>
+            <span>Made with <em>🦊</em> and a little fox-fire</span>
           </div>
         </footer>
       )}

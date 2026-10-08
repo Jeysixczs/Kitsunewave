@@ -4886,23 +4886,58 @@ body.menu-open { overflow: hidden; }
   }
 }
 
-/* ---- Footer background cover ---- */
-footer {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
+/* ---- Kitsune footer ---- */
+footer.kfooter {
+  position: relative; isolation: isolate; overflow: hidden; margin-top: 70px; padding: 0;
+  text-align: left; color: var(--muted); font-size: 13px; border-top: 0;
   background:
-    linear-gradient(180deg, #0c0d14 0%, #0c0d14cc 45%, #0c0d14f2 100%),
-    radial-gradient(ellipse at 20% 0%, #b68cff33, transparent 60%),
-    radial-gradient(ellipse at 85% 100%, #ff8a5c26, transparent 55%),
-    #0c0d14;
+    radial-gradient(ellipse 60% 80% at 8% 100%, #ff8a5c22, transparent 65%),
+    radial-gradient(ellipse 55% 70% at 92% 10%, #9c8cff26, transparent 65%),
+    linear-gradient(180deg, #0c0d14, #0a0a11);
 }
-footer::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: url("/kitsune-logo.png") center / cover no-repeat;
-  opacity: .12;
-  filter: blur(2px) saturate(1.2);
+footer.kfooter::before { content: none; }
+.kf-torii { position: absolute; left: 0; right: 0; top: -1px; height: 54px; z-index: -1; pointer-events: none; }
+.kf-torii svg { display: block; width: 100%; height: 100%; transform: scaleY(-1); opacity: .9; }
+.kf-wisp {
+  position: absolute; top: 30px; left: calc(12% + var(--n) * 19%); width: 7px; height: 7px; border-radius: 50%;
+  background: #ffb27a; box-shadow: 0 0 12px 4px #ff9a6288, 0 0 28px 8px #f2a7ff44;
+  animation: kf-float 5s ease-in-out infinite; animation-delay: calc(var(--n) * -1.1s);
 }
+@keyframes kf-float { 0%,100% { transform: translateY(0); opacity: .55; } 50% { transform: translateY(-12px); opacity: 1; } }
+.kf-inner {
+  position: relative; display: grid; grid-template-columns: 1.5fr .8fr .9fr 1.5fr; gap: 40px;
+  max-width: 1500px; margin: 0 auto; padding: 78px clamp(18px, 5vw, 72px) 40px;
+}
+.kf-logo { display: inline-flex; align-items: center; gap: 12px; color: var(--text); font: 800 24px "Plus Jakarta Sans", sans-serif; }
+.kf-logo b { background: linear-gradient(135deg, var(--accent), #ff9a62); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.kf-brand p { max-width: 330px; margin: 14px 0 0; line-height: 1.7; }
+.kf-kanji {
+  position: absolute; left: clamp(18px, 3vw, 56px); bottom: -34px; z-index: -1;
+  font: 900 190px/1 serif; color: #f2a7ff0d; user-select: none; pointer-events: none;
+}
+.kf-col, .kf-az { display: flex; flex-direction: column; gap: 4px; }
+.kf-col h4, .kf-az h4 {
+  margin: 4px 0 10px; font: 700 11px "Plus Jakarta Sans", sans-serif; letter-spacing: .18em; text-transform: uppercase; color: var(--accent);
+}
+.kf-col a { position: relative; width: fit-content; padding: 5px 0 5px 16px; color: var(--muted); font-weight: 600; transition: color .2s, transform .2s; }
+.kf-col a::before {
+  content: ""; position: absolute; left: 0; top: 50%; width: 6px; height: 6px; margin-top: -3px; border-radius: 50% 50% 50% 0;
+  background: #ff9a62; transform: rotate(-45deg) scale(0); transition: transform .2s;
+}
+.kf-col a:hover { color: var(--text); transform: translateX(3px); }
+.kf-col a:hover::before { transform: rotate(-45deg) scale(1); }
+.kf-az-grid { display: grid; grid-template-columns: repeat(9, 1fr); gap: 6px; max-width: 360px; }
+.kf-letter {
+  aspect-ratio: 1; border: 1px solid var(--line); border-radius: 50% 50% 50% 8px; background: #11131d99;
+  color: var(--muted); font: 700 12px "Plus Jakarta Sans", sans-serif; cursor: pointer; transition: all .2s;
+}
+.kf-letter:hover { color: #14121e; border-color: transparent; background: linear-gradient(135deg, var(--accent), #ff9a62); transform: translateY(-2px) rotate(-6deg); }
+.kf-bottom {
+  display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+  max-width: 1500px; margin: 0 auto; padding: 18px clamp(18px, 5vw, 72px) 26px;
+  border-top: 1px solid #ffffff0d; color: #6d7289; font-size: 12px;
+}
+.kf-bottom em { font-style: normal; }
+@media (max-width: 1000px) { .kf-inner { grid-template-columns: 1fr 1fr; } .kf-brand, .kf-az { grid-column: 1 / -1; } }
+@media (max-width: 560px) { .kf-inner { grid-template-columns: 1fr 1fr; gap: 28px; padding-top: 70px; } .kf-az-grid { grid-template-columns: repeat(7, 1fr); } .kf-bottom { justify-content: center; text-align: center; } }
+@media (prefers-reduced-motion: reduce) { .kf-wisp { animation: none; } }
