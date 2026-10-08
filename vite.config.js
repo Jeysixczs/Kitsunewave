@@ -11,6 +11,8 @@ export default defineConfig({
         main: 'index.html',
         detail: 'detail.html',
         watch: 'watch.html',
+        news: 'news.html',
+        movie: 'movie.html',
       },
     },
   },
