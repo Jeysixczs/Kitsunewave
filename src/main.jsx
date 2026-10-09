@@ -14,7 +14,7 @@ function autoplayUrl(url) {
 }
 
 async function request(path) {
-  const response = await fetch(`${API}${path}`);
+  const response = await fetch(`${API}${path}`, { headers: { "X-Kitsune-Client": "web" } });
   const body = await response.json();
   if (!response.ok || body.success === false) {
     throw new Error(body.message || `HTTP ${response.status}`);

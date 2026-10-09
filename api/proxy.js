@@ -1,17 +1,20 @@
 // Server-side proxy: hides the upstream API URL and blocks direct visits.
 // vercel.json rewrites /api/* to this function as /api/proxy?path=*
 export default async function handler(req, res) {
-  // Allow only requests made by YOUR page. Two signals, either is enough:
-  //  1) Sec-Fetch-Site=same-origin (set by browsers for same-site fetch calls)
-  //  2) Referer host matches this site (fallback if the header is stripped)
-  // Typing the URL in the address bar has neither, so it gets blocked.
+  // Allow only requests made by YOUR page. Any one of these signals is enough:
+  //  1) X-Kitsune-Client header, which the frontend adds to every request
+  //  2) Sec-Fetch-Site=same-origin
+  //  3) Referer host matches this site
+  // Typing the URL in the address bar has none of these, so it gets blocked.
   const sfs = req.headers['sec-fetch-site'];
   const host = req.headers['x-forwarded-host'] || req.headers.host;
   let refererHost = '';
   try {
     refererHost = new URL(req.headers.referer || '').host;
   } catch {}
-  const allowed = sfs === 'same-origin' || (refererHost && refererHost === host);
+  const hasClientHeader = req.headers['x-kitsune-client'] === 'web';
+  const allowed =
+    hasClientHeader || sfs === 'same-origin' || (refererHost && refererHost === host);
   if (!allowed) {
     return res.status(403).json({
       success: false,
@@ -44,7 +47,9 @@ export default async function handler(req, res) {
       });
     }
 
-    res.setHeader('Cache-Control', 'public, s-maxage=300, stale-while-revalidate=600');
+    // private = browser cache only. A shared CDN cache would serve the JSON to
+    // address-bar visitors too, bypassing the check above.
+    res.setHeader('Cache-Control', 'private, max-age=300');
     res.status(upstream.status).json(json);
   } catch {
     res.status(502).json({ success: false, message: 'Upstream error' });
