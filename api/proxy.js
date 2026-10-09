@@ -1,3 +1,5 @@
+import articleHandler from './news-article.js';
+
 // Server-side proxy: hides the upstream API URL and blocks direct visits.
 // vercel.json rewrites /api/* to this function as /api/proxy?path=*
 export default async function handler(req, res) {
@@ -37,6 +39,11 @@ export default async function handler(req, res) {
       success: false,
       message: `Forbidden (sec-fetch-site: ${sfs || 'none'}, referer: ${refererHost || 'none'}, host: ${host})`,
     });
+  }
+
+  // Full news article text is scraped by its own function (not the upstream API).
+  if (new URL(req.url, 'http://localhost').searchParams.get('path') === 'news-article') {
+    return articleHandler(req, res);
   }
 
   const base = (process.env.UPSTREAM_API || '').replace(/\/+$/, '');

@@ -4957,3 +4957,74 @@ footer.kfooter::before { content: none; }
 .kf-creator:hover strong, .kf-creator:focus-visible strong { text-decoration-color: var(--accent); color: #fff; }
 .kf-creator:hover i, .kf-creator:focus-visible i { transform: translate(2px, -2px); color: var(--accent); }
 .kf-creator:focus-visible { outline: 2px solid var(--accent); outline-offset: 6px; border-radius: 4px; }
+
+/* Center the brand in the simple (watch/detail/news/movies) header */
+.watch-header {
+  position: relative;
+  justify-content: flex-start;
+}
+.watch-header .brand {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* News detail page */
+.news-article { max-width: 760px; margin: 0 auto; display: grid; gap: 16px; padding: 8px 0 32px; }
+.news-article h1 { margin: 0; font-size: clamp(24px, 4vw, 36px); line-height: 1.2; }
+.news-article-date { color: var(--muted); font-size: 13px; }
+.news-article-image { width: 100%; max-height: 420px; object-fit: cover; border-radius: 12px; }
+.news-article-body { margin: 0; font-size: 16px; line-height: 1.75; color: var(--text); }
+.news-article-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-top: 8px; }
+.news-article-source { color: var(--muted); font-size: 13px; text-decoration: underline; }
+.news-article-source:hover { color: var(--accent); }
+.news-article-body p { margin: 0 0 16px; }
+.news-article-body p:last-child { margin-bottom: 0; }
+.news-article-loading { display: grid; gap: 12px; }
+.news-article-body .news-article-sources { color: var(--muted); font-size: 13px; padding-top: 12px; border-top: 1px solid #252832; }
+.news-article-note { margin: 0; color: var(--muted); font-size: 12px; }
+
+/* Swipeable hero */
+.hero-swipeable { touch-action: pan-y; cursor: grab; }
+.hero-swipeable:active { cursor: grabbing; }
+.hero-swipeable img { -webkit-user-drag: none; }
+.hero-swipeable .hero-copy { animation: hero-swap .35s ease; }
+@keyframes hero-swap { from { opacity: 0; transform: translateX(14px); } to { opacity: 1; transform: none; } }
+/* Fixed spot: dots stay pinned to the bottom of the hero, and the hero keeps
+   room underneath its content so they can never overlap the text or buttons. */
+.hero.hero-swipeable { padding-bottom: 92px; }
+.hero-dots {
+  position: absolute;
+  left: 50%;
+  bottom: 28px;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  gap: 8px;
+  margin: 0;
+}
+.hero-dots button {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: #ffffff55;
+  cursor: pointer;
+  transition: width .25s, background .25s;
+}
+.hero-dots button.active { width: 22px; background: var(--accent); }
+@media (prefers-reduced-motion: reduce) { .hero-swipeable .hero-copy { animation: none; } }
+
+/* Phones: brand centered on the first row, search below */
+@media (max-width: 700px) {
+  .topbar {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+  }
+  .topbar .burger { grid-column: 1; grid-row: 1; justify-self: start; }
+  .topbar .brand { grid-column: 2; grid-row: 1; justify-self: center; margin: 0; }
+  .topbar .search-wrap { grid-column: 1 / -1; grid-row: 2; }
+}

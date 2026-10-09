@@ -53,6 +53,42 @@ const FilterIcon = () => (
   <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h2M10 17h10" /><circle cx="16" cy="7" r="2" /><circle cx="8" cy="17" r="2" /></svg>
 );
 
+// Genre slugs from the API (e.g. "slice-of-life"), from /genres.
+let genreCache = null;
+function genreLabel(slug) {
+  const small = new Set(["of", "and", "the"]);
+  const label = String(slug)
+    .split(/[-_\s]+/)
+    .filter(Boolean)
+    .map((w, i) => (i && small.has(w) ? w : w[0].toUpperCase() + w.slice(1)))
+    .join(" ");
+  return label === "Sci Fi" ? "Sci-Fi" : label;
+}
+function useGenres(enabled = true) {
+  const [genres, setGenres] = useState(genreCache || []);
+  useEffect(() => {
+    if (!enabled || genres.length) return undefined;
+    let cancelled = false;
+    const clean = (list) =>
+      Array.isArray(list)
+        ? [...new Set(list.map((g) => (typeof g === "string" ? g : g?.id || g?.name || "")).map((g) => g.trim()).filter((g) => g && g.toLowerCase() !== "all"))]
+        : [];
+    // /genres matches the /animes/genre/:genre pages, so the menu only lists
+    // genres that actually open. /filter/options is just a fallback.
+    request("/genres")
+      .then(clean)
+      .then((list) => (list.length ? list : request("/filter/options").then((data) => clean(data?.genres))))
+      .catch(() => request("/filter/options").then((data) => clean(data?.genres)).catch(() => []))
+      .then((list) => {
+        if (cancelled) return;
+        if (list.length) genreCache = list;
+        setGenres(list);
+      });
+    return () => { cancelled = true; };
+  }, [enabled, genres.length]);
+  return genres;
+}
+
 const MENU_SECTIONS = [
   { heading: "Sections", items: [
     ["Trending now", "top-airing"], ["Top airing", "top-airing"], ["Most popular", "most-popular"],
@@ -66,11 +102,7 @@ const MENU_SECTIONS = [
 ];
 
 function MenuDrawer({ open, onClose, onList, onRandom }) {
-  const [genres, setGenres] = useState([]);
-  useEffect(() => {
-    if (!open || genres.length) return;
-    request("/genres").then((data) => setGenres(Array.isArray(data) ? data : [])).catch(() => setGenres([]));
-  }, [open, genres.length]);
+  const genres = useGenres(open);
   useEffect(() => {
     if (!open) return undefined;
     const onKey = (event) => event.key === "Escape" && onClose();
@@ -121,7 +153,7 @@ function MenuDrawer({ open, onClose, onList, onRandom }) {
         {genres.length > 0 && (
           <div className="menu-group menu-genres">
             <h3>Explore genres</h3>
-            {genres.map((genre) => listLink(`${genre} anime`, `genre/${encodeURIComponent(genre)}`, genre))}
+            {genres.map((genre) => listLink(`${genreLabel(genre)} anime`, `genre/${encodeURIComponent(genre)}`, genreLabel(genre)))}
           </div>
         )}
       </nav>
@@ -130,7 +162,7 @@ function MenuDrawer({ open, onClose, onList, onRandom }) {
   );
 }
 
-function Header({ back = false, onSearch, onOpenFilters, onRandom, onList }) {
+function Header({ back = false, hideBack = false, onSearch, onOpenFilters, onRandom, onList }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [keyword, setKeyword] = useState("");
   const [suggestions, setSuggestions] = useState([]);
@@ -164,9 +196,11 @@ function Header({ back = false, onSearch, onOpenFilters, onRandom, onList }) {
         <span>Kitsunewave</span>
       </a>
       {back ? (
-        <a className="watch-back" href="/">
-          ← Back to browse
-        </a>
+        hideBack ? null : (
+          <a className="watch-back" href="/">
+            ← Back to browse
+          </a>
+        )
       ) : (
         <>
         <div className="search-wrap">
@@ -393,9 +427,19 @@ function ListResults({ title, query }) {
   useEffect(() => {
     setData(null);
     setError("");
-    request(`/animes/${query}?page=${page}`)
-      .then(setData)
-      .catch((err) => setError(err.message));
+    let cancelled = false;
+    // Genre lists use the filter endpoint (it supports every genre); the
+    // /animes/genre/:genre page is only a fallback.
+    const genreSlug = query.startsWith("genre/") ? decodeURIComponent(query.slice("genre/".length)) : "";
+    const load = genreSlug
+      ? request(`/filter?genres=${encodeURIComponent(genreSlug)}&page=${page}`).catch(() =>
+          request(`/animes/${query}?page=${page}`),
+        )
+      : request(`/animes/${query}?page=${page}`);
+    load
+      .then((result) => !cancelled && setData(result))
+      .catch((err) => !cancelled && setError(err.message));
+    return () => { cancelled = true; };
   }, [query, page]);
 
   useEffect(() => setPage(1), [query]);
@@ -433,11 +477,8 @@ const BROWSE_LISTS = [
 ];
 
 function Explore({ onList }) {
-  const [genres, setGenres] = useState([]);
+  const genres = useGenres();
   const [producer, setProducer] = useState("");
-  useEffect(() => {
-    request("/genres").then(setGenres).catch(() => setGenres([]));
-  }, []);
   return (
     <section className="explore-section">
       <div className="section-heading"><h2>Browse more anime</h2></div>
@@ -448,7 +489,7 @@ function Explore({ onList }) {
       </div>
       <div className="genres explore-genres" aria-label="Browse genres">
         {genres.map((genre) => (
-          <button className="genre" type="button" key={genre} onClick={() => onList(`${genre} anime`, `genre/${encodeURIComponent(genre)}`)}>{genre}</button>
+          <button className="genre" type="button" key={genre} onClick={() => onList(`${genreLabel(genre)} anime`, `genre/${encodeURIComponent(genre)}`)}>{genreLabel(genre)}</button>
         ))}
       </div>
       <form className="producer-search" onSubmit={(event) => {
@@ -503,9 +544,10 @@ function NewsFeed() {
               <a
                 className="news-item"
                 key={article.id || `${page}-${index}`}
-                href={/^https?:/.test(article.url || "") ? article.url : `https://hianime.to${article.url || ""}`}
-                target="_blank"
-                rel="noreferrer"
+                href={`/news-detail.html?id=${encodeURIComponent(article.id || "")}&page=${page}`}
+                onClick={() => {
+                  try { sessionStorage.setItem(`kitsune-news:${article.id}`, JSON.stringify(article)); } catch {}
+                }}
               >
                 {article.thumbnail ? <img src={article.thumbnail} alt="" loading="lazy" /> : <span className="news-thumb-empty" aria-hidden="true">K</span>}
                 <span className="news-text">
@@ -527,10 +569,103 @@ function NewsFeed() {
   );
 }
 
+function NewsDetail() {
+  const params = new URLSearchParams(location.search);
+  const id = params.get("id") || "";
+  const startPage = Math.max(1, Number(params.get("page")) || 1);
+  const [article, setArticle] = useState(() => {
+    try { return JSON.parse(sessionStorage.getItem(`kitsune-news:${id}`) || "null"); } catch { return null; }
+  });
+  const [missing, setMissing] = useState(false);
+  useEffect(() => {
+    if (article || !id) { if (!id) setMissing(true); return undefined; }
+    let cancelled = false;
+    (async () => {
+      // Opened from a shared link: look the article up in the news feed.
+      const pages = [startPage, ...[1, 2, 3, 4, 5].filter((n) => n !== startPage)];
+      for (const n of pages) {
+        try {
+          const data = await request(`/news?page=${n}`);
+          const found = (data?.news || []).find((item) => item.id === id);
+          if (found) { if (!cancelled) setArticle(found); return; }
+        } catch {}
+      }
+      if (!cancelled) setMissing(true);
+    })();
+    return () => { cancelled = true; };
+  }, [id, article, startPage]);
+  useEffect(() => {
+    if (article?.title) document.title = `${article.title} — Kitsunewave`;
+  }, [article]);
+  // Full text: scraped server-side from the article's source page.
+  const [fullText, setFullText] = useState(null); // null = loading, [] = unavailable
+  const [fullTextError, setFullTextError] = useState("");
+  useEffect(() => {
+    if (!article) return undefined;
+    const numeric = (value) => (String(value || "").match(/(\d{3,9})\/?$/) || [])[1];
+    const articleId = numeric(article.id) || numeric(article.url);
+    if (!articleId) { setFullTextError("no article number"); setFullText([]); return undefined; }
+    let cancelled = false;
+    setFullText(null);
+    request(`/news-article?id=${articleId}`)
+      .then((data) => !cancelled && setFullText(Array.isArray(data?.paragraphs) ? data.paragraphs : []))
+      .catch((err) => { if (!cancelled) { setFullTextError(err.message); setFullText([]); } });
+    return () => { cancelled = true; };
+  }, [article]);
+  const source = article?.url
+    ? /^https?:/.test(article.url) ? article.url : `https://www.animenewsnetwork.com${article.url}`
+    : "";
+  return (
+    <>
+      <Header back hideBack />
+      <main className="content news-page">
+        {missing ? (
+          <div className="news-article">
+            <p className="news-empty">Couldn't find this article. It may have dropped off the latest news.</p>
+            <a className="button secondary" href="/news.html">All news</a>
+          </div>
+        ) : !article ? (
+          <div className="news-article" aria-busy="true">
+            <span className="skeleton news-skeleton" />
+            <span className="skeleton news-skeleton" />
+          </div>
+        ) : (
+          <article className="news-article">
+            <span className="section-kicker">Anime news</span>
+            <h1>{article.title}</h1>
+            {article.uploadedAt && <time className="news-article-date">{article.uploadedAt}</time>}
+            {article.thumbnail && <img className="news-article-image" src={article.thumbnail} alt="" />}
+            {fullText === null ? (
+              <div className="news-article-loading" aria-busy="true">
+                {[1, 2, 3, 4].map((item) => <span className="skeleton news-skeleton" key={item} />)}
+              </div>
+            ) : fullText.length ? (
+              <div className="news-article-body">
+                {fullText.map((text, index) => (
+                  <p key={index} className={/^Sources?:/i.test(text) ? "news-article-sources" : undefined}>{text}</p>
+                ))}
+              </div>
+            ) : (
+              <>
+                {article.description && <p className="news-article-body">{article.description}</p>}
+                <p className="news-article-note">Couldn't load the full article{fullTextError ? ` (${fullTextError})` : ""}.</p>
+              </>
+            )}
+            <div className="news-article-actions">
+              <a className="button secondary" href="/news.html">All news</a>
+              {source && <a className="news-article-source" href={source} target="_blank" rel="noreferrer">Originally published by Anime News Network</a>}
+            </div>
+          </article>
+        )}
+      </main>
+    </>
+  );
+}
+
 function News() {
   return (
     <>
-      <Header back />
+      <Header back hideBack />
       <main className="content news-page">
         <NewsFeed />
       </main>
@@ -930,14 +1065,46 @@ function Home() {
 
   const spotlight = home?.spotlight || [];
   const featured = spotlight[featuredIndex];
+  // Autoplay restarts after every change, so a manual swipe gets a full 6s.
   useEffect(() => {
     if (spotlight.length < 2) return undefined;
-    const timer = window.setInterval(
+    const timer = window.setTimeout(
       () => setFeaturedIndex((index) => (index + 1) % spotlight.length),
       6000,
     );
-    return () => window.clearInterval(timer);
-  }, [spotlight.length]);
+    return () => window.clearTimeout(timer);
+  }, [spotlight.length, featuredIndex]);
+
+  // Swipe (touch or mouse drag) to change the featured anime.
+  const swipe = useRef({ x: 0, y: 0, active: false, swiped: false });
+  const goFeatured = (step) =>
+    setFeaturedIndex((index) => (index + step + spotlight.length) % spotlight.length);
+  const heroSwipeProps = spotlight.length > 1 ? {
+    onPointerDown: (event) => {
+      swipe.current = { x: event.clientX, y: event.clientY, active: true, swiped: false };
+    },
+    onPointerUp: (event) => {
+      const state = swipe.current;
+      if (!state.active) return;
+      state.active = false;
+      const dx = event.clientX - state.x;
+      const dy = event.clientY - state.y;
+      if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) {
+        state.swiped = true;
+        goFeatured(dx < 0 ? 1 : -1);
+      }
+    },
+    onPointerCancel: () => { swipe.current.active = false; },
+    onPointerLeave: () => { swipe.current.active = false; },
+    // Don't follow a link when the gesture was a swipe
+    onClickCapture: (event) => {
+      if (swipe.current.swiped) {
+        event.preventDefault();
+        event.stopPropagation();
+        swipe.current.swiped = false;
+      }
+    },
+  } : {};
 
   return (
     <>
@@ -949,7 +1116,7 @@ function Home() {
           setListView({ title, query });
           window.scrollTo({ top: 0, behavior: "smooth" });
         }}
-        onSearch={(keyword) => setSearch(keyword.trim())}
+        onSearch={(keyword) => { setListView(null); setSearch(keyword.trim()); }}
         onRandom={() => request("/random").then(({ id }) => { if (id) location.href = `/detail.html?id=${encodeURIComponent(id)}`; })}
         onOpenFilters={() => {
           setSelectedGenre("");
@@ -958,7 +1125,8 @@ function Home() {
       />
       <main id="home">
         <section
-          className={`hero${!home && !error ? " hero-skeleton" : ""}`}
+          className={`hero${!home && !error ? " hero-skeleton" : ""}${spotlight.length > 1 ? " hero-swipeable" : ""}`}
+          {...heroSwipeProps}
           style={
             featured?.poster
               ? { "--hero-image": `url("${featured.poster}")` }
@@ -966,7 +1134,7 @@ function Home() {
           }
         >
           {featured ? (
-            <div className="hero-copy">
+            <div className="hero-copy" key={featured.id || featuredIndex}>
               <div className="eyebrow">
                 Featured · #{featured.rank || featuredIndex + 1}
               </div>
@@ -1014,6 +1182,21 @@ function Home() {
               </div>
             </div>
           )}
+          {spotlight.length > 1 && (
+            <div className="hero-dots" role="tablist" aria-label="Featured anime">
+              {spotlight.map((item, index) => (
+                <button
+                  type="button"
+                  role="tab"
+                  aria-selected={index === featuredIndex}
+                  aria-label={`Show featured anime ${index + 1}`}
+                  className={index === featuredIndex ? "active" : undefined}
+                  key={item.id || index}
+                  onClick={() => setFeaturedIndex(index)}
+                />
+              ))}
+            </div>
+          )}
         </section>
         {topSearches.length > 0 && !search && !filtering && !listView && !filtered && (
           <section className="top-search-section content" aria-label="Top searches">
@@ -1036,6 +1219,7 @@ function Home() {
               setFiltering(false);
             }}
             onResults={(result) => {
+              setListView(null); // filter results replace any open menu list (e.g. Specials)
               setFiltered({ ...result, loading: false, error: "" });
               setSelectedGenre("");
               setFiltering(false);
@@ -1265,7 +1449,7 @@ function Detail() {
   if (error)
     return (
       <>
-        <Header back />
+        <Header back hideBack />
         <main id="detail-page-content">
           <div className="watch-loading">{error}</div>
         </main>
@@ -1274,7 +1458,7 @@ function Detail() {
   if (!anime)
     return (
       <>
-        <Header back />
+        <Header back hideBack />
         <main id="detail-page-content">
           <DetailSkeleton />
         </main>
@@ -1282,7 +1466,7 @@ function Detail() {
     );
   return (
     <>
-      <Header back />
+      <Header back hideBack />
       <main id="detail-page-content">
         <section className="detail-hero">
           {anime.poster && (
@@ -1473,7 +1657,7 @@ function Watch() {
     .slice(0, 10);
   return (
     <>
-      <Header back />
+      <Header back hideBack />
       <main id="watch-page-content">
         {error ? (
           <div className="watch-loading">{error}</div>
@@ -1631,7 +1815,7 @@ function Watch() {
 function Movies() {
   return (
     <>
-      <Header back />
+      <Header back hideBack />
       <main className="content movie-page">
         <ListResults title="Movies" query="movie" />
       </main>
@@ -1640,6 +1824,7 @@ function Movies() {
 }
 
 function App() {
+  if (location.pathname.endsWith("news-detail.html")) return <NewsDetail />;
   if (location.pathname.endsWith("detail.html")) return <Detail />;
   if (location.pathname.endsWith("watch.html")) return <Watch />;
   if (location.pathname.endsWith("news.html")) return <News />;
