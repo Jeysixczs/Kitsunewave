@@ -1,10 +1,22 @@
 // Server-side proxy: hides the upstream API URL and blocks direct visits.
 // vercel.json rewrites /api/* to this function as /api/proxy?path=*
 export default async function handler(req, res) {
-  // Browsers set Sec-Fetch-Site=same-origin when YOUR page calls fetch().
-  // Typing the URL in the address bar gives "none"; other sites give "cross-site".
-  if (req.headers['sec-fetch-site'] !== 'same-origin') {
-    return res.status(403).json({ success: false, message: 'Forbidden' });
+  // Allow only requests made by YOUR page. Two signals, either is enough:
+  //  1) Sec-Fetch-Site=same-origin (set by browsers for same-site fetch calls)
+  //  2) Referer host matches this site (fallback if the header is stripped)
+  // Typing the URL in the address bar has neither, so it gets blocked.
+  const sfs = req.headers['sec-fetch-site'];
+  const host = req.headers['x-forwarded-host'] || req.headers.host;
+  let refererHost = '';
+  try {
+    refererHost = new URL(req.headers.referer || '').host;
+  } catch {}
+  const allowed = sfs === 'same-origin' || (refererHost && refererHost === host);
+  if (!allowed) {
+    return res.status(403).json({
+      success: false,
+      message: `Forbidden (sec-fetch-site: ${sfs || 'none'}, referer: ${refererHost || 'none'}, host: ${host})`,
+    });
   }
 
   const base = (process.env.UPSTREAM_API || '').replace(/\/+$/, '');
