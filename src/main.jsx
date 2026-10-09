@@ -1,15 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
 import { createPortal } from "react-dom";
 import "./styles.css";
 
 const API = "/api";
 
-function autoplayUrl(url) {
+function autoplayUrl(url, muted = false) {
   if (!url) return "";
   const embedUrl = new URL(url);
-  embedUrl.searchParams.set("autoplay", "1");
-  embedUrl.searchParams.set("autoPlay", "1");
+  // Players use different parameter names, so set the common ones
+  ["autoplay", "autoPlay", "auto_play", "autostart"].forEach((key) =>
+    embedUrl.searchParams.set(key, "1"),
+  );
+  if (muted) {
+    // Browsers block sound autoplay before the first click, so start muted then
+    ["muted", "mute"].forEach((key) => embedUrl.searchParams.set(key, "1"));
+  }
   return embedUrl.toString();
 }
 
@@ -25,7 +31,8 @@ async function request(path) {
 function embeddedServers(servers) {
   return servers.filter((item) => {
     try {
-      return new URL(item.iframe).hostname !== "flixera.co";
+      new URL(item.iframe);
+      return true;
     } catch {
       return false;
     }
@@ -1380,6 +1387,18 @@ function Watch() {
   const [server, setServer] = useState(null);
   const [player, setPlayer] = useState("");
   const [error, setError] = useState("");
+  const interacted = useRef(false);
+  useEffect(() => {
+    const mark = () => {
+      interacted.current = true;
+    };
+    window.addEventListener("pointerdown", mark, { once: true });
+    window.addEventListener("keydown", mark, { once: true });
+    return () => {
+      window.removeEventListener("pointerdown", mark);
+      window.removeEventListener("keydown", mark);
+    };
+  }, []);
   useEffect(() => {
     if (!id) return setError("An anime ID is required");
     Promise.all([
@@ -1421,15 +1440,14 @@ function Watch() {
       setServerGroups(groups);
       const available = groups[language] || groups.sub || groups.dub || [];
       setServer(
-        available.find((item) => /^s-?2$/i.test(item.serverName || "")) ||
-          available[0] ||
+        available[0] ||
           null,
       );
     };
     loadServers().catch((err) => setError(err.message));
   }, [selected, language]);
   useEffect(() => {
-    setPlayer(autoplayUrl(server?.iframe));
+    setPlayer(autoplayUrl(server?.iframe, !interacted.current));
   }, [server]);
   const visibleEpisodes = episodes.filter((episode) =>
     language === "dub" ? episode.dub : episode.sub,
@@ -1531,7 +1549,7 @@ function Watch() {
                         <span>{type.toUpperCase()}:</span>
                       </strong>
                       <div className="server-options">
-                        {group.map((item) => (
+                        {group.map((item, index) => (
                           <button
                             className={`server-button${server?.serverId === item.serverId ? " active" : ""}`}
                             type="button"
@@ -1541,7 +1559,7 @@ function Watch() {
                               setServer(item);
                             }}
                           >
-                            {item.serverName}
+                            Kitsune {index + 1}
                           </button>
                         ))}
                       </div>

@@ -1,6 +1,23 @@
 // Server-side proxy: hides the upstream API URL and blocks direct visits.
 // vercel.json rewrites /api/* to this function as /api/proxy?path=*
 export default async function handler(req, res) {
+  // CORS: let your other projects call this API from the browser.
+  // Set ALLOWED_ORIGINS in Vercel, comma-separated, e.g.
+  //   https://my-client.vercel.app,https://other.example.com
+  // localhost/127.0.0.1 are always allowed for local testing.
+  const origin = req.headers.origin;
+  const allowedOrigins = (process.env.ALLOWED_ORIGINS || '')
+    .split(',')
+    .map((o) => o.trim().replace(/\/+$/, ''))
+    .filter(Boolean);
+  const isLocal = /^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin || '');
+  if (origin && (isLocal || allowedOrigins.includes(origin))) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+    res.setHeader('Access-Control-Allow-Headers', 'X-Kitsune-Client');
+    res.setHeader('Vary', 'Origin');
+  }
+  if (req.method === 'OPTIONS') return res.status(204).end();
+
   // Allow only requests made by YOUR page. Any one of these signals is enough:
   //  1) X-Kitsune-Client header, which the frontend adds to every request
   //  2) Sec-Fetch-Site=same-origin
