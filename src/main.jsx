@@ -92,7 +92,7 @@ function useGenres(enabled = true) {
 const MENU_SECTIONS = [
   { heading: "Sections", items: [
     ["Trending now", "top-airing"], ["Top airing", "top-airing"], ["Most popular", "most-popular"],
-    ["New episodes", "recently-updated"], ["New additions", "recently-added"], ["Just completed", "completed"],
+    ["New episodes", "new-episodes"], ["New additions", "recently-added"], ["Just completed", "completed"],
   ] },
   { heading: "Browse", items: [
     ["Most favorite", "most-favorite"], ["Top upcoming", "top-upcoming"],
@@ -269,17 +269,24 @@ function Poster({ item, className = "" }) {
   ) : null;
 }
 
+function airedLabel(at, time) {
+  const days = Math.round((new Date().setHours(0, 0, 0, 0) - new Date(at).setHours(0, 0, 0, 0)) / 864e5);
+  const day = days <= 0 ? "Today" : days === 1 ? "Yesterday" : new Date(at).toLocaleDateString(undefined, { month: "short", day: "numeric" });
+  return `${day}${time ? ` · ${time}` : ""}`;
+}
+
 function Card({ item }) {
   return (
     <a className="card" href={`/detail.html?id=${encodeURIComponent(item.id)}`}>
       <div className="poster">
         <Poster item={item} />
+        {item.newEp && <span className="badge badge-new">EP {item.newEp}</span>}
         {item.episodes?.sub && (
           <span className="badge">{item.episodes.sub} eps</span>
         )}
       </div>
       <h3>{item.title || "Untitled"}</h3>
-      <p>{[item.type, item.duration].filter(Boolean).join(" · ")}</p>
+      <p>{item.airedAt ? airedLabel(item.airedAt, item.airTime) : [item.type, item.duration].filter(Boolean).join(" · ")}</p>
     </a>
   );
 }
@@ -430,6 +437,20 @@ function ListResults({ title, query }) {
     let cancelled = false;
     // Genre lists use the filter endpoint (it supports every genre); the
     // /animes/genre/:genre page is only a fallback.
+    if (query === NEW_EPISODES) {
+      releasedList()
+        .then(async (all) => {
+          const slice = all.slice((page - 1) * NEW_EPISODES_PAGE, page * NEW_EPISODES_PAGE);
+          const response = (await Promise.all(slice.map(scheduleCard))).filter(Boolean);
+          if (!cancelled)
+            setData({
+              response,
+              pageInfo: { currentPage: page, totalPages: Math.max(1, Math.ceil(all.length / NEW_EPISODES_PAGE)) },
+            });
+        })
+        .catch((err) => !cancelled && setError(err.message));
+      return () => { cancelled = true; };
+    }
     const genreSlug = query.startsWith("genre/") ? decodeURIComponent(query.slice("genre/".length)) : "";
     const load = genreSlug
       ? request(`/filter?genres=${encodeURIComponent(genreSlug)}&page=${page}`).catch(() =>
@@ -808,6 +829,102 @@ function SearchResults({ keyword, onClose }) {
 
 const SCHEDULE_PREVIEW = 8;
 
+// "02:00 AM" + "2026-10-13" -> Date (null if the time can't be read)
+function airDate(day, time) {
+  const m = /^(\d{1,2}):(\d{2})\s*(AM|PM)?$/i.exec((time || "").trim());
+  if (!m) return null;
+  let h = Number(m[1]) % 12;
+  if (!m[3]) h = Number(m[1]);
+  else if (m[3].toUpperCase() === "PM") h += 12;
+  const d = new Date(`${day}T00:00:00`);
+  d.setHours(h, Number(m[2]), 0, 0);
+  return d;
+}
+
+// Scheduled shows whose air time has already passed, newest first (one entry per anime)
+function releasedShows(schedule, now = new Date()) {
+  const seen = new Set();
+  const out = [];
+  Object.keys(schedule || {}).forEach((day) => {
+    (schedule[day] || []).forEach((show) => {
+      const at = airDate(day, show.time);
+      if (at && at <= now && show.episode) out.push({ ...show, at });
+    });
+  });
+  return out
+    .sort((a, b) => b.at - a.at)
+    .filter((show) => (seen.has(show.id) ? false : seen.add(show.id)));
+}
+
+// "New episodes": anime the schedule says already aired, with their episode number.
+const NEW_EPISODES = "new-episodes";
+const NEW_EPISODES_PAGE = 24;
+const posterCache = new Map();
+
+// Resolve a scheduled show into a card (poster etc.), caching lookups
+async function scheduleCard(show) {
+  let base = posterCache.get(show.id);
+  if (!base) {
+    try {
+      const info = await request(`/anime/${encodeURIComponent(show.id)}`);
+      base = { id: show.id, title: info.title || show.title, poster: info.poster, type: info.type };
+      posterCache.set(show.id, base);
+    } catch {
+      return null;
+    }
+  }
+  return base.poster ? { ...base, newEp: show.episode, airedAt: show.at, airTime: show.time } : null;
+}
+
+// /schedules starts at today, so yesterday's releases are missing from it. The API also has
+// no data before the current week (earlier days come back empty), so one request starting a
+// few days back is enough to cover everything that has aired.
+const DAYS_BACK = 6;
+let releasedPromise = null;
+
+function isoDate(d) {
+  const p = (n) => String(n).padStart(2, "0");
+  return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}`;
+}
+
+function releasedList() {
+  if (!releasedPromise) {
+    releasedPromise = (async () => {
+      const start = new Date();
+      start.setDate(start.getDate() - DAYS_BACK);
+      const weeks = ["/schedules", `/schedules?date=${isoDate(start)}`];
+      const results = await Promise.allSettled(weeks.map((path) => request(path)));
+      const merged = {};
+      results.forEach((r) => {
+        if (r.status === "fulfilled") Object.assign(merged, r.value);
+      });
+      if (!Object.keys(merged).length) throw new Error("Could not load the schedule");
+      return releasedShows(merged);
+    })().catch((err) => {
+      releasedPromise = null; // allow a retry after a failure
+      throw err;
+    });
+  }
+  return releasedPromise;
+}
+
+// Home rail: first 18 released shows, reusing posters from the home feed
+async function loadNewEpisodes(homeItems = []) {
+  homeItems.forEach((item) => posterCache.set(item.id, item));
+  const released = (await releasedList()).slice(0, 18);
+  return (await Promise.all(released.map(scheduleCard))).filter(Boolean);
+}
+
+// Tab label from the real date, not the tab position
+function dayLabel(day) {
+  const d = new Date(`${day}T00:00:00`);
+  const diff = Math.round((d - new Date().setHours(0, 0, 0, 0)) / 864e5);
+  if (diff === 0) return "Today";
+  if (diff === 1) return "Tomorrow";
+  if (diff === -1) return "Yesterday";
+  return d.toLocaleDateString(undefined, { weekday: "short" });
+}
+
 function Schedule() {
   const [schedule, setSchedule] = useState(null);
   const [date, setDate] = useState("");
@@ -816,7 +933,8 @@ function Schedule() {
     request("/schedules")
       .then((data) => {
         setSchedule(data);
-        setDate(Object.keys(data).sort()[0] || "");
+        const days = Object.keys(data).sort();
+        setDate(days.includes(isoDate(new Date())) ? isoDate(new Date()) : days[0] || "");
       })
       .catch(() => setSchedule({}));
   }, []);
@@ -849,11 +967,7 @@ function Schedule() {
             onClick={() => setDate(item)}
           >
             <strong>
-              {index === 0
-                ? "Today"
-                : new Date(`${item}T00:00:00`).toLocaleDateString(undefined, {
-                    weekday: "short",
-                  })}
+              {dayLabel(item)}
             </strong>
             <small>
               {new Date(`${item}T00:00:00`).toLocaleDateString(undefined, {
@@ -1031,6 +1145,7 @@ function FilterPanel({ onResults, onClose, initialGenre = "" }) {
 
 function Home() {
   const [home, setHome] = useState(null);
+  const [newEpisodes, setNewEpisodes] = useState(null);
   const [error, setError] = useState("");
   const [featuredIndex, setFeaturedIndex] = useState(0);
   const [search, setSearch] = useState("");
@@ -1058,7 +1173,12 @@ function Home() {
 
   useEffect(() => {
     request("/home")
-      .then(setHome)
+      .then((data) => {
+        setHome(data);
+        loadNewEpisodes(data.latestEpisode)
+          .then((list) => setNewEpisodes(list.length ? list : null))
+          .catch(() => setNewEpisodes(null));
+      })
       .catch((err) => setError(err.message));
     request("/top-search").then((data) => setTopSearches(Array.isArray(data) ? data : [])).catch(() => setTopSearches([]));
   }, []);
@@ -1292,8 +1412,8 @@ function Home() {
                   />
                   <Rail
                     title="New episodes"
-                    items={home.latestEpisode}
-                    query="recently-updated"
+                    items={newEpisodes || home.latestEpisode}
+                    query="new-episodes"
                     onViewAll={(title, query) => setListView({ title, query })}
                   />
                   <Rail
@@ -1376,7 +1496,7 @@ function Home() {
             </nav>
             <nav className="kf-col" aria-label="Footer lists">
               <h4>Quick lists</h4>
-              {[["Top airing", "top-airing"], ["Most popular", "most-popular"], ["New episodes", "recently-updated"], ["Just completed", "completed"]].map(([title, query]) => (
+              {[["Top airing", "top-airing"], ["Most popular", "most-popular"], ["New episodes", "new-episodes"], ["Just completed", "completed"]].map(([title, query]) => (
                 <a
                   key={query}
                   href={`/?list=${encodeURIComponent(query)}&title=${encodeURIComponent(title)}`}
