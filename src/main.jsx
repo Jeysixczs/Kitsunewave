@@ -269,10 +269,11 @@ function Poster({ item, className = "" }) {
   ) : null;
 }
 
-function airedLabel(at, time) {
+function airedLabel(at) {
   const days = Math.round((new Date().setHours(0, 0, 0, 0) - new Date(at).setHours(0, 0, 0, 0)) / 864e5);
   const day = days <= 0 ? "Today" : days === 1 ? "Yesterday" : new Date(at).toLocaleDateString(undefined, { month: "short", day: "numeric" });
-  return `${day}${time ? ` · ${time}` : ""}`;
+  const time = new Date(at).toLocaleTimeString(undefined, { hour: "numeric", minute: "2-digit" });
+  return `${day} · ${time}`;
 }
 
 function Card({ item }) {
@@ -286,7 +287,7 @@ function Card({ item }) {
         )}
       </div>
       <h3>{item.title || "Untitled"}</h3>
-      <p>{item.airedAt ? airedLabel(item.airedAt, item.airTime) : [item.type, item.duration].filter(Boolean).join(" · ")}</p>
+      <p>{item.airedAt ? airedLabel(item.airedAt) : [item.type, item.duration].filter(Boolean).join(" · ")}</p>
     </a>
   );
 }
@@ -829,15 +830,16 @@ function SearchResults({ keyword, onClose }) {
 
 const SCHEDULE_PREVIEW = 8;
 
-// "02:00 AM" + "2026-10-13" -> Date (null if the time can't be read)
+// The API's schedule times are UTC ("02:00 AM" on "2026-10-13" = 02:00 UTC), so build a UTC date.
+// It is shown to the viewer in their own local time.
 function airDate(day, time) {
   const m = /^(\d{1,2}):(\d{2})\s*(AM|PM)?$/i.exec((time || "").trim());
   if (!m) return null;
   let h = Number(m[1]) % 12;
   if (!m[3]) h = Number(m[1]);
   else if (m[3].toUpperCase() === "PM") h += 12;
-  const d = new Date(`${day}T00:00:00`);
-  d.setHours(h, Number(m[2]), 0, 0);
+  const d = new Date(`${day}T00:00:00Z`);
+  d.setUTCHours(h, Number(m[2]), 0, 0);
   return d;
 }
 
@@ -863,7 +865,7 @@ function releasedShows(schedule, now = new Date(), all = false) {
 
 // "New episodes": anime the schedule says already aired, with their episode number.
 const NEW_EPISODES = "new-episodes";
-const NEW_EPISODES_PAGE = 24;
+const NEW_EPISODES_PAGE = 12;
 const posterCache = new Map();
 const posterInflight = new Map();
 
@@ -954,7 +956,7 @@ async function releasedList(all = false) {
 // Home rail: first 18 released shows, reusing posters from the home feed
 async function loadNewEpisodes(homeItems = []) {
   homeItems.forEach((item) => posterCache.set(item.id, item));
-  const released = (await releasedList()).slice(0, 18);
+  const released = (await releasedList()).slice(0, 12);
   return (await Promise.all(released.map(scheduleCard))).filter(Boolean);
 }
 

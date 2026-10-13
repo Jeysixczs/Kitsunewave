@@ -17,6 +17,23 @@ const FILE = path.join("public", "history.json");
 const pad = (n) => String(n).padStart(2, "0");
 const iso = (d) => `${d.getUTCFullYear()}-${pad(d.getUTCMonth() + 1)}-${pad(d.getUTCDate())}`;
 
+// Schedule times are UTC: "02:00 AM" on "2026-10-13" = 2026-10-13T02:00Z
+function airDate(day, time) {
+  const m = /^(\d{1,2}):(\d{2})\s*(AM|PM)?$/i.exec((time || "").trim());
+  if (!m) return null;
+  let h = Number(m[1]) % 12;
+  if (!m[3]) h = Number(m[1]);
+  else if (m[3].toUpperCase() === "PM") h += 12;
+  const d = new Date(`${day}T00:00:00Z`);
+  d.setUTCHours(h, Number(m[2]), 0, 0);
+  return d;
+}
+
+const hasAired = (day, show) => {
+  const at = airDate(day, show.time);
+  return Boolean(at) && at <= new Date();
+};
+
 async function get(url) {
   const res = await fetch(url, { headers: { Accept: "application/json" } });
   if (!res.ok) throw new Error(`${res.status} ${res.statusText} for ${url}`);
@@ -53,7 +70,7 @@ results.forEach((r) => {
     if (!Array.isArray(shows) || !shows.length) return;
     const list = (history[day] ||= []);
     shows.forEach((show) => {
-      if (!show.id || !show.episode) return;
+      if (!show.id || !show.episode || !hasAired(day, show)) return; // only save releases that already aired
       const known = list.find((x) => x.id === show.id && x.episode === show.episode);
       const entry = { id: show.id, title: show.title, time: show.time, episode: show.episode };
       if (known) Object.assign(known, entry);
@@ -63,6 +80,11 @@ results.forEach((r) => {
       }
     });
   });
+});
+
+// Remove anything that has not aired yet (e.g. saved by an earlier version of this script)
+Object.keys(history).forEach((day) => {
+  history[day] = history[day].filter((show) => hasAired(day, show));
 });
 
 // Drop days older than KEEP_DAYS so the file stays small; the app only shows the last 7 days
