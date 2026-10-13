@@ -46,6 +46,8 @@ export default defineConfig({
         news: 'news.html',
         newsDetail: 'news-detail.html',
         movie: 'movie.html',
+        library: 'library.html',
+        profile: 'profile.html',
       },
     },
   },

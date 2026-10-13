@@ -27,6 +27,7 @@ Browse, search, schedule and stream — one tail at a time.
 - [Project structure](#project-structure)
 - [Getting started](#getting-started)
 - [Configuration](#configuration)
+- [Accounts and library](#accounts-and-library)
 - [How the API layer works](#how-the-api-layer-works)
 - [Pages and routes](#pages-and-routes)
 - [Deployment](#deployment)
@@ -206,6 +207,31 @@ These environment variables are used by the serverless functions in production. 
 Local `.env*` files are git-ignored.
 
 ---
+
+## Accounts and library
+
+Sign in to keep your **watch list, bookmarks, watched anime, continue watching and watch history** on every device.
+
+- **Guests work too.** Without an account, everything is saved in the browser (`localStorage`). On sign-in the guest list is merged into the account.
+- **Continue watching** resumes at the last episode you opened (the player is a third-party embed, so playback time can't be read). It shows on the home page and in **My library** (`/library.html`).
+- **Mark watched** moves an anime to *Watched* and removes it from *Watch list* and *Continue watching*.
+- **Profile** (`/profile.html`) — display name, avatar (a preset emoji), library stats and password change. Name and avatar are stored in the Supabase user metadata, so no extra table is needed.
+
+Accounts use [Supabase](https://supabase.com) (email + password, optional Google). Each person's library is one row protected by row level security.
+
+1. Create a Supabase project and run [`supabase/schema.sql`](supabase/schema.sql) in the SQL editor.
+2. In **Project Settings → API** copy the project URL and the `anon` key.
+3. Set them as environment variables (locally in `.env`, on Vercel under **Settings → Environment Variables**), then redeploy:
+
+   | Variable | Purpose |
+   | --- | --- |
+   | `VITE_SUPABASE_URL` | Supabase project URL |
+   | `VITE_SUPABASE_ANON_KEY` | Public `anon` key (safe in the browser; RLS protects the data) |
+   | `VITE_AUTH_GOOGLE` | `true` to show "Continue with Google" (enable the provider in Supabase first) |
+
+4. In **Authentication → URL Configuration** add your site URL (and `http://localhost:5173` for development) to the redirect URLs.
+
+Without these variables the app still works; the Sign in button is hidden and lists stay on the device.
 
 ## How the API layer works
 

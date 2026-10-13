@@ -66,7 +66,7 @@ function mockApi() {
         }
         if ((m = route.match(/^\/character\/(.+)$/))) {
           const c = data.CHARACTERS.find((x) => x.id === m[1]) || data.CHARACTERS[0];
-          return ok(res, { name: c.name, description: data.CHARACTER_BIO[c.id] || "A fictional mock character profile." });
+          return ok(res, { name: c.name, type: "character", imageUrl: c.imageUrl, description: data.CHARACTER_BIO[c.id] || "A fictional mock character profile." });
         }
         res.statusCode = 404;
         return send(res, { success: false, message: `No mock for ${route}` });

@@ -2,6 +2,10 @@ import React, { useEffect, useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
 import { createPortal } from "react-dom";
 import "./styles.css";
+import { AccountButton, Avatar, isPhotoAvatar, ContinueRail, LibCard, LibraryActions, timeAgo, watchHref, removeHistory, removeProgress } from "./account.jsx";
+import { accountsEnabled, changePassword, clearHistory, openAuth, recordWatch, signOut, toggleList, updateProfile, useLibrary } from "./library.js";
+
+const signOutAndGoHome = () => signOut().then(() => { location.href = "/"; });
 
 const API = "/api";
 
@@ -139,6 +143,8 @@ function MenuDrawer({ open, onClose, onList, onRandom }) {
           <a href="/" onClick={onClose}><span>Home</span></a>
           <a href="/movie.html" onClick={onClose}><span>Movies</span></a>
           <a href="/news.html" onClick={onClose}><span>News</span></a>
+          <a href="/library.html" onClick={onClose}><span>My library</span></a>
+          {accountsEnabled && <a href="/profile.html" onClick={onClose}><span>Profile</span></a>}
           <a href="/#schedule" onClick={onClose}><span>Anime schedule</span></a>
           {onRandom && (
             <a href="#random" onClick={(event) => { event.preventDefault(); onClose(); onRandom(); }}><span>Random anime</span></a>
@@ -252,8 +258,10 @@ function Header({ back = false, hideBack = false, onSearch, onOpenFilters, onRan
         <a className="section-link news-link" href="/movie.html">Movies</a>
         <a className="section-link news-link" href="/news.html">News</a>
         <button className="section-link random-link" type="button" onClick={onRandom}>Random anime</button>
+        <a className="section-link news-link" href="/library.html">My library</a>
         </>
       )}
+      <AccountButton />
     </header>
   );
 }
@@ -308,7 +316,7 @@ function Rail({ title, items = [], query, onViewAll }) {
           </button>
         )}
       </div>
-      <div className="rail">
+      <div className={`rail${items.length < 8 ? " rail-fixed" : ""}`}>
         {items.map((item) => (
           <Card item={item} key={item.id} />
         ))}
@@ -1437,6 +1445,7 @@ function Home() {
               <>
               <div className="content-with-sidebar">
                 <div className="anime-rails">
+                  <ContinueRail />
                   <Rail
                     title="Trending now"
                     items={home.trending}
@@ -1683,6 +1692,7 @@ function Detail() {
                   Watch now <span>▶</span>
                 </a>
               </div>
+              <LibraryActions anime={{ id, title: anime.title, poster: anime.poster, type: anime.type }} />
             </div>
           </div>
         </section>
@@ -1736,6 +1746,7 @@ function Watch() {
   const [server, setServer] = useState(null);
   const [player, setPlayer] = useState("");
   const [error, setError] = useState("");
+  const library = useLibrary();
   const interacted = useRef(false);
   useEffect(() => {
     const mark = () => {
@@ -1757,10 +1768,33 @@ function Watch() {
       .then(([details, list]) => {
         setAnime(details);
         setEpisodes(list);
-        setSelected(list.find((episode) => episode.sub) || list[0]);
       })
       .catch((err) => setError(err.message));
   }, [id]);
+  // Pick the first episode: the one asked for in the link, else where you left off, else episode 1.
+  // Waits for the account to load so a signed-in person resumes from their saved progress.
+  useEffect(() => {
+    if (!episodes.length || selected || !library.ready) return;
+    const params = new URLSearchParams(location.search);
+    const saved = library.data.progress.find((item) => item.id === id);
+    const wantedId = params.get("ep") || saved?.episodeId;
+    const wanted = wantedId && episodes.find((episode) => String(episode.id) === String(wantedId));
+    if (wanted) {
+      if ((params.get("lang") || saved?.language) === "dub" && wanted.dub) setLanguage("dub");
+      setSelected(wanted);
+    } else {
+      setSelected(episodes.find((episode) => episode.sub) || episodes[0]);
+    }
+  }, [episodes, selected, library.ready]);
+  // Remember what is being watched (continue watching + history)
+  useEffect(() => {
+    if (anime && selected && library.ready) {
+      recordWatch({ id, title: anime.title, poster: anime.poster, type: anime.type }, selected, language);
+    }
+  }, [anime, selected, language, library.ready]);
+  const seenEpisodes = new Set(
+    library.data.history.filter((item) => item.id === id).map((item) => item.episodeId),
+  );
   useEffect(() => {
     if (!selected) return;
     const loadServers = async () => {
@@ -1859,7 +1893,7 @@ function Watch() {
                 <div className="episodes">
                   {visibleEpisodes.map((episode) => (
                     <button
-                      className={`episode${selected?.id === episode.id ? " active" : ""}`}
+                      className={`episode${selected?.id === episode.id ? " active" : seenEpisodes.has(String(episode.id)) ? " seen" : ""}`}
                       title={episode.title}
                       key={`${language}-${episode.id}`}
                       onClick={() => setSelected(episode)}
@@ -1915,6 +1949,7 @@ function Watch() {
                     </div>
                   ))}
                 </div>
+                <LibraryActions anime={{ id, title: anime.title, poster: anime.poster, type: anime.type }} />
               </section>
               <aside className="related-sidebar">
                 <h3>Related anime</h3>
@@ -1977,6 +2012,365 @@ function Watch() {
   );
 }
 
+const LIBRARY_TABS = [
+  ["continue", "Continue watching"],
+  ["watchlist", "Watch list"],
+  ["bookmark", "Bookmarks"],
+  ["watched", "Watched"],
+  ["history", "History"],
+];
+const LIBRARY_EMPTY = {
+  continue: "Nothing in progress. Start an episode and it will show up here.",
+  watchlist: "Your watch list is empty. Use “Watch list” on any anime to plan what to watch next.",
+  bookmark: "No bookmarks yet. Use “Bookmark” on any anime to save it.",
+  watched: "No watched anime yet. Use “Mark watched” on anime you have finished.",
+  history: "No watch history yet.",
+};
+
+function LibraryPage() {
+  const library = useLibrary();
+  const [tab, setTab] = useState(() => {
+    const wanted = location.hash.slice(1);
+    return LIBRARY_TABS.some(([key]) => key === wanted) ? wanted : "continue";
+  });
+  useEffect(() => {
+    document.title = "My library — Kitsunewave";
+  }, []);
+  const { data, user } = library;
+  const lists = { continue: data.progress, watchlist: data.watchlist, bookmark: data.bookmark, watched: data.watched, history: data.history };
+  const items = lists[tab];
+  const detailHref = (item) => `/detail.html?id=${encodeURIComponent(item.id)}`;
+  return (
+    <>
+      <Header back hideBack />
+      <main className="content library-page">
+        <div className="section-heading">
+          <h2>My library</h2>
+        </div>
+        {accountsEnabled && (
+          <div className="library-banner">
+            {user ? (
+              <span>
+                Signed in as <strong>{user.email}</strong>.{" "}
+                {library.syncError ? `Sync problem: ${library.syncError}` : "Your library is saved to your account."}
+              </span>
+            ) : (
+              <>
+                <span>You are browsing as a guest — this list is only saved on this device.</span>
+                <button type="button" className="button" onClick={() => openAuth(true)}>Sign in to sync</button>
+              </>
+            )}
+          </div>
+        )}
+        <div className="library-tabs" role="tablist">
+          {LIBRARY_TABS.map(([key, label]) => (
+            <button
+              key={key}
+              type="button"
+              role="tab"
+              aria-selected={tab === key}
+              className={tab === key ? "active" : ""}
+              onClick={() => {
+                setTab(key);
+                history.replaceState(null, "", `#${key}`);
+              }}
+            >
+              {label}
+              <small>{lists[key].length}</small>
+            </button>
+          ))}
+        </div>
+        {tab === "history" && items.length > 0 && (
+          <div className="library-toolbar">
+            <button type="button" className="section-link" onClick={() => window.confirm("Clear your watch history?") && clearHistory()}>
+              Clear history
+            </button>
+          </div>
+        )}
+        {items.length ? (
+          <div className="filter-results">
+            {items.map((item) => {
+              const episode = `Episode ${item.episodeNumber} · ${(item.language || "sub").toUpperCase()}`;
+              if (tab === "continue")
+                return <LibCard key={item.id} item={item} href={watchHref(item)} sub={episode} onRemove={() => removeProgress(item.id)} />;
+              if (tab === "history")
+                return (
+                  <LibCard
+                    key={`${item.id}-${item.episodeId}`}
+                    item={item}
+                    href={watchHref(item)}
+                    sub={`${episode} · ${timeAgo(item.at)}`}
+                    onRemove={() => removeHistory(item.id, item.episodeId)}
+                  />
+                );
+              return (
+                <LibCard
+                  key={item.id}
+                  item={item}
+                  href={detailHref(item)}
+                  sub={item.type || "Anime"}
+                  onRemove={() => toggleList(tab, item)}
+                />
+              );
+            })}
+          </div>
+        ) : (
+          <p className="loading">{LIBRARY_EMPTY[tab]}</p>
+        )}
+      </main>
+    </>
+  );
+}
+
+// Pick a profile photo from the character detail API (/character/:id -> data.imageUrl).
+// Popular characters are listed right away; the search box finds characters by name
+// (and by anime title, since the API lists characters per anime).
+const dedupeCharacters = (list) => {
+  const seen = new Set();
+  return list.filter((c) => c.imageUrl && !seen.has(c.id) && seen.add(c.id));
+};
+
+function CharacterAvatarPicker({ value, onPick }) {
+  const [browse, setBrowse] = useState(null);
+  const [batch, setBatch] = useState(0);
+  const [loadingMore, setLoadingMore] = useState(false);
+  const [term, setTerm] = useState("");
+  const [found, setFound] = useState(null);
+  const [searching, setSearching] = useState(false);
+  const [busyId, setBusyId] = useState("");
+  const [picked, setPicked] = useState("");
+  const [error, setError] = useState("");
+  const query = term.trim().toLowerCase();
+
+  useEffect(() => {
+    let cancelled = false;
+    setLoadingMore(true);
+    (async () => {
+      let more = [];
+      try {
+        const list = await request(`/animes/most-popular?page=${Math.floor(batch / 3) + 1}`);
+        const picks = (list.response || []).slice((batch % 3) * 4, (batch % 3) * 4 + 4);
+        const results = await Promise.allSettled(picks.map((anime) => request(`/characters/${encodeURIComponent(anime.id)}?page=1`)));
+        more = results.flatMap((r) => (r.status === "fulfilled" ? r.value.response || [] : []));
+      } catch {
+        /* leave the list as it is */
+      }
+      if (cancelled) return;
+      setBrowse((prev) => dedupeCharacters([...(prev || []), ...more]));
+      setLoadingMore(false);
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [batch]);
+
+  useEffect(() => {
+    if (query.length < 2) {
+      setFound(null);
+      setSearching(false);
+      return undefined;
+    }
+    let cancelled = false;
+    setSearching(true);
+    const timer = window.setTimeout(async () => {
+      let more = [];
+      try {
+        const anime = await request(`/suggestion?keyword=${encodeURIComponent(query)}`);
+        const picks = (Array.isArray(anime) ? anime : []).slice(0, 4);
+        const results = await Promise.allSettled(picks.map((item) => request(`/characters/${encodeURIComponent(item.id)}?page=1`)));
+        more = results.flatMap((r) => (r.status === "fulfilled" ? r.value.response || [] : []));
+      } catch {
+        /* fall back to the local name match below */
+      }
+      if (cancelled) return;
+      setFound(more);
+      setSearching(false);
+    }, 350);
+    return () => {
+      cancelled = true;
+      window.clearTimeout(timer);
+    };
+  }, [query]);
+
+  const matches = (c) => (c.name || "").toLowerCase().includes(query);
+  const characters = query.length < 2
+    ? browse
+    : (() => {
+        const all = dedupeCharacters([...(browse || []).filter(matches), ...(found || [])]);
+        return [...all.filter(matches), ...all.filter((c) => !matches(c))];
+      })();
+
+  const choose = async (item) => {
+    setBusyId(item.id);
+    setError("");
+    try {
+      const detail = await request(`/character/${encodeURIComponent(item.id)}`);
+      const photo = detail?.imageUrl || item.imageUrl;
+      if (photo) {
+        onPick(photo);
+        setPicked(detail?.name || item.name || "");
+      } else setError("This character has no photo.");
+    } catch {
+      setError("Could not load that character. Try another one.");
+    }
+    setBusyId("");
+  };
+  const onScroll = (event) => {
+    const el = event.currentTarget;
+    if (query.length < 2 && !loadingMore && el.scrollTop + el.clientHeight >= el.scrollHeight - 80) setBatch((n) => n + 1);
+  };
+
+  return (
+    <div className="character-picker">
+      <input type="search" value={term} placeholder="Search characters or anime…" aria-label="Search characters" onChange={(e) => setTerm(e.target.value)} />
+      {picked && value && <small className="character-picked">Selected: {picked}</small>}
+      {!characters ? (
+        <p className="loading">Loading characters…</p>
+      ) : characters.length === 0 ? (
+        <p className="loading">{searching ? "Searching…" : "No characters found."}</p>
+      ) : (
+        <div className="character-avatar-grid" role="radiogroup" aria-label="Character photos" onScroll={onScroll}>
+          {characters.map((item) => (
+            <button key={item.id} type="button" role="radio" aria-checked={value === item.imageUrl} disabled={busyId === item.id} title={item.name}
+              className={value === item.imageUrl ? "active" : ""} onClick={() => choose(item)}>
+              <img src={item.imageUrl} alt={item.name} loading="lazy" referrerPolicy="no-referrer" />
+              <span>{item.name}</span>
+            </button>
+          ))}
+          {(loadingMore || searching) && <p className="loading character-grid-status">Loading…</p>}
+        </div>
+      )}
+      {error && <p className="auth-message error" role="alert">{error}</p>}
+    </div>
+  );
+}
+
+function ProfilePage() {
+  const library = useLibrary();
+  const { user, ready, data } = library;
+  const [name, setName] = useState("");
+  const [avatar, setAvatar] = useState("");
+  const [saving, setSaving] = useState(false);
+  const [profileMsg, setProfileMsg] = useState({});
+  const [password, setPassword] = useState("");
+  const [confirm, setConfirm] = useState("");
+  const [passwordMsg, setPasswordMsg] = useState({});
+  useEffect(() => {
+    document.title = "Profile — Kitsunewave";
+  }, []);
+  useEffect(() => {
+    if (user) {
+      setName(user.name);
+      setAvatar(user.avatar);
+    }
+  }, [user?.id]);
+
+  const saveProfile = async (event) => {
+    event.preventDefault();
+    setSaving(true);
+    setProfileMsg({});
+    setProfileMsg(await updateProfile({ name: name.trim().slice(0, 40), avatar }));
+    setSaving(false);
+  };
+  const savePassword = async (event) => {
+    event.preventDefault();
+    setPasswordMsg({});
+    if (password.length < 8) return setPasswordMsg({ error: "Use a password with at least 8 characters." });
+    if (password !== confirm) return setPasswordMsg({ error: "The two passwords do not match." });
+    const result = await changePassword(password);
+    setPasswordMsg(result);
+    if (!result.error) {
+      setPassword("");
+      setConfirm("");
+    }
+  };
+  const Message = ({ result }) =>
+    result.error ? <p className="auth-message error" role="alert">{result.error}</p> : result.info ? <p className="auth-message" role="status">{result.info}</p> : null;
+
+  const stats = [
+    ["Continue watching", data.progress.length],
+    ["Watch list", data.watchlist.length],
+    ["Bookmarks", data.bookmark.length],
+    ["Watched anime", data.watched.length],
+    ["Episodes opened", data.history.length],
+  ];
+  return (
+    <>
+      <Header back hideBack />
+      <main className="content profile-page">
+        <div className="section-heading">
+          <h2>Profile</h2>
+        </div>
+        {!accountsEnabled ? (
+          <p className="loading">Accounts are not set up on this site, so there is no profile to edit.</p>
+        ) : !ready ? (
+          <p className="loading">Loading…</p>
+        ) : !user ? (
+          <div className="library-banner">
+            <span>Sign in to see and edit your profile.</span>
+            <button type="button" className="button" onClick={() => openAuth(true)}>Sign in</button>
+          </div>
+        ) : (
+          <div className="profile-grid">
+            <section className="profile-card profile-hero">
+              <Avatar user={{ ...user, name, avatar }} className="avatar-big" />
+              <div>
+                <h3>{name.trim() || "Set a display name"}</h3>
+                <p>{user.email}</p>
+                {user.createdAt && (
+                  <small>Member since {new Date(user.createdAt).toLocaleDateString(undefined, { month: "long", year: "numeric" })}</small>
+                )}
+              </div>
+            </section>
+            <section className="profile-card profile-stats" aria-label="Your library">
+              {stats.map(([label, count]) => (
+                <a key={label} href={label === "Episodes opened" ? "/library.html#history" : `/library.html#${{ "Continue watching": "continue", "Watch list": "watchlist", Bookmarks: "bookmark", "Watched anime": "watched" }[label]}`}>
+                  <strong>{count}</strong>
+                  <span>{label}</span>
+                </a>
+              ))}
+            </section>
+            <form className="profile-card profile-form profile-form-wide" onSubmit={saveProfile}>
+              <h3>Edit profile</h3>
+              <label>
+                <span>Display name</span>
+                <input maxLength={40} value={name} placeholder="How should we call you?" onChange={(e) => setName(e.target.value)} />
+              </label>
+              <div className="profile-field">
+                <span>Avatar</span>
+                <div className="avatar-current">
+                  <Avatar user={{ ...user, name, avatar }} className="avatar-preview" />
+                  {avatar && <button type="button" className="button secondary" onClick={() => setAvatar("")}>Use my initial instead</button>}
+                </div>
+                <CharacterAvatarPicker value={avatar} onPick={setAvatar} />
+              </div>
+              <Message result={profileMsg} />
+              <button className="button" type="submit" disabled={saving}>{saving ? "Saving…" : "Save profile"}</button>
+            </form>
+            <form className="profile-card profile-form" onSubmit={savePassword}>
+              <h3>Change password</h3>
+              <label>
+                <span>New password</span>
+                <input type="password" autoComplete="new-password" minLength={8} value={password} onChange={(e) => setPassword(e.target.value)} />
+              </label>
+              <label>
+                <span>Confirm new password</span>
+                <input type="password" autoComplete="new-password" minLength={8} value={confirm} onChange={(e) => setConfirm(e.target.value)} />
+              </label>
+              <Message result={passwordMsg} />
+              <button className="button secondary" type="submit">Update password</button>
+            </form>
+            <div className="profile-actions">
+              <a className="button secondary" href="/library.html">Open my library</a>
+              <button type="button" className="button secondary" onClick={() => signOutAndGoHome()}>Sign out</button>
+            </div>
+          </div>
+        )}
+      </main>
+    </>
+  );
+}
+
 function Movies() {
   return (
     <>
@@ -1994,6 +2388,8 @@ function App() {
   if (location.pathname.endsWith("watch.html")) return <Watch />;
   if (location.pathname.endsWith("news.html")) return <News />;
   if (location.pathname.endsWith("movie.html")) return <Movies />;
+  if (location.pathname.endsWith("library.html")) return <LibraryPage />;
+  if (location.pathname.endsWith("profile.html")) return <ProfilePage />;
   return <Home />;
 }
 
