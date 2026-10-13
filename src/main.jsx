@@ -438,7 +438,7 @@ function ListResults({ title, query }) {
     // Genre lists use the filter endpoint (it supports every genre); the
     // /animes/genre/:genre page is only a fallback.
     if (query === NEW_EPISODES) {
-      releasedList()
+      releasedList(true)
         .then(async (all) => {
           const slice = all.slice((page - 1) * NEW_EPISODES_PAGE, page * NEW_EPISODES_PAGE);
           const response = (await Promise.all(slice.map(scheduleCard))).filter(Boolean);
@@ -842,7 +842,7 @@ function airDate(day, time) {
 }
 
 // Scheduled shows whose air time has already passed, newest first (one entry per anime)
-function releasedShows(schedule, now = new Date()) {
+function releasedShows(schedule, now = new Date(), all = false) {
   const seen = new Set();
   const out = [];
   Object.keys(schedule || {}).forEach((day) => {
@@ -851,27 +851,37 @@ function releasedShows(schedule, now = new Date()) {
       if (at && at <= now && show.episode) out.push({ ...show, at });
     });
   });
-  return out
-    .sort((a, b) => b.at - a.at)
-    .filter((show) => (seen.has(show.id) ? false : seen.add(show.id)));
+  const sorted = out.sort((a, b) => b.at - a.at);
+  // all=false: one card per anime (its newest episode). all=true: every released episode.
+  return all ? sorted : sorted.filter((show) => (seen.has(show.id) ? false : seen.add(show.id)));
 }
 
 // "New episodes": anime the schedule says already aired, with their episode number.
 const NEW_EPISODES = "new-episodes";
 const NEW_EPISODES_PAGE = 24;
 const posterCache = new Map();
+const posterInflight = new Map();
 
 // Resolve a scheduled show into a card (poster etc.), caching lookups
 async function scheduleCard(show) {
   let base = posterCache.get(show.id);
   if (!base) {
-    try {
-      const info = await request(`/anime/${encodeURIComponent(show.id)}`);
-      base = { id: show.id, title: info.title || show.title, poster: info.poster, type: info.type };
-      posterCache.set(show.id, base);
-    } catch {
-      return null;
+    // Several episodes of one anime share a single lookup
+    if (!posterInflight.has(show.id)) {
+      posterInflight.set(
+        show.id,
+        request(`/anime/${encodeURIComponent(show.id)}`)
+          .then((info) => {
+            const card = { id: show.id, title: info.title || show.title, poster: info.poster, type: info.type };
+            posterCache.set(show.id, card);
+            return card;
+          })
+          .catch(() => null)
+          .finally(() => posterInflight.delete(show.id)),
+      );
     }
+    base = await posterInflight.get(show.id);
+    if (!base) return null;
   }
   return base.poster ? { ...base, newEp: show.episode, airedAt: show.at, airTime: show.time } : null;
 }
@@ -880,32 +890,60 @@ async function scheduleCard(show) {
 // no data before the current week (earlier days come back empty), so one request starting a
 // few days back is enough to cover everything that has aired.
 const DAYS_BACK = 6;
-let releasedPromise = null;
+let schedulePromise = null;
 
 function isoDate(d) {
   const p = (n) => String(n).padStart(2, "0");
   return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}`;
 }
 
-function releasedList() {
-  if (!releasedPromise) {
-    releasedPromise = (async () => {
+// Saved releases from the daily GitHub Action (public/history.json). Optional: ignored if missing.
+async function loadHistory() {
+  try {
+    const res = await fetch("/history.json", { cache: "no-cache" });
+    if (!res.ok) return {};
+    const body = await res.json();
+    return body.data || {};
+  } catch {
+    return {};
+  }
+}
+
+// Saved history + live API, merged per day (an episode is identified by anime id + number)
+function scheduleData() {
+  if (!schedulePromise) {
+    schedulePromise = (async () => {
       const start = new Date();
       start.setDate(start.getDate() - DAYS_BACK);
-      const weeks = ["/schedules", `/schedules?date=${isoDate(start)}`];
-      const results = await Promise.allSettled(weeks.map((path) => request(path)));
+      const paths = ["/schedules", `/schedules?date=${isoDate(start)}`];
+      const [history, ...live] = await Promise.all([
+        loadHistory(),
+        ...paths.map((path) => request(path).catch(() => null)),
+      ]);
       const merged = {};
-      results.forEach((r) => {
-        if (r.status === "fulfilled") Object.assign(merged, r.value);
+      [history, ...live].forEach((data) => {
+        Object.entries(data || {}).forEach(([day, shows]) => {
+          const list = (merged[day] ||= []);
+          (shows || []).forEach((show) => {
+            const same = list.findIndex((x) => x.id === show.id && x.episode === show.episode);
+            if (same >= 0) list[same] = show;
+            else list.push(show);
+          });
+        });
       });
       if (!Object.keys(merged).length) throw new Error("Could not load the schedule");
-      return releasedShows(merged);
+      return merged;
     })().catch((err) => {
-      releasedPromise = null; // allow a retry after a failure
+      schedulePromise = null; // allow a retry after a failure
       throw err;
     });
   }
-  return releasedPromise;
+  return schedulePromise;
+}
+
+// all=false: one card per anime (rail). all=true: every released episode ("View all").
+async function releasedList(all = false) {
+  return releasedShows(await scheduleData(), new Date(), all);
 }
 
 // Home rail: first 18 released shows, reusing posters from the home feed
