@@ -842,13 +842,18 @@ function airDate(day, time) {
 }
 
 // Scheduled shows whose air time has already passed, newest first (one entry per anime)
+// Only releases from the last 7 days are shown (saved history can hold older ones)
+const RELEASE_WINDOW_DAYS = 7;
+
 function releasedShows(schedule, now = new Date(), all = false) {
   const seen = new Set();
+  const oldest = new Date(now);
+  oldest.setDate(oldest.getDate() - RELEASE_WINDOW_DAYS);
   const out = [];
   Object.keys(schedule || {}).forEach((day) => {
     (schedule[day] || []).forEach((show) => {
       const at = airDate(day, show.time);
-      if (at && at <= now && show.episode) out.push({ ...show, at });
+      if (at && at <= now && at >= oldest && show.episode) out.push({ ...show, at });
     });
   });
   const sorted = out.sort((a, b) => b.at - a.at);

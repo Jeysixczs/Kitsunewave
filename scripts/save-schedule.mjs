@@ -5,11 +5,13 @@
 //
 // Env: UPSTREAM_API  base URL of the anime API (default https://kitsuneapi.vercel.app/api/v2)
 //      DAYS_BACK     how many days back to request (default 7)
+//      KEEP_DAYS     days of history to keep in the file (default 30); older days are dropped
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import path from "node:path";
 
 const BASE = (process.env.UPSTREAM_API || "https://kitsuneapi.vercel.app/api/v2").replace(/\/+$/, "");
 const DAYS_BACK = Number(process.env.DAYS_BACK || 7);
+const KEEP_DAYS = Number(process.env.KEEP_DAYS || 30);
 const FILE = path.join("public", "history.json");
 
 const pad = (n) => String(n).padStart(2, "0");
@@ -63,11 +65,16 @@ results.forEach((r) => {
   });
 });
 
-// Oldest day first, shows in air-time order is handled by the app; keep the file stable
+// Drop days older than KEEP_DAYS so the file stays small; the app only shows the last 7 days
+const cutoff = new Date();
+cutoff.setUTCDate(cutoff.getUTCDate() - KEEP_DAYS);
+const oldest = iso(cutoff);
+
+// Oldest day first; the app sorts by air time itself
 const sorted = Object.fromEntries(
   Object.keys(history)
     .sort()
-    .filter((day) => history[day].length)
+    .filter((day) => day >= oldest && history[day].length)
     .map((day) => [day, history[day]]),
 );
 
