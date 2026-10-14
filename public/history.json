@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-13T21:59:52.102Z",
+ "updated": "2026-10-14T04:05:20.647Z",
  "data": {
   "2026-10-12": [
    {
@@ -105,6 +105,38 @@
     "title": "DARK MACHINE THE ANIMATION",
     "time": "04:45 PM",
     "episode": 1
+   },
+   {
+    "id": "chibi-godzilla-raids-again-season-4-780341",
+    "title": "Chibi Godzilla Raids Again Season 4",
+    "time": "10:06 PM",
+    "episode": 15
+   },
+   {
+    "id": "mofusand-758230",
+    "title": "mofusand",
+    "time": "11:00 PM",
+    "episode": 41
+   }
+  ],
+  "2026-10-14": [
+   {
+    "id": "a-will-eternal-4th-season-33122",
+    "title": "Yi Nian Yongheng 4",
+    "time": "02:00 AM",
+    "episode": 15
+   },
+   {
+    "id": "fabulous-beasts-6-757469",
+    "title": "Fabulous Beasts 6",
+    "time": "02:00 AM",
+    "episode": 12
+   },
+   {
+    "id": "da-xia-shou-mu-ren-777741",
+    "title": "Da Xia Shou Mu Ren",
+    "time": "02:00 AM",
+    "episode": 5
    }
   ]
  }
