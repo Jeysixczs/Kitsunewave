@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-15T11:02:54.828Z",
+ "updated": "2026-10-15T16:33:08.550Z",
  "data": {
   "2026-10-12": [
    {
@@ -204,6 +204,66 @@
     "id": "playing-sister-20344",
     "title": "Playing Sister",
     "time": "10:00 AM",
+    "episode": 2
+   },
+   {
+    "id": "fx-senshi-kurumi-chan-20275",
+    "title": "FX Fighter Kurumi-chan",
+    "time": "12:30 PM",
+    "episode": 3
+   },
+   {
+    "id": "girls-und-panzer-motto-love-love-sakusen-desu-19427",
+    "title": "Girls und Panzer: Motto Love Love Sakusen desu!",
+    "time": "02:30 PM",
+    "episode": 2
+   },
+   {
+    "id": "koori-no-jouheki-2nd-season-756509",
+    "title": "The Ramparts of Ice Season 2",
+    "time": "02:56 PM",
+    "episode": 3
+   },
+   {
+    "id": "rascal-does-not-dream-of-a-dear-friend-19871",
+    "title": "Rascal Does Not Dream of a Dear Friend",
+    "time": "03:00 PM",
+    "episode": 1
+   },
+   {
+    "id": "tetsuryou-meet-with-tetsudou-musume-19928",
+    "title": "TETSURYO! Meet With Tetsudou Musume",
+    "time": "03:00 PM",
+    "episode": 2
+   },
+   {
+    "id": "yuusanchi-from-yuuhachi-757603",
+    "title": "Yuusanchi! from Yuuhachi",
+    "time": "03:00 PM",
+    "episode": 4
+   },
+   {
+    "id": "bang-dream-ave-mujica-prima-aurora-19784",
+    "title": "BanG Dream! Ave Mujica: prima aurora",
+    "time": "03:00 PM",
+    "episode": 1
+   },
+   {
+    "id": "kizu-darake-seijo-yori-houfuku-wo-komete-season2-754983",
+    "title": "With Vengeance, Sincerely, Your Broken Saintess Season 2",
+    "time": "03:00 PM",
+    "episode": 3
+   },
+   {
+    "id": "tsuihou-sareta-tensei-juukishi-wa-game-chishiki-de-musou-suru-18753",
+    "title": "The Exiled Heavy Knight Knows How to Game the System",
+    "time": "03:26 PM",
+    "episode": 16
+   },
+   {
+    "id": "hyouken-no-majutsushi-ga-sekai-wo-suberu-ii-755673",
+    "title": "The Iceblade Sorcerer Shall Rule the World II",
+    "time": "04:28 PM",
     "episode": 2
    }
   ]
