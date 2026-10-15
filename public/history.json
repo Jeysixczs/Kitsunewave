@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-15T03:47:24.113Z",
+ "updated": "2026-10-15T11:02:54.828Z",
  "data": {
   "2026-10-12": [
    {
@@ -137,6 +137,74 @@
     "title": "Da Xia Shou Mu Ren",
     "time": "02:00 AM",
     "episode": 5
+   },
+   {
+    "id": "tantei-wa-mou-shindeiru-season-2-16300",
+    "title": "The Detective Is Already Dead Season 2",
+    "time": "12:30 PM",
+    "episode": 2
+   },
+   {
+    "id": "sekai-saikyou-no-majo-hajimemashita-442584",
+    "title": "The World's Strongest Witch",
+    "time": "01:00 PM",
+    "episode": 2
+   },
+   {
+    "id": "sasaki-to-pii-chan-season-2-18107",
+    "title": "Sasaki and Peeps Season 2",
+    "time": "01:00 PM",
+    "episode": 2
+   },
+   {
+    "id": "magic-knight-rayearth-2026-18525",
+    "title": "Magic Knight Rayearth (2026)",
+    "time": "02:46 PM",
+    "episode": 2
+   },
+   {
+    "id": "shin-tennis-no-ouji-sama-u-17-world-cup-kesshou-member-ketteisen-19859",
+    "title": "The Prince of Tennis II U-17 WORLD CUP: Final Member Selection Match",
+    "time": "03:00 PM",
+    "episode": 3
+   },
+   {
+    "id": "dali-si-rizhi-3-779723",
+    "title": "Dali Si Rizhi 3",
+    "time": "03:00 PM",
+    "episode": 1
+   },
+   {
+    "id": "tensei-shitara-ken-deshita-2nd-season-16828",
+    "title": "Reincarnated as a Sword Season 2",
+    "time": "03:30 PM",
+    "episode": 3
+   },
+   {
+    "id": "jyu-u-mujin-dandivine-756213",
+    "title": "Dandivine",
+    "time": "03:30 PM",
+    "episode": 2
+   },
+   {
+    "id": "a-returner-s-magic-should-be-special-season-2-17860",
+    "title": "A Returner's Magic Should be Special Season 2",
+    "time": "03:45 PM",
+    "episode": 2
+   }
+  ],
+  "2026-10-15": [
+   {
+    "id": "petitcure-precure-fairies-season-4-778051",
+    "title": "PetitCure: Precure Fairies Season 4",
+    "time": "09:30 AM",
+    "episode": 3
+   },
+   {
+    "id": "playing-sister-20344",
+    "title": "Playing Sister",
+    "time": "10:00 AM",
+    "episode": 2
    }
   ]
  }
