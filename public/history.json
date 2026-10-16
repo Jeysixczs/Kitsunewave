@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-16T03:43:23.331Z",
+ "updated": "2026-10-16T10:58:26.406Z",
  "data": {
   "2026-10-12": [
    {
@@ -279,6 +279,24 @@
     "title": "Link Click Season 3",
     "time": "03:00 AM",
     "episode": 11
+   },
+   {
+    "id": "steel-ball-run-jojo-s-bizarre-adventure-2nd-stage-755420",
+    "title": "STEEL BALL RUN JoJo's Bizarre Adventure 2nd - 3rd STAGE",
+    "time": "08:00 AM",
+    "episode": 4
+   },
+   {
+    "id": "pan-dorobou-19650",
+    "title": "Pan Dorobou",
+    "time": "09:40 AM",
+    "episode": 3
+   },
+   {
+    "id": "pok-mon-horizons-the-series-16809",
+    "title": "Pokémon Horizons: The Series",
+    "time": "09:55 AM",
+    "episode": 153
    }
   ]
  }
