@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-16T10:58:26.406Z",
+ "updated": "2026-10-16T16:18:14.719Z",
  "data": {
   "2026-10-12": [
    {
@@ -297,6 +297,54 @@
     "title": "Pokémon Horizons: The Series",
     "time": "09:55 AM",
     "episode": 153
+   },
+   {
+    "id": "watame-did-borderline-nothing-wrong-759680",
+    "title": "Watame Did Borderline Nothing Wrong",
+    "time": "10:00 AM",
+    "episode": 84
+   },
+   {
+    "id": "duel-masters-lost-danzai-no-shounen-20404",
+    "title": "Duel Masters LOST: Danzai no Shounen",
+    "time": "12:00 PM",
+    "episode": 2
+   },
+   {
+    "id": "aoki-denshou-welsh-shedar-769200",
+    "title": "Welsh & Shedar",
+    "time": "12:26 PM",
+    "episode": 3
+   },
+   {
+    "id": "toaru-anbu-no-item-19305",
+    "title": "A Certain Dark Item",
+    "time": "01:30 PM",
+    "episode": 2
+   },
+   {
+    "id": "kusuriya-no-hitorigoto-3rd-season-19700",
+    "title": "The Apothecary Diaries Season 3",
+    "time": "02:00 PM",
+    "episode": 3
+   },
+   {
+    "id": "hotaru-no-yomeiri-20207",
+    "title": "Firefly Wedding",
+    "time": "02:30 PM",
+    "episode": 2
+   },
+   {
+    "id": "tougen-anki-nikko-kegon-falls-arc-33554",
+    "title": "TOUGEN ANKI: Nikko Kegon Falls Arc",
+    "time": "02:30 PM",
+    "episode": 3
+   },
+   {
+    "id": "uchi-no-otouto-domo-ga-sumimasen-20047",
+    "title": "Please Excuse My Younger Brothers",
+    "time": "03:00 PM",
+    "episode": 15
    }
   ]
  }
