@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-15T21:04:32.054Z",
+ "updated": "2026-10-16T03:43:23.331Z",
  "data": {
   "2026-10-12": [
    {
@@ -265,6 +265,20 @@
     "title": "The Iceblade Sorcerer Shall Rule the World II",
     "time": "04:28 PM",
     "episode": 2
+   }
+  ],
+  "2026-10-16": [
+   {
+    "id": "mazenchu-777744",
+    "title": "Mazenchu",
+    "time": "12:50 AM",
+    "episode": 3
+   },
+   {
+    "id": "shiguang-dailiren-iii-19579",
+    "title": "Link Click Season 3",
+    "time": "03:00 AM",
+    "episode": 11
    }
   ]
  }
