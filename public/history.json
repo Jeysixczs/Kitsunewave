@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-17T15:13:09.261Z",
+ "updated": "2026-10-17T20:18:32.776Z",
  "data": {
   "2026-10-12": [
    {
@@ -350,6 +350,152 @@
     "id": "tokyo-revengers-santen-sensou-hen-18338",
     "title": "Tokyo Revengers: War of the Three Titans Arc",
     "time": "04:53 PM",
+    "episode": 3
+   }
+  ],
+  "2026-10-17": [
+   {
+    "id": "rilakkuma-758475",
+    "title": "RILAKKUMA",
+    "time": "12:26 AM",
+    "episode": 28
+   },
+   {
+    "id": "al-214968",
+    "title": "Nezumi-kun no Chokki (TV) 2nd Season",
+    "time": "12:30 AM",
+    "episode": 3
+   },
+   {
+    "id": "al-216557",
+    "title": "KERORO☆",
+    "time": "12:30 AM",
+    "episode": 3
+   },
+   {
+    "id": "a-good-day-to-ascend-32868",
+    "title": "A Good Day to Ascend",
+    "time": "01:00 AM",
+    "episode": 16
+   },
+   {
+    "id": "soul-land-2-the-peerless-tang-clan-14582",
+    "title": "Soul Land 2: The Peerless Tang Clan",
+    "time": "02:00 AM",
+    "episode": 175
+   },
+   {
+    "id": "dawang-raoming-3-776942",
+    "title": "Dawang Raoming 3",
+    "time": "02:00 AM",
+    "episode": 5
+   },
+   {
+    "id": "sirotan-20448",
+    "title": "Sirotan",
+    "time": "07:29 AM",
+    "episode": 3
+   },
+   {
+    "id": "shin-chan-846",
+    "title": "Shin Chan",
+    "time": "07:30 AM",
+    "episode": 1357
+   },
+   {
+    "id": "doraemon-2005-4693",
+    "title": "Doraemon (2005)",
+    "time": "08:00 AM",
+    "episode": 937
+   },
+   {
+    "id": "the-vermilion-mask-19704",
+    "title": "The Vermilion Mask",
+    "time": "08:30 AM",
+    "episode": 2
+   },
+   {
+    "id": "case-closed-204",
+    "title": "Detective Conan",
+    "time": "09:00 AM",
+    "episode": 1217
+   },
+   {
+    "id": "marronnier-oukoku-no-shichinin-no-kishi-755733",
+    "title": "The Seven Knights of the Marronnier Kingdom",
+    "time": "09:25 AM",
+    "episode": 3
+   },
+   {
+    "id": "beyond-time-s-gaze-2-756099",
+    "title": "Beyond Time's Gaze 2",
+    "time": "10:00 AM",
+    "episode": 18
+   },
+   {
+    "id": "romeria-senki-maou-wo-taoshita-nochi-mo-jinrui-yabasou-dakara-guntai-soshiki-shita-18813",
+    "title": "Romelia War Chronicle",
+    "time": "12:00 PM",
+    "episode": 3
+   },
+   {
+    "id": "tenshou-shita-dai-seijo-wa-seijo-de-aru-koto-wo-hita-kakusu-19381",
+    "title": "A Tale of the Secret Saint",
+    "time": "01:00 PM",
+    "episode": 4
+   },
+   {
+    "id": "yasei-no-last-boss-ga-arawareta-2nd-season-20075",
+    "title": "A Wild Last Boss Appeared! Season 2",
+    "time": "01:30 PM",
+    "episode": 4
+   },
+   {
+    "id": "black-clover-season-2-19706",
+    "title": "Black Clover Season 2",
+    "time": "02:00 PM",
+    "episode": 3
+   },
+   {
+    "id": "vertex-force-20442",
+    "title": "VERTEX FORCE",
+    "time": "02:30 PM",
+    "episode": 3
+   },
+   {
+    "id": "zombie-sagashitemasu-19854",
+    "title": "#I'm Looking For a Zombie",
+    "time": "02:30 PM",
+    "episode": 3
+   },
+   {
+    "id": "kyoufu-collector-20046",
+    "title": "HORROR COLLECTOR",
+    "time": "02:45 PM",
+    "episode": 2
+   },
+   {
+    "id": "magical-explorer-eroge-no-yuujin-chara-ni-tensei-shitakedo-game-chishiki-tsukatte-jiyuu-ni-ikiru-17575",
+    "title": "Magical Explorer",
+    "time": "03:00 PM",
+    "episode": 4
+   },
+   {
+    "id": "seitokai-ni-mo-ana-wa-aru-19574",
+    "title": "Even the Student Council Has Its Holes!",
+    "time": "03:30 PM",
+    "episode": 3
+   },
+   {
+    "id": "ranma1-2-2024-season-3-20452",
+    "title": "Ranma1/2 (2024) Season 3",
+    "time": "03:56 PM",
+    "episode": 3
+   },
+   {
+    "id": "uchi-no-ko-no-tame-naraba-ore-wa-moshikashitara-maou-mo-taoseru-kamo-shirenai-33441",
+    "title": "Magic Repo Man: Dumped by My Party, I’ll Cash In With a Cute Support Fairy to Become the Strongest!",
+    "time": "04:30 PM",
     "episode": 3
    }
   ]
