@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-17T20:18:32.776Z",
+ "updated": "2026-10-18T03:40:05.717Z",
  "data": {
   "2026-10-12": [
    {
@@ -497,6 +497,68 @@
     "title": "Magic Repo Man: Dumped by My Party, I’ll Cash In With a Cute Support Fairy to Become the Strongest!",
     "time": "04:30 PM",
     "episode": 3
+   },
+   {
+    "id": "little-shark-s-day-out-season-2-758418",
+    "title": "Little Shark's Day Out Season 2",
+    "time": "10:00 PM",
+    "episode": 28
+   },
+   {
+    "id": "yuruyuru-zukan-756211",
+    "title": "Yuruyuru Zukan",
+    "time": "10:00 PM",
+    "episode": 3
+   },
+   {
+    "id": "raccoon-dog-fox-780340",
+    "title": "Raccoon Dog & Fox",
+    "time": "10:00 PM",
+    "episode": 3
+   },
+   {
+    "id": "koupen-chan-758398",
+    "title": "Koupen-chan",
+    "time": "11:00 PM",
+    "episode": 81
+   },
+   {
+    "id": "star-detective-precure-20026",
+    "title": "Star Detective Precure!",
+    "time": "11:30 PM",
+    "episode": 38
+   }
+  ],
+  "2026-10-18": [
+   {
+    "id": "punirunes-puni-4-768682",
+    "title": "Punirunes Puni 4",
+    "time": "12:16 AM",
+    "episode": 3
+   },
+   {
+    "id": "onegai-aipri-20282",
+    "title": "Onegai AiPri",
+    "time": "12:30 AM",
+    "episode": 29
+   },
+   {
+    "id": "pop-pap-polters-778977",
+    "title": "Pop Pap Polters",
+    "time": "01:00 AM",
+    "episode": 3
+   },
+   {
+    "id": "wushen-zhuzai-da-wei-pian-16593",
+    "title": "Wushen Zhuzai: Da Wei Pian",
+    "time": "02:00 AM",
+    "episode": 425
+   },
+   {
+    "id": "dou-po-cangqiong-nian-fan-4-19768",
+    "title": "Dou Po Cangqiong: Nian Fan 4",
+    "time": "02:00 AM",
+    "episode": 57
    }
   ]
  }
