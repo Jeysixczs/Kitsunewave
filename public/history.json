@@ -1,12 +1,14 @@
 {
- "updated": "2026-10-19T12:41:39.128Z",
+ "updated": "2026-10-19T22:10:09.972Z",
  "data": {
   "2026-10-12": [
    {
     "id": "renegade-immortal-14557",
     "title": "Renegade Immortal",
     "time": "02:00 AM",
-    "episode": 162
+    "episode": 162,
+    "poster": "https://s4.zanix.tr/poster/14557.jpg",
+    "type": "ONA"
    },
    {
     "id": "yuusanchi-from-yuuhachi-757603",
@@ -20,7 +22,9 @@
     "id": "doumo-suki-na-hito-ni-horegusuri-wo-irai-sareta-majo-desu-20346",
     "title": "Hello, I am a Witch and my Crush Wants me to Make a Love Potion!",
     "time": "12:30 PM",
-    "episode": 2
+    "episode": 2,
+    "poster": "https://s4.zanix.tr/poster/20346.jpg",
+    "type": "TV"
    },
    {
     "id": "tensei-goblin-dakedo-shitsumon-aru-20431",
@@ -148,7 +152,9 @@
     "id": "mofusand-758230",
     "title": "mofusand",
     "time": "11:00 PM",
-    "episode": 41
+    "episode": 41,
+    "poster": "https://s4.zanix.tr/poster/758230.jpg",
+    "type": "ONA"
    }
   ],
   "2026-10-14": [
@@ -156,7 +162,9 @@
     "id": "a-will-eternal-4th-season-33122",
     "title": "Yi Nian Yongheng 4",
     "time": "02:00 AM",
-    "episode": 15
+    "episode": 15,
+    "poster": "https://s4.zanix.tr/poster/33122.jpg",
+    "type": "ONA"
    },
    {
     "id": "fabulous-beasts-6-757469",
@@ -170,37 +178,49 @@
     "id": "da-xia-shou-mu-ren-777741",
     "title": "Da Xia Shou Mu Ren",
     "time": "02:00 AM",
-    "episode": 5
+    "episode": 5,
+    "poster": "https://s4.zanix.tr/poster/777741.jpg",
+    "type": "ONA"
    },
    {
     "id": "tantei-wa-mou-shindeiru-season-2-16300",
     "title": "The Detective Is Already Dead Season 2",
     "time": "12:30 PM",
-    "episode": 2
+    "episode": 2,
+    "poster": "https://s4.zanix.tr/poster/16300.jpg",
+    "type": "TV"
    },
    {
     "id": "sekai-saikyou-no-majo-hajimemashita-442584",
     "title": "The World's Strongest Witch",
     "time": "01:00 PM",
-    "episode": 2
+    "episode": 2,
+    "poster": "https://s4.zanix.tr/poster/442584.jpg",
+    "type": "TV"
    },
    {
     "id": "sasaki-to-pii-chan-season-2-18107",
     "title": "Sasaki and Peeps Season 2",
     "time": "01:00 PM",
-    "episode": 2
+    "episode": 2,
+    "poster": "https://s4.zanix.tr/poster/18107.jpg",
+    "type": "TV"
    },
    {
     "id": "magic-knight-rayearth-2026-18525",
     "title": "Magic Knight Rayearth (2026)",
     "time": "02:46 PM",
-    "episode": 2
+    "episode": 2,
+    "poster": "https://s4.zanix.tr/poster/18525.jpg",
+    "type": "TV"
    },
    {
     "id": "shin-tennis-no-ouji-sama-u-17-world-cup-kesshou-member-ketteisen-19859",
     "title": "The Prince of Tennis II U-17 WORLD CUP: Final Member Selection Match",
     "time": "03:00 PM",
-    "episode": 3
+    "episode": 3,
+    "poster": "https://s4.zanix.tr/poster/627c39def67ff4d3bea42e967031741f.jpg",
+    "type": "TV"
    },
    {
     "id": "dali-si-rizhi-3-779723",
@@ -222,7 +242,9 @@
     "id": "jyu-u-mujin-dandivine-756213",
     "title": "Dandivine",
     "time": "03:30 PM",
-    "episode": 2
+    "episode": 2,
+    "poster": "https://s4.zanix.tr/poster/756213.jpg",
+    "type": "TV"
    },
    {
     "id": "a-returner-s-magic-should-be-special-season-2-17860",
@@ -238,25 +260,33 @@
     "id": "petitcure-precure-fairies-season-4-778051",
     "title": "PetitCure: Precure Fairies Season 4",
     "time": "09:30 AM",
-    "episode": 3
+    "episode": 3,
+    "poster": "https://s4.zanix.tr/poster/778051.jpg",
+    "type": "ONA"
    },
    {
     "id": "playing-sister-20344",
     "title": "Playing Sister",
     "time": "10:00 AM",
-    "episode": 2
+    "episode": 2,
+    "poster": "https://s4.zanix.tr/poster/20344.jpg",
+    "type": "ONA"
    },
    {
     "id": "fx-senshi-kurumi-chan-20275",
     "title": "FX Fighter Kurumi-chan",
     "time": "12:30 PM",
-    "episode": 3
+    "episode": 3,
+    "poster": "https://s4.zanix.tr/poster/20275.jpg",
+    "type": "TV"
    },
    {
     "id": "girls-und-panzer-motto-love-love-sakusen-desu-19427",
     "title": "Girls und Panzer: Motto Love Love Sakusen desu!",
     "time": "02:30 PM",
-    "episode": 2
+    "episode": 2,
+    "poster": "https://s4.zanix.tr/poster/19427.jpg",
+    "type": "TV"
    },
    {
     "id": "koori-no-jouheki-2nd-season-756509",
@@ -278,7 +308,9 @@
     "id": "tetsuryou-meet-with-tetsudou-musume-19928",
     "title": "TETSURYO! Meet With Tetsudou Musume",
     "time": "03:00 PM",
-    "episode": 2
+    "episode": 2,
+    "poster": "https://s4.zanix.tr/poster/19928.jpg",
+    "type": "TV"
    },
    {
     "id": "yuusanchi-from-yuuhachi-757603",
@@ -320,7 +352,9 @@
     "id": "mazenchu-777744",
     "title": "Mazenchu",
     "time": "12:50 AM",
-    "episode": 3
+    "episode": 3,
+    "poster": "https://s4.zanix.tr/poster/777744.jpg",
+    "type": "TV_SHORT"
    },
    {
     "id": "shiguang-dailiren-iii-19579",
@@ -442,7 +476,9 @@
     "id": "al-216557",
     "title": "KERORO☆",
     "time": "12:30 AM",
-    "episode": 3
+    "episode": 3,
+    "poster": "https://s4.zanix.tr/poster/acd68d4e896712014a986280ede87989.jpg",
+    "type": "TV"
    },
    {
     "id": "a-good-day-to-ascend-32868",
@@ -658,7 +694,9 @@
     "id": "pop-pap-polters-778977",
     "title": "Pop Pap Polters",
     "time": "01:00 AM",
-    "episode": 3
+    "episode": 3,
+    "poster": "https://s4.zanix.tr/poster/778977.jpg",
+    "type": "TV_SHORT"
    },
    {
     "id": "wushen-zhuzai-da-wei-pian-16593",
