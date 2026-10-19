@@ -87,6 +87,41 @@ Object.keys(history).forEach((day) => {
   history[day] = history[day].filter((show) => hasAired(day, show));
 });
 
+// Save each show's poster and type next to its release, so the site can draw the "New episodes"
+// rail from history.json alone instead of looking every anime up on each page load.
+// Only releases from the last POSTER_DAYS days are looked up; older entries keep what they have.
+const POSTER_DAYS = Number(process.env.POSTER_DAYS || 8);
+const posterCutoff = iso(new Date(Date.now() - POSTER_DAYS * 864e5));
+const info = new Map(); // anime id -> { poster, type }
+Object.values(history).flat().forEach((show) => {
+  if (show.poster && !info.has(show.id)) info.set(show.id, { poster: show.poster, type: show.type });
+});
+const missing = new Set();
+Object.entries(history).forEach(([day, shows]) => {
+  if (day < posterCutoff) return;
+  shows.forEach((show) => !show.poster && !info.has(show.id) && missing.add(show.id));
+});
+const ids = [...missing];
+for (let i = 0; i < ids.length; i += 4) {
+  await Promise.all(
+    ids.slice(i, i + 4).map(async (id) => {
+      try {
+        const data = await get(`${BASE}/anime/${encodeURIComponent(id)}`);
+        if (data.poster) info.set(id, { poster: data.poster, type: data.type });
+      } catch (err) {
+        console.warn("No poster for", id, "-", err.message);
+      }
+    }),
+  );
+}
+Object.values(history).flat().forEach((show) => {
+  const found = info.get(show.id);
+  if (!found) return;
+  show.poster = found.poster;
+  if (found.type) show.type = found.type;
+});
+console.log(`Posters looked up: ${ids.length}`);
+
 // Drop days older than KEEP_DAYS so the file stays small; the app only shows the last 7 days
 const cutoff = new Date();
 cutoff.setUTCDate(cutoff.getUTCDate() - KEEP_DAYS);

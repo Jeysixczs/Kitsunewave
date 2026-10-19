@@ -325,6 +325,22 @@ function Rail({ title, items = [], query, onViewAll }) {
   );
 }
 
+// Placeholder while the New episodes rail loads, so it doesn't swap to a different list
+function RailSkeleton({ title }) {
+  return (
+    <section aria-busy="true">
+      <div className="section-heading">
+        <h2>{title}</h2>
+      </div>
+      <div className="skeleton-cards">
+        {[1, 2, 3, 4, 5, 6].map((card) => (
+          <span className="skeleton skeleton-card" key={card} />
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function TopAnime({ top10 }) {
   const [period, setPeriod] = useState("today");
   const periods = [
@@ -880,6 +896,11 @@ const posterInflight = new Map();
 // Resolve a scheduled show into a card (poster etc.), caching lookups
 async function scheduleCard(show) {
   let base = posterCache.get(show.id);
+  // history.json saves the poster with each release, so no extra lookup is needed
+  if (!base && show.poster) {
+    base = { id: show.id, title: show.title, poster: show.poster, type: show.type };
+    posterCache.set(show.id, base);
+  }
   if (!base) {
     // Several episodes of one anime share a single lookup
     if (!posterInflight.has(show.id)) {
@@ -941,7 +962,7 @@ function scheduleData() {
           const list = (merged[day] ||= []);
           (shows || []).forEach((show) => {
             const same = list.findIndex((x) => x.id === show.id && x.episode === show.episode);
-            if (same >= 0) list[same] = show;
+            if (same >= 0) list[same] = { ...list[same], ...show };
             else list.push(show);
           });
         });
@@ -961,11 +982,36 @@ async function releasedList(all = false) {
   return releasedShows(await scheduleData(), new Date(), all);
 }
 
-// Home rail: first 18 released shows, reusing posters from the home feed
-async function loadNewEpisodes(homeItems = []) {
-  homeItems.forEach((item) => posterCache.set(item.id, item));
+// The last rail is kept in localStorage so the next visit shows it instantly (then refreshes it)
+const NEW_EPISODES_CACHE = "kitsune:new-episodes";
+const NEW_EPISODES_CACHE_MAX_AGE = 24 * 36e5;
+
+function readNewEpisodesCache() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(NEW_EPISODES_CACHE) || "null");
+    if (!saved || Date.now() - saved.t > NEW_EPISODES_CACHE_MAX_AGE || !saved.items?.length) return undefined;
+    return saved.items.map((item) => ({ ...item, airedAt: new Date(item.airedAt) }));
+  } catch {
+    return undefined;
+  }
+}
+
+function writeNewEpisodesCache(items) {
+  try {
+    localStorage.setItem(NEW_EPISODES_CACHE, JSON.stringify({ t: Date.now(), items }));
+  } catch {}
+}
+
+// Home rail: first 12 released shows. It starts at the same time as /home. Posters come from
+// history.json; the home feed (homeItems, a promise) is only waited for if a poster is missing.
+async function loadNewEpisodes(homeItems = Promise.resolve([])) {
   const released = (await releasedList()).slice(0, 12);
-  return (await Promise.all(released.map(scheduleCard))).filter(Boolean);
+  if (released.some((show) => !show.poster && !posterCache.has(show.id))) {
+    (await homeItems).forEach((item) => !posterCache.has(item.id) && posterCache.set(item.id, item));
+  }
+  const cards = (await Promise.all(released.map(scheduleCard))).filter(Boolean);
+  if (cards.length) writeNewEpisodesCache(cards);
+  return cards;
 }
 
 // Tab label from the real date, not the tab position
@@ -1198,7 +1244,8 @@ function FilterPanel({ onResults, onClose, initialGenre = "" }) {
 
 function Home() {
   const [home, setHome] = useState(null);
-  const [newEpisodes, setNewEpisodes] = useState(null);
+  // undefined = still loading, null = nothing to show (falls back to the home feed)
+  const [newEpisodes, setNewEpisodes] = useState(readNewEpisodesCache);
   const [error, setError] = useState("");
   const [featuredIndex, setFeaturedIndex] = useState(0);
   const [search, setSearch] = useState("");
@@ -1225,14 +1272,12 @@ function Home() {
   };
 
   useEffect(() => {
-    request("/home")
-      .then((data) => {
-        setHome(data);
-        loadNewEpisodes(data.latestEpisode)
-          .then((list) => setNewEpisodes(list.length ? list : null))
-          .catch(() => setNewEpisodes(null));
-      })
-      .catch((err) => setError(err.message));
+    // Start /home and the New episodes rail together instead of one after the other
+    const homeRequest = request("/home");
+    homeRequest.then(setHome).catch((err) => setError(err.message));
+    loadNewEpisodes(homeRequest.then((data) => data.latestEpisode || []).catch(() => []))
+      .then((list) => setNewEpisodes(list.length ? list : null))
+      .catch(() => setNewEpisodes((current) => current ?? null)); // keep the cached rail if refreshing fails
     request("/top-search").then((data) => setTopSearches(Array.isArray(data) ? data : [])).catch(() => setTopSearches([]));
   }, []);
 
@@ -1464,12 +1509,16 @@ function Home() {
                     query="most-popular"
                     onViewAll={(title, query) => setListView({ title, query })}
                   />
-                  <Rail
-                    title="New episodes"
-                    items={newEpisodes || home.latestEpisode}
-                    query="new-episodes"
-                    onViewAll={(title, query) => setListView({ title, query })}
-                  />
+                  {newEpisodes === undefined ? (
+                    <RailSkeleton title="New episodes" />
+                  ) : (
+                    <Rail
+                      title="New episodes"
+                      items={newEpisodes || home.latestEpisode}
+                      query="new-episodes"
+                      onViewAll={(title, query) => setListView({ title, query })}
+                    />
+                  )}
                   <Rail
                     title="New additions"
                     items={home.newAdded}
