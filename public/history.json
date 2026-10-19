@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-13T21:59:52.102Z",
+ "updated": "2026-10-19T03:49:57.480Z",
  "data": {
   "2026-10-12": [
    {
@@ -105,6 +105,460 @@
     "title": "DARK MACHINE THE ANIMATION",
     "time": "04:45 PM",
     "episode": 1
+   },
+   {
+    "id": "chibi-godzilla-raids-again-season-4-780341",
+    "title": "Chibi Godzilla Raids Again Season 4",
+    "time": "10:06 PM",
+    "episode": 15
+   },
+   {
+    "id": "mofusand-758230",
+    "title": "mofusand",
+    "time": "11:00 PM",
+    "episode": 41
+   }
+  ],
+  "2026-10-14": [
+   {
+    "id": "a-will-eternal-4th-season-33122",
+    "title": "Yi Nian Yongheng 4",
+    "time": "02:00 AM",
+    "episode": 15
+   },
+   {
+    "id": "fabulous-beasts-6-757469",
+    "title": "Fabulous Beasts 6",
+    "time": "02:00 AM",
+    "episode": 12
+   },
+   {
+    "id": "da-xia-shou-mu-ren-777741",
+    "title": "Da Xia Shou Mu Ren",
+    "time": "02:00 AM",
+    "episode": 5
+   },
+   {
+    "id": "tantei-wa-mou-shindeiru-season-2-16300",
+    "title": "The Detective Is Already Dead Season 2",
+    "time": "12:30 PM",
+    "episode": 2
+   },
+   {
+    "id": "sekai-saikyou-no-majo-hajimemashita-442584",
+    "title": "The World's Strongest Witch",
+    "time": "01:00 PM",
+    "episode": 2
+   },
+   {
+    "id": "sasaki-to-pii-chan-season-2-18107",
+    "title": "Sasaki and Peeps Season 2",
+    "time": "01:00 PM",
+    "episode": 2
+   },
+   {
+    "id": "magic-knight-rayearth-2026-18525",
+    "title": "Magic Knight Rayearth (2026)",
+    "time": "02:46 PM",
+    "episode": 2
+   },
+   {
+    "id": "shin-tennis-no-ouji-sama-u-17-world-cup-kesshou-member-ketteisen-19859",
+    "title": "The Prince of Tennis II U-17 WORLD CUP: Final Member Selection Match",
+    "time": "03:00 PM",
+    "episode": 3
+   },
+   {
+    "id": "dali-si-rizhi-3-779723",
+    "title": "Dali Si Rizhi 3",
+    "time": "03:00 PM",
+    "episode": 1
+   },
+   {
+    "id": "tensei-shitara-ken-deshita-2nd-season-16828",
+    "title": "Reincarnated as a Sword Season 2",
+    "time": "03:30 PM",
+    "episode": 3
+   },
+   {
+    "id": "jyu-u-mujin-dandivine-756213",
+    "title": "Dandivine",
+    "time": "03:30 PM",
+    "episode": 2
+   },
+   {
+    "id": "a-returner-s-magic-should-be-special-season-2-17860",
+    "title": "A Returner's Magic Should be Special Season 2",
+    "time": "03:45 PM",
+    "episode": 2
+   }
+  ],
+  "2026-10-15": [
+   {
+    "id": "petitcure-precure-fairies-season-4-778051",
+    "title": "PetitCure: Precure Fairies Season 4",
+    "time": "09:30 AM",
+    "episode": 3
+   },
+   {
+    "id": "playing-sister-20344",
+    "title": "Playing Sister",
+    "time": "10:00 AM",
+    "episode": 2
+   },
+   {
+    "id": "fx-senshi-kurumi-chan-20275",
+    "title": "FX Fighter Kurumi-chan",
+    "time": "12:30 PM",
+    "episode": 3
+   },
+   {
+    "id": "girls-und-panzer-motto-love-love-sakusen-desu-19427",
+    "title": "Girls und Panzer: Motto Love Love Sakusen desu!",
+    "time": "02:30 PM",
+    "episode": 2
+   },
+   {
+    "id": "koori-no-jouheki-2nd-season-756509",
+    "title": "The Ramparts of Ice Season 2",
+    "time": "02:56 PM",
+    "episode": 3
+   },
+   {
+    "id": "rascal-does-not-dream-of-a-dear-friend-19871",
+    "title": "Rascal Does Not Dream of a Dear Friend",
+    "time": "03:00 PM",
+    "episode": 1
+   },
+   {
+    "id": "tetsuryou-meet-with-tetsudou-musume-19928",
+    "title": "TETSURYO! Meet With Tetsudou Musume",
+    "time": "03:00 PM",
+    "episode": 2
+   },
+   {
+    "id": "yuusanchi-from-yuuhachi-757603",
+    "title": "Yuusanchi! from Yuuhachi",
+    "time": "03:00 PM",
+    "episode": 4
+   },
+   {
+    "id": "bang-dream-ave-mujica-prima-aurora-19784",
+    "title": "BanG Dream! Ave Mujica: prima aurora",
+    "time": "03:00 PM",
+    "episode": 1
+   },
+   {
+    "id": "kizu-darake-seijo-yori-houfuku-wo-komete-season2-754983",
+    "title": "With Vengeance, Sincerely, Your Broken Saintess Season 2",
+    "time": "03:00 PM",
+    "episode": 3
+   },
+   {
+    "id": "tsuihou-sareta-tensei-juukishi-wa-game-chishiki-de-musou-suru-18753",
+    "title": "The Exiled Heavy Knight Knows How to Game the System",
+    "time": "03:26 PM",
+    "episode": 16
+   },
+   {
+    "id": "hyouken-no-majutsushi-ga-sekai-wo-suberu-ii-755673",
+    "title": "The Iceblade Sorcerer Shall Rule the World II",
+    "time": "04:28 PM",
+    "episode": 2
+   }
+  ],
+  "2026-10-16": [
+   {
+    "id": "mazenchu-777744",
+    "title": "Mazenchu",
+    "time": "12:50 AM",
+    "episode": 3
+   },
+   {
+    "id": "shiguang-dailiren-iii-19579",
+    "title": "Link Click Season 3",
+    "time": "03:00 AM",
+    "episode": 11
+   },
+   {
+    "id": "steel-ball-run-jojo-s-bizarre-adventure-2nd-stage-755420",
+    "title": "STEEL BALL RUN JoJo's Bizarre Adventure 2nd - 3rd STAGE",
+    "time": "08:00 AM",
+    "episode": 4
+   },
+   {
+    "id": "pan-dorobou-19650",
+    "title": "Pan Dorobou",
+    "time": "09:40 AM",
+    "episode": 3
+   },
+   {
+    "id": "pok-mon-horizons-the-series-16809",
+    "title": "Pokémon Horizons: The Series",
+    "time": "09:55 AM",
+    "episode": 153
+   },
+   {
+    "id": "watame-did-borderline-nothing-wrong-759680",
+    "title": "Watame Did Borderline Nothing Wrong",
+    "time": "10:00 AM",
+    "episode": 84
+   },
+   {
+    "id": "duel-masters-lost-danzai-no-shounen-20404",
+    "title": "Duel Masters LOST: Danzai no Shounen",
+    "time": "12:00 PM",
+    "episode": 2
+   },
+   {
+    "id": "aoki-denshou-welsh-shedar-769200",
+    "title": "Welsh & Shedar",
+    "time": "12:26 PM",
+    "episode": 3
+   },
+   {
+    "id": "toaru-anbu-no-item-19305",
+    "title": "A Certain Dark Item",
+    "time": "01:30 PM",
+    "episode": 2
+   },
+   {
+    "id": "kusuriya-no-hitorigoto-3rd-season-19700",
+    "title": "The Apothecary Diaries Season 3",
+    "time": "02:00 PM",
+    "episode": 3
+   },
+   {
+    "id": "hotaru-no-yomeiri-20207",
+    "title": "Firefly Wedding",
+    "time": "02:30 PM",
+    "episode": 2
+   },
+   {
+    "id": "tougen-anki-nikko-kegon-falls-arc-33554",
+    "title": "TOUGEN ANKI: Nikko Kegon Falls Arc",
+    "time": "02:30 PM",
+    "episode": 3
+   },
+   {
+    "id": "uchi-no-otouto-domo-ga-sumimasen-20047",
+    "title": "Please Excuse My Younger Brothers",
+    "time": "03:00 PM",
+    "episode": 15
+   },
+   {
+    "id": "tokyo-revengers-santen-sensou-hen-18338",
+    "title": "Tokyo Revengers: War of the Three Titans Arc",
+    "time": "04:53 PM",
+    "episode": 3
+   }
+  ],
+  "2026-10-17": [
+   {
+    "id": "rilakkuma-758475",
+    "title": "RILAKKUMA",
+    "time": "12:26 AM",
+    "episode": 28
+   },
+   {
+    "id": "al-214968",
+    "title": "Nezumi-kun no Chokki (TV) 2nd Season",
+    "time": "12:30 AM",
+    "episode": 3
+   },
+   {
+    "id": "al-216557",
+    "title": "KERORO☆",
+    "time": "12:30 AM",
+    "episode": 3
+   },
+   {
+    "id": "a-good-day-to-ascend-32868",
+    "title": "A Good Day to Ascend",
+    "time": "01:00 AM",
+    "episode": 16
+   },
+   {
+    "id": "soul-land-2-the-peerless-tang-clan-14582",
+    "title": "Soul Land 2: The Peerless Tang Clan",
+    "time": "02:00 AM",
+    "episode": 175
+   },
+   {
+    "id": "dawang-raoming-3-776942",
+    "title": "Dawang Raoming 3",
+    "time": "02:00 AM",
+    "episode": 5
+   },
+   {
+    "id": "sirotan-20448",
+    "title": "Sirotan",
+    "time": "07:29 AM",
+    "episode": 3
+   },
+   {
+    "id": "shin-chan-846",
+    "title": "Shin Chan",
+    "time": "07:30 AM",
+    "episode": 1357
+   },
+   {
+    "id": "doraemon-2005-4693",
+    "title": "Doraemon (2005)",
+    "time": "08:00 AM",
+    "episode": 937
+   },
+   {
+    "id": "the-vermilion-mask-19704",
+    "title": "The Vermilion Mask",
+    "time": "08:30 AM",
+    "episode": 2
+   },
+   {
+    "id": "case-closed-204",
+    "title": "Detective Conan",
+    "time": "09:00 AM",
+    "episode": 1217
+   },
+   {
+    "id": "marronnier-oukoku-no-shichinin-no-kishi-755733",
+    "title": "The Seven Knights of the Marronnier Kingdom",
+    "time": "09:25 AM",
+    "episode": 3
+   },
+   {
+    "id": "beyond-time-s-gaze-2-756099",
+    "title": "Beyond Time's Gaze 2",
+    "time": "10:00 AM",
+    "episode": 18
+   },
+   {
+    "id": "romeria-senki-maou-wo-taoshita-nochi-mo-jinrui-yabasou-dakara-guntai-soshiki-shita-18813",
+    "title": "Romelia War Chronicle",
+    "time": "12:00 PM",
+    "episode": 3
+   },
+   {
+    "id": "tenshou-shita-dai-seijo-wa-seijo-de-aru-koto-wo-hita-kakusu-19381",
+    "title": "A Tale of the Secret Saint",
+    "time": "01:00 PM",
+    "episode": 4
+   },
+   {
+    "id": "yasei-no-last-boss-ga-arawareta-2nd-season-20075",
+    "title": "A Wild Last Boss Appeared! Season 2",
+    "time": "01:30 PM",
+    "episode": 4
+   },
+   {
+    "id": "black-clover-season-2-19706",
+    "title": "Black Clover Season 2",
+    "time": "02:00 PM",
+    "episode": 3
+   },
+   {
+    "id": "vertex-force-20442",
+    "title": "VERTEX FORCE",
+    "time": "02:30 PM",
+    "episode": 3
+   },
+   {
+    "id": "zombie-sagashitemasu-19854",
+    "title": "#I'm Looking For a Zombie",
+    "time": "02:30 PM",
+    "episode": 3
+   },
+   {
+    "id": "kyoufu-collector-20046",
+    "title": "HORROR COLLECTOR",
+    "time": "02:45 PM",
+    "episode": 2
+   },
+   {
+    "id": "magical-explorer-eroge-no-yuujin-chara-ni-tensei-shitakedo-game-chishiki-tsukatte-jiyuu-ni-ikiru-17575",
+    "title": "Magical Explorer",
+    "time": "03:00 PM",
+    "episode": 4
+   },
+   {
+    "id": "seitokai-ni-mo-ana-wa-aru-19574",
+    "title": "Even the Student Council Has Its Holes!",
+    "time": "03:30 PM",
+    "episode": 3
+   },
+   {
+    "id": "ranma1-2-2024-season-3-20452",
+    "title": "Ranma1/2 (2024) Season 3",
+    "time": "03:56 PM",
+    "episode": 3
+   },
+   {
+    "id": "uchi-no-ko-no-tame-naraba-ore-wa-moshikashitara-maou-mo-taoseru-kamo-shirenai-33441",
+    "title": "Magic Repo Man: Dumped by My Party, I’ll Cash In With a Cute Support Fairy to Become the Strongest!",
+    "time": "04:30 PM",
+    "episode": 3
+   },
+   {
+    "id": "little-shark-s-day-out-season-2-758418",
+    "title": "Little Shark's Day Out Season 2",
+    "time": "10:00 PM",
+    "episode": 28
+   },
+   {
+    "id": "yuruyuru-zukan-756211",
+    "title": "Yuruyuru Zukan",
+    "time": "10:00 PM",
+    "episode": 3
+   },
+   {
+    "id": "raccoon-dog-fox-780340",
+    "title": "Raccoon Dog & Fox",
+    "time": "10:00 PM",
+    "episode": 3
+   },
+   {
+    "id": "koupen-chan-758398",
+    "title": "Koupen-chan",
+    "time": "11:00 PM",
+    "episode": 81
+   },
+   {
+    "id": "star-detective-precure-20026",
+    "title": "Star Detective Precure!",
+    "time": "11:30 PM",
+    "episode": 38
+   }
+  ],
+  "2026-10-18": [
+   {
+    "id": "punirunes-puni-4-768682",
+    "title": "Punirunes Puni 4",
+    "time": "12:16 AM",
+    "episode": 3
+   },
+   {
+    "id": "onegai-aipri-20282",
+    "title": "Onegai AiPri",
+    "time": "12:30 AM",
+    "episode": 29
+   },
+   {
+    "id": "pop-pap-polters-778977",
+    "title": "Pop Pap Polters",
+    "time": "01:00 AM",
+    "episode": 3
+   },
+   {
+    "id": "wushen-zhuzai-da-wei-pian-16593",
+    "title": "Wushen Zhuzai: Da Wei Pian",
+    "time": "02:00 AM",
+    "episode": 425
+   },
+   {
+    "id": "dou-po-cangqiong-nian-fan-4-19768",
+    "title": "Dou Po Cangqiong: Nian Fan 4",
+    "time": "02:00 AM",
+    "episode": 57
    }
   ]
  }
