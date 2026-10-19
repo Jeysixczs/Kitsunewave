@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-19T03:49:57.480Z",
+ "updated": "2026-10-19T12:41:39.128Z",
  "data": {
   "2026-10-12": [
    {
@@ -12,7 +12,9 @@
     "id": "yuusanchi-from-yuuhachi-757603",
     "title": "Yuusanchi! from Yuuhachi",
     "time": "02:00 AM",
-    "episode": 3
+    "episode": 3,
+    "poster": "https://s4.zanix.tr/poster/757603.jpg",
+    "type": "TV_SHORT"
    },
    {
     "id": "doumo-suki-na-hito-ni-horegusuri-wo-irai-sareta-majo-desu-20346",
@@ -24,19 +26,25 @@
     "id": "tensei-goblin-dakedo-shitsumon-aru-20431",
     "title": "So What's Wrong with Getting Reborn as a Goblin?",
     "time": "01:00 PM",
-    "episode": 3
+    "episode": 3,
+    "poster": "https://s4.zanix.tr/poster/20431.jpg",
+    "type": "ONA"
    },
    {
     "id": "psyren-33518",
     "title": "PSYREN",
     "time": "02:00 PM",
-    "episode": 2
+    "episode": 2,
+    "poster": "https://s4.zanix.tr/poster/33518.jpg",
+    "type": "TV"
    },
    {
     "id": "mahou-shoujo-ikusei-keikaku-restart-16899",
     "title": "MAGICAL GIRL RAISING PROJECT restart",
     "time": "05:00 PM",
-    "episode": 2
+    "episode": 2,
+    "poster": "https://s4.zanix.tr/poster/16899.jpg",
+    "type": "TV"
    }
   ],
   "2026-10-13": [
@@ -44,73 +52,97 @@
     "id": "wushen-zhuzai-da-wei-pian-16593",
     "title": "Wushen Zhuzai: Da Wei Pian",
     "time": "02:00 AM",
-    "episode": 424
+    "episode": 424,
+    "poster": "https://s4.zanix.tr/poster/16593.jpg",
+    "type": "ONA"
    },
    {
     "id": "jueshi-zhan-hun-2-771057",
     "title": "Jueshi Zhan Hun 2",
     "time": "02:00 AM",
-    "episode": 19
+    "episode": 19,
+    "poster": "https://s4.zanix.tr/poster/771057.jpg",
+    "type": "ONA"
    },
    {
     "id": "kyouran-reijou-nia-liston-20335",
     "title": "Nia Liston: The Merciless Maiden",
     "time": "12:26 PM",
-    "episode": 2
+    "episode": 2,
+    "poster": "https://s4.zanix.tr/poster/20335.jpg",
+    "type": "TV"
    },
    {
     "id": "shiotaiou-no-satou-san-ga-ore-ni-dake-amai-20439",
     "title": "The Cold Sato-san is Only Sweet to Me",
     "time": "01:00 PM",
-    "episode": 2
+    "episode": 2,
+    "poster": "https://s4.zanix.tr/poster/20439.jpg",
+    "type": "TV"
    },
    {
     "id": "choujun-choujou-senpai-19948",
     "title": "Super Psychic Policeman Chojo",
     "time": "02:00 PM",
-    "episode": 2
+    "episode": 2,
+    "poster": "https://s4.zanix.tr/poster/19948.jpg",
+    "type": "TV"
    },
    {
     "id": "battle-spirits-re-zekkai-no-ku-19424",
     "title": "Battle Spirits [Re] Zekkai No Ku",
     "time": "02:00 PM",
-    "episode": 2
+    "episode": 2,
+    "poster": "https://s4.zanix.tr/poster/af2d4b6644dc7ab41135c9f49374f240.jpg",
+    "type": "TV"
    },
    {
     "id": "chitose-kun-wa-ramune-bin-no-naka-part-2-19838",
     "title": "Chitose Is in the Ramune Bottle 2nd Cour",
     "time": "02:00 PM",
-    "episode": 1
+    "episode": 1,
+    "poster": "https://s4.zanix.tr/poster/752bf884d2e0a73fc1724e791556e296.jpg",
+    "type": "TV"
    },
    {
     "id": "gensou-suikoden-19371",
     "title": "Gensou Suikoden",
     "time": "02:30 PM",
-    "episode": 2
+    "episode": 2,
+    "poster": "https://s4.zanix.tr/poster/19371.jpg",
+    "type": "TV"
    },
    {
     "id": "tsuihou-sareta-cheat-fuyo-majutsushi-wa-kimama-na-second-life-wo-ouka-suru-ore-wa-buki-dake-ja-naku-arayuru-mono-ni-kyouka-point-wo-fuyo-dekiru-shi-ore-no-ishi-de-itsudemo-kouka-wo-kaijo-dekiru-kedo-nokotta-hitotachi-daijoubu-20358",
     "title": "The Laid-Off Cheat-Granting Mage Enjoys a Second Lease on Life",
     "time": "03:00 PM",
-    "episode": 2
+    "episode": 2,
+    "poster": "https://s4.zanix.tr/poster/20358.jpg",
+    "type": "TV"
    },
    {
     "id": "sora-wa-akai-kawa-no-hotori-20381",
     "title": "Red River",
     "time": "04:35 PM",
-    "episode": 15
+    "episode": 15,
+    "poster": "https://s4.zanix.tr/poster/20381.jpg",
+    "type": "TV"
    },
    {
     "id": "dark-machine-the-animation-18717",
     "title": "DARK MACHINE THE ANIMATION",
     "time": "04:45 PM",
-    "episode": 1
+    "episode": 1,
+    "poster": "https://s4.zanix.tr/poster/18717.jpg",
+    "type": "TV"
    },
    {
     "id": "chibi-godzilla-raids-again-season-4-780341",
     "title": "Chibi Godzilla Raids Again Season 4",
     "time": "10:06 PM",
-    "episode": 15
+    "episode": 15,
+    "poster": "https://s4.zanix.tr/poster/780341.jpg",
+    "type": "TV_SHORT"
    },
    {
     "id": "mofusand-758230",
@@ -130,7 +162,9 @@
     "id": "fabulous-beasts-6-757469",
     "title": "Fabulous Beasts 6",
     "time": "02:00 AM",
-    "episode": 12
+    "episode": 12,
+    "poster": "https://s4.zanix.tr/poster/757469.jpg",
+    "type": "ONA"
    },
    {
     "id": "da-xia-shou-mu-ren-777741",
@@ -172,13 +206,17 @@
     "id": "dali-si-rizhi-3-779723",
     "title": "Dali Si Rizhi 3",
     "time": "03:00 PM",
-    "episode": 1
+    "episode": 1,
+    "poster": "https://s4.zanix.tr/poster/779723.jpg",
+    "type": "ONA"
    },
    {
     "id": "tensei-shitara-ken-deshita-2nd-season-16828",
     "title": "Reincarnated as a Sword Season 2",
     "time": "03:30 PM",
-    "episode": 3
+    "episode": 3,
+    "poster": "https://s4.zanix.tr/poster/16828.jpg",
+    "type": "ONA"
    },
    {
     "id": "jyu-u-mujin-dandivine-756213",
@@ -190,7 +228,9 @@
     "id": "a-returner-s-magic-should-be-special-season-2-17860",
     "title": "A Returner's Magic Should be Special Season 2",
     "time": "03:45 PM",
-    "episode": 2
+    "episode": 2,
+    "poster": "https://s4.zanix.tr/poster/17860.jpg",
+    "type": "TV"
    }
   ],
   "2026-10-15": [
@@ -222,13 +262,17 @@
     "id": "koori-no-jouheki-2nd-season-756509",
     "title": "The Ramparts of Ice Season 2",
     "time": "02:56 PM",
-    "episode": 3
+    "episode": 3,
+    "poster": "https://s4.zanix.tr/poster/756509.jpg",
+    "type": "TV"
    },
    {
     "id": "rascal-does-not-dream-of-a-dear-friend-19871",
     "title": "Rascal Does Not Dream of a Dear Friend",
     "time": "03:00 PM",
-    "episode": 1
+    "episode": 1,
+    "poster": "https://s4.zanix.tr/poster/19871.jpg",
+    "type": "MOVIE"
    },
    {
     "id": "tetsuryou-meet-with-tetsudou-musume-19928",
@@ -240,13 +284,17 @@
     "id": "yuusanchi-from-yuuhachi-757603",
     "title": "Yuusanchi! from Yuuhachi",
     "time": "03:00 PM",
-    "episode": 4
+    "episode": 4,
+    "poster": "https://s4.zanix.tr/poster/757603.jpg",
+    "type": "TV_SHORT"
    },
    {
     "id": "bang-dream-ave-mujica-prima-aurora-19784",
     "title": "BanG Dream! Ave Mujica: prima aurora",
     "time": "03:00 PM",
-    "episode": 1
+    "episode": 1,
+    "poster": "https://s4.zanix.tr/poster/26c1f37dc3b1f6d232cd8ef4ae482ea8.jpg",
+    "type": "MOVIE"
    },
    {
     "id": "kizu-darake-seijo-yori-houfuku-wo-komete-season2-754983",
@@ -278,25 +326,33 @@
     "id": "shiguang-dailiren-iii-19579",
     "title": "Link Click Season 3",
     "time": "03:00 AM",
-    "episode": 11
+    "episode": 11,
+    "poster": "https://s4.zanix.tr/poster/19579.jpg",
+    "type": "ONA"
    },
    {
     "id": "steel-ball-run-jojo-s-bizarre-adventure-2nd-stage-755420",
     "title": "STEEL BALL RUN JoJo's Bizarre Adventure 2nd - 3rd STAGE",
     "time": "08:00 AM",
-    "episode": 4
+    "episode": 4,
+    "poster": "https://s4.zanix.tr/poster/755420.jpg",
+    "type": "ONA"
    },
    {
     "id": "pan-dorobou-19650",
     "title": "Pan Dorobou",
     "time": "09:40 AM",
-    "episode": 3
+    "episode": 3,
+    "poster": "https://s4.zanix.tr/poster/19650.jpg",
+    "type": "TV_SHORT"
    },
    {
     "id": "pok-mon-horizons-the-series-16809",
     "title": "Pokémon Horizons: The Series",
     "time": "09:55 AM",
-    "episode": 153
+    "episode": 153,
+    "poster": "https://s4.zanix.tr/poster/16809.jpg",
+    "type": "TV"
    },
    {
     "id": "watame-did-borderline-nothing-wrong-759680",
@@ -308,13 +364,17 @@
     "id": "duel-masters-lost-danzai-no-shounen-20404",
     "title": "Duel Masters LOST: Danzai no Shounen",
     "time": "12:00 PM",
-    "episode": 2
+    "episode": 2,
+    "poster": "https://s4.zanix.tr/poster/e94f9cb1cbc7c0cfd907a73ae72f8f82.jpg",
+    "type": "ONA"
    },
    {
     "id": "aoki-denshou-welsh-shedar-769200",
     "title": "Welsh & Shedar",
     "time": "12:26 PM",
-    "episode": 3
+    "episode": 3,
+    "poster": "https://s4.zanix.tr/poster/769200.jpg",
+    "type": "TV"
    },
    {
     "id": "toaru-anbu-no-item-19305",
@@ -326,31 +386,41 @@
     "id": "kusuriya-no-hitorigoto-3rd-season-19700",
     "title": "The Apothecary Diaries Season 3",
     "time": "02:00 PM",
-    "episode": 3
+    "episode": 3,
+    "poster": "https://s4.zanix.tr/poster/19700.jpg",
+    "type": "TV"
    },
    {
     "id": "hotaru-no-yomeiri-20207",
     "title": "Firefly Wedding",
     "time": "02:30 PM",
-    "episode": 2
+    "episode": 2,
+    "poster": "https://s4.zanix.tr/poster/20207.jpg",
+    "type": "TV"
    },
    {
     "id": "tougen-anki-nikko-kegon-falls-arc-33554",
     "title": "TOUGEN ANKI: Nikko Kegon Falls Arc",
     "time": "02:30 PM",
-    "episode": 3
+    "episode": 3,
+    "poster": "https://s4.zanix.tr/poster/33554.jpg",
+    "type": "TV"
    },
    {
     "id": "uchi-no-otouto-domo-ga-sumimasen-20047",
     "title": "Please Excuse My Younger Brothers",
     "time": "03:00 PM",
-    "episode": 15
+    "episode": 15,
+    "poster": "https://s4.zanix.tr/poster/20047.jpg",
+    "type": "TV"
    },
    {
     "id": "tokyo-revengers-santen-sensou-hen-18338",
     "title": "Tokyo Revengers: War of the Three Titans Arc",
     "time": "04:53 PM",
-    "episode": 3
+    "episode": 3,
+    "poster": "https://s4.zanix.tr/poster/18338.jpg",
+    "type": "TV"
    }
   ],
   "2026-10-17": [
@@ -358,7 +428,9 @@
     "id": "rilakkuma-758475",
     "title": "RILAKKUMA",
     "time": "12:26 AM",
-    "episode": 28
+    "episode": 28,
+    "poster": "https://s4.zanix.tr/poster/33c14ab38a8923e563e17b79e41693ba.jpg",
+    "type": "TV_SHORT"
    },
    {
     "id": "al-214968",
@@ -376,19 +448,25 @@
     "id": "a-good-day-to-ascend-32868",
     "title": "A Good Day to Ascend",
     "time": "01:00 AM",
-    "episode": 16
+    "episode": 16,
+    "poster": "https://s4.zanix.tr/poster/32868.jpg",
+    "type": "ONA"
    },
    {
     "id": "soul-land-2-the-peerless-tang-clan-14582",
     "title": "Soul Land 2: The Peerless Tang Clan",
     "time": "02:00 AM",
-    "episode": 175
+    "episode": 175,
+    "poster": "https://s4.zanix.tr/poster/14582.jpg",
+    "type": "ONA"
    },
    {
     "id": "dawang-raoming-3-776942",
     "title": "Dawang Raoming 3",
     "time": "02:00 AM",
-    "episode": 5
+    "episode": 5,
+    "poster": "https://s4.zanix.tr/poster/776942.jpg",
+    "type": "ONA"
    },
    {
     "id": "sirotan-20448",
@@ -406,31 +484,41 @@
     "id": "doraemon-2005-4693",
     "title": "Doraemon (2005)",
     "time": "08:00 AM",
-    "episode": 937
+    "episode": 937,
+    "poster": "https://s4.zanix.tr/poster/4693.jpg",
+    "type": "TV"
    },
    {
     "id": "the-vermilion-mask-19704",
     "title": "The Vermilion Mask",
     "time": "08:30 AM",
-    "episode": 2
+    "episode": 2,
+    "poster": "https://s4.zanix.tr/poster/19704.jpg",
+    "type": "TV"
    },
    {
     "id": "case-closed-204",
     "title": "Detective Conan",
     "time": "09:00 AM",
-    "episode": 1217
+    "episode": 1217,
+    "poster": "https://s4.zanix.tr/poster/204.jpg",
+    "type": "TV"
    },
    {
     "id": "marronnier-oukoku-no-shichinin-no-kishi-755733",
     "title": "The Seven Knights of the Marronnier Kingdom",
     "time": "09:25 AM",
-    "episode": 3
+    "episode": 3,
+    "poster": "https://s4.zanix.tr/poster/c7d84ae0568e37cc77543ca7f8c5451d.jpg",
+    "type": "TV"
    },
    {
     "id": "beyond-time-s-gaze-2-756099",
     "title": "Beyond Time's Gaze 2",
     "time": "10:00 AM",
-    "episode": 18
+    "episode": 18,
+    "poster": "https://s4.zanix.tr/poster/756099.jpg",
+    "type": "ONA"
    },
    {
     "id": "romeria-senki-maou-wo-taoshita-nochi-mo-jinrui-yabasou-dakara-guntai-soshiki-shita-18813",
@@ -454,13 +542,17 @@
     "id": "black-clover-season-2-19706",
     "title": "Black Clover Season 2",
     "time": "02:00 PM",
-    "episode": 3
+    "episode": 3,
+    "poster": "https://s4.zanix.tr/poster/19706.jpg",
+    "type": "TV"
    },
    {
     "id": "vertex-force-20442",
     "title": "VERTEX FORCE",
     "time": "02:30 PM",
-    "episode": 3
+    "episode": 3,
+    "poster": "https://s4.zanix.tr/poster/20442.jpg",
+    "type": "TV"
    },
    {
     "id": "zombie-sagashitemasu-19854",
@@ -478,49 +570,65 @@
     "id": "magical-explorer-eroge-no-yuujin-chara-ni-tensei-shitakedo-game-chishiki-tsukatte-jiyuu-ni-ikiru-17575",
     "title": "Magical Explorer",
     "time": "03:00 PM",
-    "episode": 4
+    "episode": 4,
+    "poster": "https://s4.zanix.tr/poster/17575.jpg",
+    "type": "ONA"
    },
    {
     "id": "seitokai-ni-mo-ana-wa-aru-19574",
     "title": "Even the Student Council Has Its Holes!",
     "time": "03:30 PM",
-    "episode": 3
+    "episode": 3,
+    "poster": "https://s4.zanix.tr/poster/19574.jpg",
+    "type": "TV"
    },
    {
     "id": "ranma1-2-2024-season-3-20452",
     "title": "Ranma1/2 (2024) Season 3",
     "time": "03:56 PM",
-    "episode": 3
+    "episode": 3,
+    "poster": "https://s4.zanix.tr/poster/20452.jpg",
+    "type": "TV"
    },
    {
     "id": "uchi-no-ko-no-tame-naraba-ore-wa-moshikashitara-maou-mo-taoseru-kamo-shirenai-33441",
     "title": "Magic Repo Man: Dumped by My Party, I’ll Cash In With a Cute Support Fairy to Become the Strongest!",
     "time": "04:30 PM",
-    "episode": 3
+    "episode": 3,
+    "poster": "https://s4.zanix.tr/poster/33441.jpg",
+    "type": "TV"
    },
    {
     "id": "little-shark-s-day-out-season-2-758418",
     "title": "Little Shark's Day Out Season 2",
     "time": "10:00 PM",
-    "episode": 28
+    "episode": 28,
+    "poster": "https://s4.zanix.tr/poster/758418.jpg",
+    "type": "TV_SHORT"
    },
    {
     "id": "yuruyuru-zukan-756211",
     "title": "Yuruyuru Zukan",
     "time": "10:00 PM",
-    "episode": 3
+    "episode": 3,
+    "poster": "https://s4.zanix.tr/poster/756211.jpg",
+    "type": "TV_SHORT"
    },
    {
     "id": "raccoon-dog-fox-780340",
     "title": "Raccoon Dog & Fox",
     "time": "10:00 PM",
-    "episode": 3
+    "episode": 3,
+    "poster": "https://s4.zanix.tr/poster/780340.jpg",
+    "type": "TV_SHORT"
    },
    {
     "id": "koupen-chan-758398",
     "title": "Koupen-chan",
     "time": "11:00 PM",
-    "episode": 81
+    "episode": 81,
+    "poster": "https://s4.zanix.tr/poster/758398.jpg",
+    "type": "TV_SHORT"
    },
    {
     "id": "star-detective-precure-20026",
@@ -534,13 +642,17 @@
     "id": "punirunes-puni-4-768682",
     "title": "Punirunes Puni 4",
     "time": "12:16 AM",
-    "episode": 3
+    "episode": 3,
+    "poster": "https://s4.zanix.tr/poster/768682.jpg",
+    "type": "TV_SHORT"
    },
    {
     "id": "onegai-aipri-20282",
     "title": "Onegai AiPri",
     "time": "12:30 AM",
-    "episode": 29
+    "episode": 29,
+    "poster": "https://s4.zanix.tr/poster/20282.jpg",
+    "type": "TV"
    },
    {
     "id": "pop-pap-polters-778977",
@@ -552,13 +664,17 @@
     "id": "wushen-zhuzai-da-wei-pian-16593",
     "title": "Wushen Zhuzai: Da Wei Pian",
     "time": "02:00 AM",
-    "episode": 425
+    "episode": 425,
+    "poster": "https://s4.zanix.tr/poster/16593.jpg",
+    "type": "ONA"
    },
    {
     "id": "dou-po-cangqiong-nian-fan-4-19768",
     "title": "Dou Po Cangqiong: Nian Fan 4",
     "time": "02:00 AM",
-    "episode": 57
+    "episode": 57,
+    "poster": "https://s4.zanix.tr/poster/19768.jpg",
+    "type": "ONA"
    }
   ]
  }
