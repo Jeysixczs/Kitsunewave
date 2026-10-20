@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-19T22:10:09.972Z",
+ "updated": "2026-10-20T04:01:47.736Z",
  "data": {
   "2026-10-12": [
    {
@@ -332,19 +332,25 @@
     "id": "kizu-darake-seijo-yori-houfuku-wo-komete-season2-754983",
     "title": "With Vengeance, Sincerely, Your Broken Saintess Season 2",
     "time": "03:00 PM",
-    "episode": 3
+    "episode": 3,
+    "poster": "https://s4.zanix.tr/poster/754983.jpg",
+    "type": "TV_SHORT"
    },
    {
     "id": "tsuihou-sareta-tensei-juukishi-wa-game-chishiki-de-musou-suru-18753",
     "title": "The Exiled Heavy Knight Knows How to Game the System",
     "time": "03:26 PM",
-    "episode": 16
+    "episode": 16,
+    "poster": "https://s4.zanix.tr/poster/18753.jpg",
+    "type": "TV"
    },
    {
     "id": "hyouken-no-majutsushi-ga-sekai-wo-suberu-ii-755673",
     "title": "The Iceblade Sorcerer Shall Rule the World II",
     "time": "04:28 PM",
-    "episode": 2
+    "episode": 2,
+    "poster": "https://s4.zanix.tr/poster/755673.jpg",
+    "type": "TV"
    }
   ],
   "2026-10-16": [
@@ -392,7 +398,9 @@
     "id": "watame-did-borderline-nothing-wrong-759680",
     "title": "Watame Did Borderline Nothing Wrong",
     "time": "10:00 AM",
-    "episode": 84
+    "episode": 84,
+    "poster": "https://s4.zanix.tr/poster/759680.jpg",
+    "type": "ONA"
    },
    {
     "id": "duel-masters-lost-danzai-no-shounen-20404",
@@ -414,7 +422,9 @@
     "id": "toaru-anbu-no-item-19305",
     "title": "A Certain Dark Item",
     "time": "01:30 PM",
-    "episode": 2
+    "episode": 2,
+    "poster": "https://s4.zanix.tr/poster/19305.jpg",
+    "type": "TV"
    },
    {
     "id": "kusuriya-no-hitorigoto-3rd-season-19700",
@@ -470,7 +480,9 @@
     "id": "al-214968",
     "title": "Nezumi-kun no Chokki (TV) 2nd Season",
     "time": "12:30 AM",
-    "episode": 3
+    "episode": 3,
+    "poster": "https://s4.zanix.tr/poster/759930.jpg",
+    "type": "TV_SHORT"
    },
    {
     "id": "al-216557",
@@ -508,13 +520,17 @@
     "id": "sirotan-20448",
     "title": "Sirotan",
     "time": "07:29 AM",
-    "episode": 3
+    "episode": 3,
+    "poster": "https://s4.zanix.tr/poster/20448.jpg",
+    "type": "TV"
    },
    {
     "id": "shin-chan-846",
     "title": "Shin Chan",
     "time": "07:30 AM",
-    "episode": 1357
+    "episode": 1357,
+    "poster": "https://s4.zanix.tr/poster/846.jpg",
+    "type": "TV"
    },
    {
     "id": "doraemon-2005-4693",
@@ -560,19 +576,25 @@
     "id": "romeria-senki-maou-wo-taoshita-nochi-mo-jinrui-yabasou-dakara-guntai-soshiki-shita-18813",
     "title": "Romelia War Chronicle",
     "time": "12:00 PM",
-    "episode": 3
+    "episode": 3,
+    "poster": "https://s4.zanix.tr/poster/18813.jpg",
+    "type": "ONA"
    },
    {
     "id": "tenshou-shita-dai-seijo-wa-seijo-de-aru-koto-wo-hita-kakusu-19381",
     "title": "A Tale of the Secret Saint",
     "time": "01:00 PM",
-    "episode": 4
+    "episode": 4,
+    "poster": "https://s4.zanix.tr/poster/19381.jpg",
+    "type": "ONA"
    },
    {
     "id": "yasei-no-last-boss-ga-arawareta-2nd-season-20075",
     "title": "A Wild Last Boss Appeared! Season 2",
     "time": "01:30 PM",
-    "episode": 4
+    "episode": 4,
+    "poster": "https://s4.zanix.tr/poster/20075.jpg",
+    "type": "ONA"
    },
    {
     "id": "black-clover-season-2-19706",
@@ -594,13 +616,17 @@
     "id": "zombie-sagashitemasu-19854",
     "title": "#I'm Looking For a Zombie",
     "time": "02:30 PM",
-    "episode": 3
+    "episode": 3,
+    "poster": "https://s4.zanix.tr/poster/19854.jpg",
+    "type": "TV"
    },
    {
     "id": "kyoufu-collector-20046",
     "title": "HORROR COLLECTOR",
     "time": "02:45 PM",
-    "episode": 2
+    "episode": 2,
+    "poster": "https://s4.zanix.tr/poster/8500cd4427ccbc38d536e34f1014924f.jpg",
+    "type": "TV"
    },
    {
     "id": "magical-explorer-eroge-no-yuujin-chara-ni-tensei-shitakedo-game-chishiki-tsukatte-jiyuu-ni-ikiru-17575",
@@ -670,7 +696,9 @@
     "id": "star-detective-precure-20026",
     "title": "Star Detective Precure!",
     "time": "11:30 PM",
-    "episode": 38
+    "episode": 38,
+    "poster": "https://s4.zanix.tr/poster/20026.jpg",
+    "type": "TV"
    }
   ],
   "2026-10-18": [
@@ -712,6 +740,66 @@
     "time": "02:00 AM",
     "episode": 57,
     "poster": "https://s4.zanix.tr/poster/19768.jpg",
+    "type": "ONA"
+   }
+  ],
+  "2026-10-19": [
+   {
+    "id": "doumo-suki-na-hito-ni-horegusuri-wo-irai-sareta-majo-desu-20346",
+    "title": "Hello, I am a Witch and my Crush Wants me to Make a Love Potion!",
+    "time": "12:30 PM",
+    "episode": 3,
+    "poster": "https://s4.zanix.tr/poster/20346.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "tensei-goblin-dakedo-shitsumon-aru-20431",
+    "title": "So What's Wrong with Getting Reborn as a Goblin?",
+    "time": "01:00 PM",
+    "episode": 4,
+    "poster": "https://s4.zanix.tr/poster/20431.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "psyren-33518",
+    "title": "PSYREN",
+    "time": "02:00 PM",
+    "episode": 3,
+    "poster": "https://s4.zanix.tr/poster/33518.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "bleach-thousand-year-blood-war-the-calamity-19230",
+    "title": "BLEACH: Thousand-Year Blood War - The Calamity",
+    "time": "03:00 PM",
+    "episode": 9,
+    "poster": "https://s4.zanix.tr/poster/19230.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "mahou-shoujo-ikusei-keikaku-restart-16899",
+    "title": "MAGICAL GIRL RAISING PROJECT restart",
+    "time": "05:00 PM",
+    "episode": 3,
+    "poster": "https://s4.zanix.tr/poster/16899.jpg",
+    "type": "TV"
+   }
+  ],
+  "2026-10-20": [
+   {
+    "id": "wushen-zhuzai-da-wei-pian-16593",
+    "title": "Wushen Zhuzai: Da Wei Pian",
+    "time": "02:00 AM",
+    "episode": 426,
+    "poster": "https://s4.zanix.tr/poster/16593.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "jueshi-zhan-hun-2-771057",
+    "title": "Jueshi Zhan Hun 2",
+    "time": "02:00 AM",
+    "episode": 20,
+    "poster": "https://s4.zanix.tr/poster/771057.jpg",
     "type": "ONA"
    }
   ]
