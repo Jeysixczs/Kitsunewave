@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-20T04:01:47.736Z",
+ "updated": "2026-10-20T11:07:19.669Z",
  "data": {
   "2026-10-12": [
    {
@@ -800,6 +800,86 @@
     "time": "02:00 AM",
     "episode": 20,
     "poster": "https://s4.zanix.tr/poster/771057.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "cyberpunk-edgerunners-2-19703",
+    "title": "Cyberpunk: Edgerunners 2",
+    "time": "07:00 AM",
+    "episode": 1,
+    "poster": "https://s4.zanix.tr/poster/19703.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "cyberpunk-edgerunners-2-19703",
+    "title": "Cyberpunk: Edgerunners 2",
+    "time": "07:00 AM",
+    "episode": 2,
+    "poster": "https://s4.zanix.tr/poster/19703.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "cyberpunk-edgerunners-2-19703",
+    "title": "Cyberpunk: Edgerunners 2",
+    "time": "07:00 AM",
+    "episode": 3,
+    "poster": "https://s4.zanix.tr/poster/19703.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "cyberpunk-edgerunners-2-19703",
+    "title": "Cyberpunk: Edgerunners 2",
+    "time": "07:00 AM",
+    "episode": 4,
+    "poster": "https://s4.zanix.tr/poster/19703.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "cyberpunk-edgerunners-2-19703",
+    "title": "Cyberpunk: Edgerunners 2",
+    "time": "07:00 AM",
+    "episode": 5,
+    "poster": "https://s4.zanix.tr/poster/19703.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "cyberpunk-edgerunners-2-19703",
+    "title": "Cyberpunk: Edgerunners 2",
+    "time": "07:00 AM",
+    "episode": 6,
+    "poster": "https://s4.zanix.tr/poster/19703.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "cyberpunk-edgerunners-2-19703",
+    "title": "Cyberpunk: Edgerunners 2",
+    "time": "07:00 AM",
+    "episode": 7,
+    "poster": "https://s4.zanix.tr/poster/19703.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "cyberpunk-edgerunners-2-19703",
+    "title": "Cyberpunk: Edgerunners 2",
+    "time": "07:00 AM",
+    "episode": 8,
+    "poster": "https://s4.zanix.tr/poster/19703.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "cyberpunk-edgerunners-2-19703",
+    "title": "Cyberpunk: Edgerunners 2",
+    "time": "07:00 AM",
+    "episode": 9,
+    "poster": "https://s4.zanix.tr/poster/19703.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "cyberpunk-edgerunners-2-19703",
+    "title": "Cyberpunk: Edgerunners 2",
+    "time": "07:00 AM",
+    "episode": 10,
+    "poster": "https://s4.zanix.tr/poster/19703.jpg",
     "type": "ONA"
    }
   ]
