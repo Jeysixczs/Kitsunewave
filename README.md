@@ -288,32 +288,6 @@ The project is set up for [Vercel](https://vercel.com):
 2. Add the `UPSTREAM_API` environment variable (and optionally `ALLOWED_ORIGINS`).
 3. Deploy. `vercel.json` takes care of the `/api` rewrite, and the `api/` folder is deployed as serverless functions.
 
----
-
-## Regenerating the screenshots
-
-The screenshots are generated, not hand-captured. `docs/mock/` contains:
-
-| File | Purpose |
-| --- | --- |
-| `vite.mock.config.js` | Vite dev server that answers every `/api/*` call with mock data |
-| `data.js` | Fictional titles, schedule, characters and news |
-| `art.js` | Generates placeholder posters, avatars, news images and a mock video player as SVG / HTML |
-| `capture.py` | Drives headless Chromium (Playwright) through each page and saves PNGs |
-| `fonts/` | Plus Jakarta Sans (SIL Open Font License) so the images render the same offline |
-
-To regenerate them:
-
-```bash
-npm install
-pip install playwright
-playwright install chromium
-python docs/mock/capture.py
-```
-
-The images are written to `docs/screenshots/`. To change what appears in them, edit `docs/mock/data.js` and re-run the script.
-
----
 
 ## Credits and disclaimer
 
@@ -321,3 +295,4 @@ The images are written to `docs/screenshots/`. To change what appears in them, e
 - News articles are sourced from [Anime News Network](https://www.animenewsnetwork.com) and link back to the original publication.
 - Kitsunewave does not host any video files. The player embeds the iframe servers returned by the configured API; make sure you have the right to use the content and API you connect to it.
 - The app footer states it is intended for personal use.
+- The app is for learning purposes only.
