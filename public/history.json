@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-20T21:23:13.863Z",
+ "updated": "2026-10-21T03:50:45.973Z",
  "data": {
   "2026-10-12": [
    {
@@ -880,6 +880,104 @@
     "time": "07:00 AM",
     "episode": 10,
     "poster": "https://s4.zanix.tr/poster/19703.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "kyouran-reijou-nia-liston-20335",
+    "title": "Nia Liston: The Merciless Maiden",
+    "time": "12:26 PM",
+    "episode": 3,
+    "poster": "https://s4.zanix.tr/poster/20335.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "shiotaiou-no-satou-san-ga-ore-ni-dake-amai-20439",
+    "title": "The Cold Sato-san is Only Sweet to Me",
+    "time": "01:00 PM",
+    "episode": 3,
+    "poster": "https://s4.zanix.tr/poster/20439.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "choujun-choujou-senpai-19948",
+    "title": "Super Psychic Policeman Chojo",
+    "time": "02:00 PM",
+    "episode": 3,
+    "poster": "https://s4.zanix.tr/poster/19948.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "battle-spirits-re-zekkai-no-ku-19424",
+    "title": "Battle Spirits [Re] Zekkai No Ku",
+    "time": "02:00 PM",
+    "episode": 3,
+    "poster": "https://s4.zanix.tr/poster/af2d4b6644dc7ab41135c9f49374f240.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "chitose-kun-wa-ramune-bin-no-naka-part-2-19838",
+    "title": "Chitose Is in the Ramune Bottle 2nd Cour",
+    "time": "02:00 PM",
+    "episode": 2,
+    "poster": "https://s4.zanix.tr/poster/752bf884d2e0a73fc1724e791556e296.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "gensou-suikoden-19371",
+    "title": "Gensou Suikoden",
+    "time": "02:30 PM",
+    "episode": 3,
+    "poster": "https://s4.zanix.tr/poster/19371.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "tsuihou-sareta-cheat-fuyo-majutsushi-wa-kimama-na-second-life-wo-ouka-suru-ore-wa-buki-dake-ja-naku-arayuru-mono-ni-kyouka-point-wo-fuyo-dekiru-shi-ore-no-ishi-de-itsudemo-kouka-wo-kaijo-dekiru-kedo-nokotta-hitotachi-daijoubu-20358",
+    "title": "The Laid-Off Cheat-Granting Mage Enjoys a Second Lease on Life",
+    "time": "03:00 PM",
+    "episode": 3,
+    "poster": "https://s4.zanix.tr/poster/20358.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "sora-wa-akai-kawa-no-hotori-20381",
+    "title": "Red River",
+    "time": "04:35 PM",
+    "episode": 16,
+    "poster": "https://s4.zanix.tr/poster/20381.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "dark-machine-the-animation-18717",
+    "title": "DARK MACHINE THE ANIMATION",
+    "time": "04:45 PM",
+    "episode": 2,
+    "poster": "https://s4.zanix.tr/poster/18717.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "mofusand-758230",
+    "title": "mofusand",
+    "time": "11:00 PM",
+    "episode": 42,
+    "poster": "https://s4.zanix.tr/poster/758230.jpg",
+    "type": "ONA"
+   }
+  ],
+  "2026-10-21": [
+   {
+    "id": "a-will-eternal-4th-season-33122",
+    "title": "Yi Nian Yongheng 4",
+    "time": "02:00 AM",
+    "episode": 16,
+    "poster": "https://s4.zanix.tr/poster/33122.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "da-xia-shou-mu-ren-777741",
+    "title": "Da Xia Shou Mu Ren",
+    "time": "02:00 AM",
+    "episode": 6,
+    "poster": "https://s4.zanix.tr/poster/777741.jpg",
     "type": "ONA"
    }
   ]
