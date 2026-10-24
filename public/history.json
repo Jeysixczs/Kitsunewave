@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-23T21:09:03.134Z",
+ "updated": "2026-10-24T03:49:13.308Z",
  "data": {
   "2026-10-12": [
    {
@@ -978,6 +978,178 @@
     "time": "02:00 AM",
     "episode": 6,
     "poster": "https://s4.zanix.tr/poster/777741.jpg",
+    "type": "ONA"
+   }
+  ],
+  "2026-10-23": [
+   {
+    "id": "steel-ball-run-jojo-s-bizarre-adventure-2nd-stage-755420",
+    "title": "STEEL BALL RUN JoJo's Bizarre Adventure 2nd - 3rd STAGE",
+    "time": "08:00 AM",
+    "episode": 5,
+    "poster": "https://s4.zanix.tr/poster/755420.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "pan-dorobou-19650",
+    "title": "Pan Dorobou",
+    "time": "09:40 AM",
+    "episode": 4,
+    "poster": "https://s4.zanix.tr/poster/19650.jpg",
+    "type": "TV_SHORT"
+   },
+   {
+    "id": "pok-mon-horizons-the-series-16809",
+    "title": "Pokémon Horizons: The Series",
+    "time": "09:55 AM",
+    "episode": 154,
+    "poster": "https://s4.zanix.tr/poster/16809.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "beyblade-x-17103",
+    "title": "BEYBLADE X",
+    "time": "10:00 AM",
+    "episode": 136,
+    "poster": "https://s4.zanix.tr/poster/17103.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "watame-did-borderline-nothing-wrong-759680",
+    "title": "Watame Did Borderline Nothing Wrong",
+    "time": "10:00 AM",
+    "episode": 85,
+    "poster": "https://s4.zanix.tr/poster/759680.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "duel-masters-lost-danzai-no-shounen-20404",
+    "title": "Duel Masters LOST: Danzai no Shounen",
+    "time": "12:00 PM",
+    "episode": 3,
+    "poster": "https://s4.zanix.tr/poster/e94f9cb1cbc7c0cfd907a73ae72f8f82.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "aoki-denshou-welsh-shedar-769200",
+    "title": "Welsh & Shedar",
+    "time": "12:26 PM",
+    "episode": 4,
+    "poster": "https://s4.zanix.tr/poster/769200.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "toaru-anbu-no-item-19305",
+    "title": "A Certain Dark Item",
+    "time": "01:30 PM",
+    "episode": 3,
+    "poster": "https://s4.zanix.tr/poster/19305.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "kusuriya-no-hitorigoto-3rd-season-19700",
+    "title": "The Apothecary Diaries Season 3",
+    "time": "02:00 PM",
+    "episode": 4,
+    "poster": "https://s4.zanix.tr/poster/19700.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "hotaru-no-yomeiri-20207",
+    "title": "Firefly Wedding",
+    "time": "02:30 PM",
+    "episode": 3,
+    "poster": "https://s4.zanix.tr/poster/20207.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "tougen-anki-nikko-kegon-falls-arc-33554",
+    "title": "TOUGEN ANKI: Nikko Kegon Falls Arc",
+    "time": "02:30 PM",
+    "episode": 4,
+    "poster": "https://s4.zanix.tr/poster/33554.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "uchi-no-otouto-domo-ga-sumimasen-20047",
+    "title": "Please Excuse My Younger Brothers",
+    "time": "03:00 PM",
+    "episode": 16,
+    "poster": "https://s4.zanix.tr/poster/20047.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "tokyo-revengers-santen-sensou-hen-18338",
+    "title": "Tokyo Revengers: War of the Three Titans Arc",
+    "time": "04:53 PM",
+    "episode": 4,
+    "poster": "https://s4.zanix.tr/poster/18338.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "al-214703",
+    "title": "Ghost Meets Gal!",
+    "time": "11:00 PM",
+    "episode": 8,
+    "poster": "https://s4.zanix.tr/poster/db9b7a663a1d14ed9baea33249683c2b.jpg",
+    "type": "TV_SHORT"
+   },
+   {
+    "id": "pan-no-akachan-tv-759116",
+    "title": "Pan no Akachan (TV)",
+    "time": "11:30 PM",
+    "episode": 17,
+    "poster": "https://s4.zanix.tr/poster/759116.jpg",
+    "type": "TV_SHORT"
+   }
+  ],
+  "2026-10-24": [
+   {
+    "id": "rilakkuma-758475",
+    "title": "RILAKKUMA",
+    "time": "12:26 AM",
+    "episode": 29,
+    "poster": "https://s4.zanix.tr/poster/33c14ab38a8923e563e17b79e41693ba.jpg",
+    "type": "TV_SHORT"
+   },
+   {
+    "id": "al-214968",
+    "title": "Nezumi-kun no Chokki (TV) 2nd Season",
+    "time": "12:30 AM",
+    "episode": 4,
+    "poster": "https://s4.zanix.tr/poster/759930.jpg",
+    "type": "TV_SHORT"
+   },
+   {
+    "id": "al-216557",
+    "title": "KERORO☆",
+    "time": "12:30 AM",
+    "episode": 4,
+    "poster": "https://s4.zanix.tr/poster/acd68d4e896712014a986280ede87989.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "a-good-day-to-ascend-32868",
+    "title": "A Good Day to Ascend",
+    "time": "01:00 AM",
+    "episode": 17,
+    "poster": "https://s4.zanix.tr/poster/32868.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "soul-land-2-the-peerless-tang-clan-14582",
+    "title": "Soul Land 2: The Peerless Tang Clan",
+    "time": "02:00 AM",
+    "episode": 176,
+    "poster": "https://s4.zanix.tr/poster/14582.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "dawang-raoming-3-776942",
+    "title": "Dawang Raoming 3",
+    "time": "02:00 AM",
+    "episode": 6,
+    "poster": "https://s4.zanix.tr/poster/776942.jpg",
     "type": "ONA"
    }
   ]
