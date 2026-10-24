@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-24T03:49:13.308Z",
+ "updated": "2026-10-24T10:32:01.218Z",
  "data": {
   "2026-10-12": [
    {
@@ -1150,6 +1150,62 @@
     "time": "02:00 AM",
     "episode": 6,
     "poster": "https://s4.zanix.tr/poster/776942.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "sirotan-20448",
+    "title": "Sirotan",
+    "time": "07:29 AM",
+    "episode": 4,
+    "poster": "https://s4.zanix.tr/poster/20448.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "shin-chan-846",
+    "title": "Shin Chan",
+    "time": "07:30 AM",
+    "episode": 1358,
+    "poster": "https://s4.zanix.tr/poster/846.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "doraemon-2005-4693",
+    "title": "Doraemon (2005)",
+    "time": "08:00 AM",
+    "episode": 938,
+    "poster": "https://s4.zanix.tr/poster/4693.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "the-vermilion-mask-19704",
+    "title": "The Vermilion Mask",
+    "time": "08:30 AM",
+    "episode": 3,
+    "poster": "https://s4.zanix.tr/poster/19704.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "case-closed-204",
+    "title": "Detective Conan",
+    "time": "09:00 AM",
+    "episode": 1218,
+    "poster": "https://s4.zanix.tr/poster/204.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "marronnier-oukoku-no-shichinin-no-kishi-755733",
+    "title": "The Seven Knights of the Marronnier Kingdom",
+    "time": "09:25 AM",
+    "episode": 4,
+    "poster": "https://s4.zanix.tr/poster/c7d84ae0568e37cc77543ca7f8c5451d.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "beyond-time-s-gaze-2-756099",
+    "title": "Beyond Time's Gaze 2",
+    "time": "10:00 AM",
+    "episode": 19,
+    "poster": "https://s4.zanix.tr/poster/756099.jpg",
     "type": "ONA"
    }
   ]
