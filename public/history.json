@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-24T15:36:38.690Z",
+ "updated": "2026-10-24T20:26:58.249Z",
  "data": {
   "2026-10-12": [
    {
@@ -1218,7 +1218,9 @@
     "id": "keroro-gunsou-767640",
     "title": "KERORO☆",
     "time": "12:30 AM",
-    "episode": 4
+    "episode": 4,
+    "poster": "https://s4.zanix.tr/poster/acd68d4e896712014a986280ede87989.jpg?v=1791645343",
+    "type": "TV"
    },
    {
     "id": "romeria-senki-maou-wo-taoshita-nochi-mo-jinrui-yabasou-dakara-guntai-soshiki-shita-18813",
@@ -1290,6 +1292,22 @@
     "time": "03:30 PM",
     "episode": 4,
     "poster": "https://s4.zanix.tr/poster/19574.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "ranma1-2-2024-season-3-20452",
+    "title": "Ranma1/2 (2024) Season 3",
+    "time": "03:56 PM",
+    "episode": 4,
+    "poster": "https://s4.zanix.tr/poster/20452.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "uchi-no-ko-no-tame-naraba-ore-wa-moshikashitara-maou-mo-taoseru-kamo-shirenai-33441",
+    "title": "Magic Repo Man: Dumped by My Party, I’ll Cash In With a Cute Support Fairy to Become the Strongest!",
+    "time": "04:30 PM",
+    "episode": 4,
+    "poster": "https://s4.zanix.tr/poster/33441.jpg",
     "type": "TV"
    }
   ]
