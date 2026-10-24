@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-24T10:32:01.218Z",
+ "updated": "2026-10-24T15:36:38.690Z",
  "data": {
   "2026-10-12": [
    {
@@ -1207,6 +1207,90 @@
     "episode": 19,
     "poster": "https://s4.zanix.tr/poster/756099.jpg",
     "type": "ONA"
+   },
+   {
+    "id": "nezumi-kun-no-chokki-tv-2nd-season-759930",
+    "title": "Nezumi-kun no Chokki (TV) 2nd Season",
+    "time": "12:30 AM",
+    "episode": 4
+   },
+   {
+    "id": "keroro-gunsou-767640",
+    "title": "KERORO☆",
+    "time": "12:30 AM",
+    "episode": 4
+   },
+   {
+    "id": "romeria-senki-maou-wo-taoshita-nochi-mo-jinrui-yabasou-dakara-guntai-soshiki-shita-18813",
+    "title": "Romelia War Chronicle",
+    "time": "12:00 PM",
+    "episode": 4,
+    "poster": "https://s4.zanix.tr/poster/18813.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "tenshou-shita-dai-seijo-wa-seijo-de-aru-koto-wo-hita-kakusu-19381",
+    "title": "A Tale of the Secret Saint",
+    "time": "01:00 PM",
+    "episode": 5,
+    "poster": "https://s4.zanix.tr/poster/19381.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "yasei-no-last-boss-ga-arawareta-2nd-season-20075",
+    "title": "A Wild Last Boss Appeared! Season 2",
+    "time": "01:30 PM",
+    "episode": 5,
+    "poster": "https://s4.zanix.tr/poster/20075.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "black-clover-season-2-19706",
+    "title": "Black Clover Season 2",
+    "time": "02:00 PM",
+    "episode": 4,
+    "poster": "https://s4.zanix.tr/poster/19706.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "vertex-force-20442",
+    "title": "VERTEX FORCE",
+    "time": "02:30 PM",
+    "episode": 4,
+    "poster": "https://s4.zanix.tr/poster/20442.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "zombie-sagashitemasu-19854",
+    "title": "#I'm Looking For a Zombie",
+    "time": "02:30 PM",
+    "episode": 4,
+    "poster": "https://s4.zanix.tr/poster/19854.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "kyoufu-collector-20046",
+    "title": "HORROR COLLECTOR",
+    "time": "02:45 PM",
+    "episode": 3,
+    "poster": "https://s4.zanix.tr/poster/8500cd4427ccbc38d536e34f1014924f.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "magical-explorer-eroge-no-yuujin-chara-ni-tensei-shitakedo-game-chishiki-tsukatte-jiyuu-ni-ikiru-17575",
+    "title": "Magical Explorer",
+    "time": "03:00 PM",
+    "episode": 5,
+    "poster": "https://s4.zanix.tr/poster/17575.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "seitokai-ni-mo-ana-wa-aru-19574",
+    "title": "Even the Student Council Has Its Holes!",
+    "time": "03:30 PM",
+    "episode": 4,
+    "poster": "https://s4.zanix.tr/poster/19574.jpg",
+    "type": "TV"
    }
   ]
  }
