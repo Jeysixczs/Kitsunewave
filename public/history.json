@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-24T20:26:58.249Z",
+ "updated": "2026-10-25T03:48:19.753Z",
  "data": {
   "2026-10-12": [
    {
@@ -1212,7 +1212,9 @@
     "id": "nezumi-kun-no-chokki-tv-2nd-season-759930",
     "title": "Nezumi-kun no Chokki (TV) 2nd Season",
     "time": "12:30 AM",
-    "episode": 4
+    "episode": 4,
+    "poster": "https://s4.zanix.tr/poster/759930.jpg?v=1791632131",
+    "type": "TV_SHORT"
    },
    {
     "id": "keroro-gunsou-767640",
@@ -1309,6 +1311,88 @@
     "episode": 4,
     "poster": "https://s4.zanix.tr/poster/33441.jpg",
     "type": "TV"
+   },
+   {
+    "id": "little-shark-s-day-out-season-2-758418",
+    "title": "Little Shark's Day Out Season 2",
+    "time": "10:00 PM",
+    "episode": 29,
+    "poster": "https://s4.zanix.tr/poster/758418.jpg",
+    "type": "TV_SHORT"
+   },
+   {
+    "id": "yuruyuru-zukan-756211",
+    "title": "Yuruyuru Zukan",
+    "time": "10:00 PM",
+    "episode": 4,
+    "poster": "https://s4.zanix.tr/poster/756211.jpg",
+    "type": "TV_SHORT"
+   },
+   {
+    "id": "raccoon-dog-fox-780340",
+    "title": "Raccoon Dog & Fox",
+    "time": "10:00 PM",
+    "episode": 4,
+    "poster": "https://s4.zanix.tr/poster/780340.jpg",
+    "type": "TV_SHORT"
+   },
+   {
+    "id": "koupen-chan-758398",
+    "title": "Koupen-chan",
+    "time": "11:00 PM",
+    "episode": 82,
+    "poster": "https://s4.zanix.tr/poster/758398.jpg",
+    "type": "TV_SHORT"
+   },
+   {
+    "id": "star-detective-precure-20026",
+    "title": "Star Detective Precure!",
+    "time": "11:30 PM",
+    "episode": 39,
+    "poster": "https://s4.zanix.tr/poster/20026.jpg",
+    "type": "TV"
+   }
+  ],
+  "2026-10-25": [
+   {
+    "id": "punirunes-puni-4-768682",
+    "title": "Punirunes Puni 4",
+    "time": "12:16 AM",
+    "episode": 4,
+    "poster": "https://s4.zanix.tr/poster/768682.jpg",
+    "type": "TV_SHORT"
+   },
+   {
+    "id": "onegai-aipri-20282",
+    "title": "Onegai AiPri",
+    "time": "12:30 AM",
+    "episode": 30,
+    "poster": "https://s4.zanix.tr/poster/20282.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "pop-pap-polters-778977",
+    "title": "Pop Pap Polters",
+    "time": "01:00 AM",
+    "episode": 4,
+    "poster": "https://s4.zanix.tr/poster/778977.jpg",
+    "type": "TV_SHORT"
+   },
+   {
+    "id": "wushen-zhuzai-da-wei-pian-16593",
+    "title": "Wushen Zhuzai: Da Wei Pian",
+    "time": "02:00 AM",
+    "episode": 427,
+    "poster": "https://s4.zanix.tr/poster/16593.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "dou-po-cangqiong-nian-fan-4-19768",
+    "title": "Dou Po Cangqiong: Nian Fan 4",
+    "time": "02:00 AM",
+    "episode": 58,
+    "poster": "https://s4.zanix.tr/poster/19768.jpg",
+    "type": "ONA"
    }
   ]
  }
