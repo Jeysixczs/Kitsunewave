@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-25T15:46:30.536Z",
+ "updated": "2026-10-25T20:34:47.977Z",
  "data": {
   "2026-10-12": [
    {
@@ -1393,6 +1393,204 @@
     "episode": 58,
     "poster": "https://s4.zanix.tr/poster/19768.jpg",
     "type": "ONA"
+   },
+   {
+    "id": "blue-box-season-2-19516",
+    "title": "Blue Box Season 2",
+    "time": "07:30 AM",
+    "episode": 4,
+    "poster": "https://s4.zanix.tr/poster/19516.jpg?v=1791628397",
+    "type": "TV"
+   },
+   {
+    "id": "aoashi-2nd-season-19578",
+    "title": "Aoashi Season 2",
+    "time": "08:00 AM",
+    "episode": 4,
+    "poster": "https://s4.zanix.tr/poster/19578.jpg?v=1791628397",
+    "type": "TV"
+   },
+   {
+    "id": "mission-yozakura-family-season-2-part-2-756624",
+    "title": "Mission: Yozakura Family Season 2 Part 2",
+    "time": "08:00 AM",
+    "episode": 3,
+    "poster": "https://s4.zanix.tr/poster/756624.jpg?v=1792313172",
+    "type": "TV"
+   },
+   {
+    "id": "diamond-no-ace-act-ii-second-season-part-2-756625",
+    "title": "Ace of the Diamond act II -Second Season-",
+    "time": "08:30 AM",
+    "episode": 3,
+    "poster": "https://s4.zanix.tr/poster/756625.jpg?v=1792313172",
+    "type": "TV"
+   },
+   {
+    "id": "holo-no-graffiti-758388",
+    "title": "Holo no Graffiti",
+    "time": "09:00 AM",
+    "episode": 389,
+    "poster": "https://s4.zanix.tr/poster/758388.jpg?v=1791628740",
+    "type": "ONA"
+   },
+   {
+    "id": "sazae-san-2034",
+    "title": "Sazae-san",
+    "time": "09:30 AM",
+    "episode": 2855
+   },
+   {
+    "id": "watashi-no-shiawase-na-kekkon-shinsaku-anime-19552",
+    "title": "My Happy Marriage Special Episodes",
+    "time": "10:00 AM",
+    "episode": 1,
+    "poster": "https://s4.zanix.tr/poster/19552.jpg?v=1792836808",
+    "type": "SPECIAL"
+   },
+   {
+    "id": "watashi-no-shiawase-na-kekkon-shinsaku-anime-19552",
+    "title": "My Happy Marriage Special Episodes",
+    "time": "10:30 AM",
+    "episode": 2,
+    "poster": "https://s4.zanix.tr/poster/19552.jpg?v=1792836808",
+    "type": "SPECIAL"
+   },
+   {
+    "id": "watashi-no-shiawase-na-kekkon-shinsaku-anime-19552",
+    "title": "My Happy Marriage Special Episodes",
+    "time": "11:00 AM",
+    "episode": 3,
+    "poster": "https://s4.zanix.tr/poster/19552.jpg?v=1792836808",
+    "type": "SPECIAL"
+   },
+   {
+    "id": "umayuru-full-gate-758303",
+    "title": "Umayuru: Full Gate!",
+    "time": "12:00 PM",
+    "episode": 5,
+    "poster": "https://s4.zanix.tr/poster/758303.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "reborn-as-a-space-mercenary-i-woke-up-piloting-the-strongest-starship-19289",
+    "title": "Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship!",
+    "time": "12:30 PM",
+    "episode": 4,
+    "poster": "https://s4.zanix.tr/poster/19289.jpg?v=1791629192",
+    "type": "TV"
+   },
+   {
+    "id": "ojisan-wa-kawaii-mono-ga-osuki-19991",
+    "title": "Uncle's Obsession with Cute Things",
+    "time": "01:00 PM",
+    "episode": 4,
+    "poster": "https://s4.zanix.tr/poster/19991.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "mahou-no-shimai-luluttolilly-part-2-20427",
+    "title": "Magical Sisters LuluttoLilly Part 2",
+    "time": "01:30 PM",
+    "episode": 4,
+    "poster": "https://s4.zanix.tr/poster/20427.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "saikyou-tank-no-meikyuu-kouryaku-tairyoku-9999-no-rare-skill-mochi-tank-yuusha-party-wo-tsuihou-sareru-33830",
+    "title": "TANK CHAIR",
+    "time": "02:00 PM",
+    "episode": 4,
+    "poster": "https://s4.zanix.tr/poster/33830.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "dragon-ball-super-beerus-20298",
+    "title": "Dragon Ball Super: Beerus",
+    "time": "02:16 PM",
+    "episode": 3,
+    "poster": "https://s4.zanix.tr/poster/20298.jpg?v=1791629530",
+    "type": "TV"
+   },
+   {
+    "id": "tensei-kizoku-kantei-skill-de-nariagaru-3rd-season-19176",
+    "title": "As a Reincarnated Aristocrat, I'll Use My Appraisal Skill to Rise in the World Season 3",
+    "time": "02:30 PM",
+    "episode": 5,
+    "poster": "https://s4.zanix.tr/poster/19176.jpg?v=1791628406",
+    "type": "TV"
+   },
+   {
+    "id": "shinja-zero-no-megami-sama-to-hajimeru-isekai-kouryaku-20203",
+    "title": "Full Clearing Another World under a Goddess with Zero Believers",
+    "time": "02:30 PM",
+    "episode": 3,
+    "poster": "https://s4.zanix.tr/poster/20203.jpg?v=1792950175",
+    "type": "TV"
+   },
+   {
+    "id": "yowaki-max-reijou-nano-ni-ratsuwan-konyakusha-sama-no-kake-ni-notte-shimatta-19958",
+    "title": "Even Though I'm a Super Timid Noble Girl, I Accepted the Bet From My Cunning Fiancé",
+    "time": "02:30 PM",
+    "episode": 4,
+    "poster": "https://s4.zanix.tr/poster/19958.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "temppal-item-no-chikara-755734",
+    "title": "Overgeared",
+    "time": "02:30 PM",
+    "episode": 5,
+    "poster": "https://s4.zanix.tr/poster/755734.jpg?v=1791629188",
+    "type": "ONA"
+   },
+   {
+    "id": "hotel-inhumans-2nd-season-19903",
+    "title": "HOTEL INHUMANS Season 2",
+    "time": "02:45 PM",
+    "episode": 4,
+    "poster": "https://s4.zanix.tr/poster/19903.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "yahari-ore-no-seishun-love-comedy-wa-machigatteiru-ova-33831",
+    "title": "From Far Away",
+    "time": "03:00 PM",
+    "episode": 4,
+    "poster": "https://s4.zanix.tr/poster/33831.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "kanojo-no-tomodachi-756160",
+    "title": "My Girlfriend's Friend",
+    "time": "04:05 PM",
+    "episode": 4,
+    "poster": "https://s4.zanix.tr/poster/756160.jpg",
+    "type": "TV_SHORT"
+   },
+   {
+    "id": "my-girlfriend-s-friend-mini-anime-778978",
+    "title": "My Girlfriend's Friend Mini Anime",
+    "time": "04:17 PM",
+    "episode": 4,
+    "poster": "https://s4.zanix.tr/poster/778978.jpg",
+    "type": "TV_SHORT"
+   },
+   {
+    "id": "dark-summoner-to-dekiteiru-20386",
+    "title": "I'm Dating a Dark Summoner",
+    "time": "04:20 PM",
+    "episode": 4,
+    "poster": "https://s4.zanix.tr/poster/20386.jpg?v=1791658313",
+    "type": "TV_SHORT"
+   },
+   {
+    "id": "dark-summoner-to-dekiteiru-mini-anime-gekijou-781612",
+    "title": "JK Dark Summoner to Deki......Dei Nai!?",
+    "time": "06:00 PM",
+    "episode": 4,
+    "poster": "https://s4.zanix.tr/poster/781612.jpg",
+    "type": "TV_SHORT"
    }
   ]
  }
