@@ -31,7 +31,6 @@ Browse, search, schedule and stream — one tail at a time.
 - [How the API layer works](#how-the-api-layer-works)
 - [Pages and routes](#pages-and-routes)
 - [Deployment](#deployment)
-- [Regenerating the screenshots](#regenerating-the-screenshots)
 - [Credits and disclaimer](#credits-and-disclaimer)
 
 ---
