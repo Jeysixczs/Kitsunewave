@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-26T03:52:41.949Z",
+ "updated": "2026-10-26T12:29:53.255Z",
  "data": {
   "2026-10-12": [
    {
@@ -1591,6 +1591,32 @@
     "episode": 4,
     "poster": "https://s4.zanix.tr/poster/781612.jpg",
     "type": "TV_SHORT"
+   }
+  ],
+  "2026-10-26": [
+   {
+    "id": "renegade-immortal-14557",
+    "title": "Renegade Immortal",
+    "time": "02:00 AM",
+    "episode": 164,
+    "poster": "https://s4.zanix.tr/poster/14557.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "yuusanchi-from-yuuhachi-757603",
+    "title": "Yuusanchi! from Yuuhachi",
+    "time": "02:00 AM",
+    "episode": 7,
+    "poster": "https://s4.zanix.tr/poster/757603.jpg",
+    "type": "TV_SHORT"
+   },
+   {
+    "id": "maomao-no-hitorigoto-3rd-season-782754",
+    "title": "Maomao no Hitorigoto 3rd Season",
+    "time": "03:00 AM",
+    "episode": 4,
+    "poster": "https://s4.zanix.tr/poster/782754.jpg",
+    "type": "ONA"
    }
   ]
  }
