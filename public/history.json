@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-26T22:26:23.900Z",
+ "updated": "2026-10-27T04:14:15.448Z",
  "data": {
   "2026-10-12": [
    {
@@ -1616,6 +1616,64 @@
     "time": "03:00 AM",
     "episode": 4,
     "poster": "https://s4.zanix.tr/poster/782754.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "doumo-suki-na-hito-ni-horegusuri-wo-irai-sareta-majo-desu-20346",
+    "title": "Hello, I am a Witch and my Crush Wants me to Make a Love Potion!",
+    "time": "12:30 PM",
+    "episode": 4,
+    "poster": "https://s4.zanix.tr/poster/20346.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "tensei-goblin-dakedo-shitsumon-aru-20431",
+    "title": "So What's Wrong with Getting Reborn as a Goblin?",
+    "time": "01:00 PM",
+    "episode": 5,
+    "poster": "https://s4.zanix.tr/poster/20431.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "psyren-33518",
+    "title": "PSYREN",
+    "time": "02:00 PM",
+    "episode": 4,
+    "poster": "https://s4.zanix.tr/poster/33518.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "bleach-thousand-year-blood-war-the-calamity-19230",
+    "title": "BLEACH: Thousand-Year Blood War - The Calamity",
+    "time": "03:00 PM",
+    "episode": 10,
+    "poster": "https://s4.zanix.tr/poster/19230.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "mahou-shoujo-ikusei-keikaku-restart-16899",
+    "title": "MAGICAL GIRL RAISING PROJECT restart",
+    "time": "05:00 PM",
+    "episode": 4,
+    "poster": "https://s4.zanix.tr/poster/16899.jpg",
+    "type": "TV"
+   }
+  ],
+  "2026-10-27": [
+   {
+    "id": "wushen-zhuzai-da-wei-pian-16593",
+    "title": "Wushen Zhuzai: Da Wei Pian",
+    "time": "02:00 AM",
+    "episode": 428,
+    "poster": "https://s4.zanix.tr/poster/16593.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "jueshi-zhan-hun-2-771057",
+    "title": "Jueshi Zhan Hun 2",
+    "time": "02:00 AM",
+    "episode": 21,
+    "poster": "https://s4.zanix.tr/poster/771057.jpg",
     "type": "ONA"
    }
   ]
