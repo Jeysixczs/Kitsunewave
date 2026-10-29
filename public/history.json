@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-29T04:55:47.714Z",
+ "updated": "2026-10-29T12:31:57.407Z",
  "data": {
   "2026-10-12": [
    {
@@ -1860,6 +1860,32 @@
     "time": "03:45 PM",
     "episode": 4,
     "poster": "https://s4.zanix.tr/poster/17860.jpg",
+    "type": "TV"
+   }
+  ],
+  "2026-10-29": [
+   {
+    "id": "petitcure-precure-fairies-season-4-778051",
+    "title": "PetitCure: Precure Fairies Season 4",
+    "time": "09:30 AM",
+    "episode": 5,
+    "poster": "https://s4.zanix.tr/poster/778051.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "sylvanian-families-freya-no-colorful-everyday-784439",
+    "title": "Sylvanian Families: Freya no Colorful Everyday",
+    "time": "10:19 AM",
+    "episode": 5,
+    "poster": "https://s4.zanix.tr/poster/784439.jpg?v=1793071116",
+    "type": "TV_SHORT"
+   },
+   {
+    "id": "fx-senshi-kurumi-chan-20275",
+    "title": "FX Fighter Kurumi-chan",
+    "time": "12:30 PM",
+    "episode": 5,
+    "poster": "https://s4.zanix.tr/poster/20275.jpg",
     "type": "TV"
    }
   ]
