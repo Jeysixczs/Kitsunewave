@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-30T12:23:08.831Z",
+ "updated": "2026-10-30T22:02:43.962Z",
  "data": {
   "2026-10-12": [
    {
@@ -2009,6 +2009,62 @@
     "episode": 4,
     "poster": "https://s4.zanix.tr/poster/e94f9cb1cbc7c0cfd907a73ae72f8f82.jpg",
     "type": "ONA"
+   },
+   {
+    "id": "aoki-denshou-welsh-shedar-769200",
+    "title": "Welsh & Shedar",
+    "time": "12:26 PM",
+    "episode": 5,
+    "poster": "https://s4.zanix.tr/poster/769200.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "toaru-anbu-no-item-19305",
+    "title": "A Certain Dark Item",
+    "time": "01:30 PM",
+    "episode": 4,
+    "poster": "https://s4.zanix.tr/poster/19305.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "kusuriya-no-hitorigoto-3rd-season-19700",
+    "title": "The Apothecary Diaries Season 3",
+    "time": "02:00 PM",
+    "episode": 5,
+    "poster": "https://s4.zanix.tr/poster/19700.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "hotaru-no-yomeiri-20207",
+    "title": "Firefly Wedding",
+    "time": "02:30 PM",
+    "episode": 4,
+    "poster": "https://s4.zanix.tr/poster/20207.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "tougen-anki-nikko-kegon-falls-arc-33554",
+    "title": "TOUGEN ANKI: Nikko Kegon Falls Arc",
+    "time": "02:30 PM",
+    "episode": 5,
+    "poster": "https://s4.zanix.tr/poster/33554.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "uchi-no-otouto-domo-ga-sumimasen-20047",
+    "title": "Please Excuse My Younger Brothers",
+    "time": "03:00 PM",
+    "episode": 17,
+    "poster": "https://s4.zanix.tr/poster/20047.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "tokyo-revengers-santen-sensou-hen-18338",
+    "title": "Tokyo Revengers: War of the Three Titans Arc",
+    "time": "04:53 PM",
+    "episode": 5,
+    "poster": "https://s4.zanix.tr/poster/18338.jpg",
+    "type": "TV"
    }
   ]
  }
