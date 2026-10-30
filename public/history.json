@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-30T04:55:59.413Z",
+ "updated": "2026-10-30T12:23:08.831Z",
  "data": {
   "2026-10-12": [
    {
@@ -1943,6 +1943,72 @@
     "episode": 4,
     "poster": "https://s4.zanix.tr/poster/755673.jpg",
     "type": "TV"
+   }
+  ],
+  "2026-10-30": [
+   {
+    "id": "mazenchu-777744",
+    "title": "Mazenchu",
+    "time": "12:50 AM",
+    "episode": 5,
+    "poster": "https://s4.zanix.tr/poster/777744.jpg",
+    "type": "TV_SHORT"
+   },
+   {
+    "id": "luo-xiaohei-zhan-ji-xue-qian-pian-20244",
+    "title": "Luo Xiaohei Zhan Ji: Xue Qian Pian",
+    "time": "04:00 AM",
+    "episode": 1,
+    "poster": "https://s4.zanix.tr/poster/20244.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "steel-ball-run-jojo-s-bizarre-adventure-2nd-stage-755420",
+    "title": "STEEL BALL RUN JoJo's Bizarre Adventure 2nd - 3rd STAGE",
+    "time": "08:00 AM",
+    "episode": 6,
+    "poster": "https://s4.zanix.tr/poster/755420.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "pan-dorobou-19650",
+    "title": "Pan Dorobou",
+    "time": "09:40 AM",
+    "episode": 5,
+    "poster": "https://s4.zanix.tr/poster/19650.jpg",
+    "type": "TV_SHORT"
+   },
+   {
+    "id": "pok-mon-horizons-the-series-16809",
+    "title": "Pokémon Horizons: The Series",
+    "time": "09:55 AM",
+    "episode": 155,
+    "poster": "https://s4.zanix.tr/poster/16809.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "watame-did-borderline-nothing-wrong-759680",
+    "title": "Watame Did Borderline Nothing Wrong",
+    "time": "10:00 AM",
+    "episode": 86,
+    "poster": "https://s4.zanix.tr/poster/759680.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "beyblade-x-17103",
+    "title": "BEYBLADE X",
+    "time": "10:00 AM",
+    "episode": 138,
+    "poster": "https://s4.zanix.tr/poster/17103.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "duel-masters-lost-danzai-no-shounen-20404",
+    "title": "Duel Masters LOST: Danzai no Shounen",
+    "time": "12:00 PM",
+    "episode": 4,
+    "poster": "https://s4.zanix.tr/poster/e94f9cb1cbc7c0cfd907a73ae72f8f82.jpg",
+    "type": "ONA"
    }
   ]
  }
