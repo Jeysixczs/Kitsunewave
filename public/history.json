@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-30T22:02:43.962Z",
+ "updated": "2026-10-31T04:41:41.109Z",
  "data": {
   "2026-10-12": [
    {
@@ -2065,6 +2065,88 @@
     "episode": 5,
     "poster": "https://s4.zanix.tr/poster/18338.jpg",
     "type": "TV"
+   },
+   {
+    "id": "ghost-meets-gal-759826",
+    "title": "Ghost Meets Gal!",
+    "time": "11:00 PM",
+    "episode": 9,
+    "poster": "https://s4.zanix.tr/poster/759826.jpg?v=1792820866",
+    "type": "TV_SHORT"
+   },
+   {
+    "id": "pan-no-akachan-tv-759116",
+    "title": "Pan no Akachan (TV)",
+    "time": "11:30 PM",
+    "episode": 18,
+    "poster": "https://s4.zanix.tr/poster/759116.jpg",
+    "type": "TV_SHORT"
+   }
+  ],
+  "2026-10-31": [
+   {
+    "id": "rilakkuma-758475",
+    "title": "RILAKKUMA",
+    "time": "12:26 AM",
+    "episode": 30,
+    "poster": "https://s4.zanix.tr/poster/33c14ab38a8923e563e17b79e41693ba.jpg",
+    "type": "TV_SHORT"
+   },
+   {
+    "id": "nezumi-kun-no-chokki-tv-2nd-season-759930",
+    "title": "Nezumi-kun no Chokki (TV) 2nd Season",
+    "time": "12:30 AM",
+    "episode": 5,
+    "poster": "https://s4.zanix.tr/poster/759930.jpg?v=1791632131",
+    "type": "TV_SHORT"
+   },
+   {
+    "id": "keroro-gunsou-767640",
+    "title": "KERORO☆",
+    "time": "12:30 AM",
+    "episode": 5,
+    "poster": "https://s4.zanix.tr/poster/acd68d4e896712014a986280ede87989.jpg?v=1791645343",
+    "type": "TV"
+   },
+   {
+    "id": "a-good-day-to-ascend-32868",
+    "title": "A Good Day to Ascend",
+    "time": "01:00 AM",
+    "episode": 18,
+    "poster": "https://s4.zanix.tr/poster/32868.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "soul-land-2-the-peerless-tang-clan-14582",
+    "title": "Soul Land 2: The Peerless Tang Clan",
+    "time": "02:00 AM",
+    "episode": 177,
+    "poster": "https://s4.zanix.tr/poster/14582.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "dawang-raoming-3-776942",
+    "title": "Dawang Raoming 3",
+    "time": "02:00 AM",
+    "episode": 7,
+    "poster": "https://s4.zanix.tr/poster/776942.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "wan-sheng-jie-gubao-de-mimi-782589",
+    "title": "Wan Sheng Jie: Gubao de Mimi",
+    "time": "02:00 AM",
+    "episode": 1,
+    "poster": "https://s4.zanix.tr/poster/782589.jpg",
+    "type": "SPECIAL"
+   },
+   {
+    "id": "gekkan-nanmono-anime-758794",
+    "title": "Gekkan! Nanmono Anime",
+    "time": "03:00 AM",
+    "episode": 19,
+    "poster": "https://s4.zanix.tr/poster/758794.jpg",
+    "type": "ONA"
    }
   ]
  }
