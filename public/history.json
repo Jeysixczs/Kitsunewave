@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-01T05:01:05.654Z",
+ "updated": "2026-11-01T12:52:14.730Z",
  "data": {
   "2026-10-12": [
    {
@@ -1438,7 +1438,9 @@
     "id": "sazae-san-2034",
     "title": "Sazae-san",
     "time": "09:30 AM",
-    "episode": 2855
+    "episode": 2855,
+    "poster": "https://s4.zanix.tr/poster/2034.jpg?v=1791628204",
+    "type": "TV"
    },
    {
     "id": "watashi-no-shiawase-na-kekkon-shinsaku-anime-19552",
@@ -2381,6 +2383,62 @@
     "episode": 3,
     "poster": "https://s4.zanix.tr/poster/782589.jpg",
     "type": "SPECIAL"
+   },
+   {
+    "id": "aoashi-2nd-season-19578",
+    "title": "Aoashi Season 2",
+    "time": "08:00 AM",
+    "episode": 5,
+    "poster": "https://s4.zanix.tr/poster/19578.jpg?v=1791628397",
+    "type": "TV"
+   },
+   {
+    "id": "mission-yozakura-family-season-2-part-2-756624",
+    "title": "Mission: Yozakura Family Season 2 Part 2",
+    "time": "08:00 AM",
+    "episode": 4,
+    "poster": "https://s4.zanix.tr/poster/756624.jpg?v=1792313172",
+    "type": "TV"
+   },
+   {
+    "id": "diamond-no-ace-act-ii-second-season-part-2-756625",
+    "title": "Ace of the Diamond act II -Second Season-",
+    "time": "08:30 AM",
+    "episode": 4,
+    "poster": "https://s4.zanix.tr/poster/756625.jpg?v=1792313172",
+    "type": "TV"
+   },
+   {
+    "id": "holo-no-graffiti-758388",
+    "title": "Holo no Graffiti",
+    "time": "09:00 AM",
+    "episode": 390,
+    "poster": "https://s4.zanix.tr/poster/758388.jpg?v=1791628740",
+    "type": "ONA"
+   },
+   {
+    "id": "sazae-san-2034",
+    "title": "Sazae-san",
+    "time": "09:30 AM",
+    "episode": 2856,
+    "poster": "https://s4.zanix.tr/poster/2034.jpg?v=1791628204",
+    "type": "TV"
+   },
+   {
+    "id": "umayuru-full-gate-758303",
+    "title": "Umayuru: Full Gate!",
+    "time": "12:00 PM",
+    "episode": 6,
+    "poster": "https://s4.zanix.tr/poster/758303.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "reborn-as-a-space-mercenary-i-woke-up-piloting-the-strongest-starship-19289",
+    "title": "Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship!",
+    "time": "12:30 PM",
+    "episode": 5,
+    "poster": "https://s4.zanix.tr/poster/19289.jpg?v=1791629192",
+    "type": "TV"
    }
   ]
  }
