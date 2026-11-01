@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-31T21:12:38.091Z",
+ "updated": "2026-11-01T05:01:05.654Z",
  "data": {
   "2026-10-12": [
    {
@@ -2291,6 +2291,96 @@
     "episode": 5,
     "poster": "https://s4.zanix.tr/poster/33441.jpg",
     "type": "TV"
+   },
+   {
+    "id": "little-shark-s-day-out-season-2-758418",
+    "title": "Little Shark's Day Out Season 2",
+    "time": "10:00 PM",
+    "episode": 30,
+    "poster": "https://s4.zanix.tr/poster/758418.jpg",
+    "type": "TV_SHORT"
+   },
+   {
+    "id": "yuruyuru-zukan-756211",
+    "title": "Yuruyuru Zukan",
+    "time": "10:00 PM",
+    "episode": 5,
+    "poster": "https://s4.zanix.tr/poster/756211.jpg",
+    "type": "TV_SHORT"
+   },
+   {
+    "id": "raccoon-dog-fox-780340",
+    "title": "Raccoon Dog & Fox",
+    "time": "10:00 PM",
+    "episode": 5,
+    "poster": "https://s4.zanix.tr/poster/780340.jpg",
+    "type": "TV_SHORT"
+   },
+   {
+    "id": "koupen-chan-758398",
+    "title": "Koupen-chan",
+    "time": "11:00 PM",
+    "episode": 83,
+    "poster": "https://s4.zanix.tr/poster/758398.jpg",
+    "type": "TV_SHORT"
+   }
+  ],
+  "2026-11-01": [
+   {
+    "id": "punirunes-puni-4-768682",
+    "title": "Punirunes Puni 4",
+    "time": "12:16 AM",
+    "episode": 5,
+    "poster": "https://s4.zanix.tr/poster/768682.jpg",
+    "type": "TV_SHORT"
+   },
+   {
+    "id": "onegai-aipri-20282",
+    "title": "Onegai AiPri",
+    "time": "12:30 AM",
+    "episode": 31,
+    "poster": "https://s4.zanix.tr/poster/20282.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "pop-pap-polters-778977",
+    "title": "Pop Pap Polters",
+    "time": "01:00 AM",
+    "episode": 5,
+    "poster": "https://s4.zanix.tr/poster/778977.jpg",
+    "type": "TV_SHORT"
+   },
+   {
+    "id": "wushen-zhuzai-da-wei-pian-16593",
+    "title": "Wushen Zhuzai: Da Wei Pian",
+    "time": "02:00 AM",
+    "episode": 429,
+    "poster": "https://s4.zanix.tr/poster/16593.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "dou-po-cangqiong-nian-fan-4-19768",
+    "title": "Dou Po Cangqiong: Nian Fan 4",
+    "time": "02:00 AM",
+    "episode": 59,
+    "poster": "https://s4.zanix.tr/poster/19768.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "wan-sheng-jie-gubao-de-mimi-782589",
+    "title": "Wan Sheng Jie Specials: Gubao de Mimi",
+    "time": "02:00 AM",
+    "episode": 2,
+    "poster": "https://s4.zanix.tr/poster/782589.jpg",
+    "type": "SPECIAL"
+   },
+   {
+    "id": "wan-sheng-jie-gubao-de-mimi-782589",
+    "title": "Wan Sheng Jie Specials: Gubao de Mimi",
+    "time": "02:00 AM",
+    "episode": 3,
+    "poster": "https://s4.zanix.tr/poster/782589.jpg",
+    "type": "SPECIAL"
    }
   ]
  }
