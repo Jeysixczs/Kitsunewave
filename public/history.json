@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-01T21:49:13.707Z",
+ "updated": "2026-11-02T05:02:04.283Z",
  "data": {
   "2026-10-12": [
    {
@@ -2557,6 +2557,32 @@
     "title": "JK Dark Summoner to Deki......Dei Nai!?",
     "time": "06:00 PM",
     "episode": 5
+   }
+  ],
+  "2026-11-02": [
+   {
+    "id": "renegade-immortal-14557",
+    "title": "Renegade Immortal",
+    "time": "02:00 AM",
+    "episode": 165,
+    "poster": "https://s4.zanix.tr/poster/14557.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "yuusanchi-from-yuuhachi-757603",
+    "title": "YU-SANCHi! from YU-HACHi",
+    "time": "02:00 AM",
+    "episode": 9,
+    "poster": "https://s4.zanix.tr/poster/757603.jpg",
+    "type": "TV_SHORT"
+   },
+   {
+    "id": "maomao-no-hitorigoto-3rd-season-782754",
+    "title": "Maomao no Hitorigoto 3rd Season",
+    "time": "03:00 AM",
+    "episode": 5,
+    "poster": "https://s4.zanix.tr/poster/782754.jpg",
+    "type": "ONA"
    }
   ]
  }
