@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-03T00:43:32.980Z",
+ "updated": "2026-11-03T13:49:50.946Z",
  "data": {
   "2026-10-12": [
    {
@@ -2625,6 +2625,22 @@
     "episode": 44,
     "poster": "https://s4.zanix.tr/poster/758230.jpg",
     "type": "ONA"
+   },
+   {
+    "id": "jueshi-zhan-hun-2-771057",
+    "title": "Jueshi Zhan Hun 2",
+    "time": "03:00 AM",
+    "episode": 22,
+    "poster": "https://s4.zanix.tr/poster/771057.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "kyouran-reijou-nia-liston-20335",
+    "title": "Otome Game no Hametsu Flag shika Nai Akuyaku Reijou ni Tensei shiteshimatta... X",
+    "time": "01:26 PM",
+    "episode": 5,
+    "poster": "https://s4.zanix.tr/poster/20335.jpg",
+    "type": "TV"
    }
   ]
  }
