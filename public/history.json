@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-03T23:00:04.836Z",
+ "updated": "2026-11-04T05:25:58.351Z",
  "data": {
   "2026-10-12": [
    {
@@ -2705,6 +2705,24 @@
     "episode": 4,
     "poster": "https://s4.zanix.tr/poster/18717.jpg",
     "type": "TV"
+   }
+  ],
+  "2026-11-04": [
+   {
+    "id": "a-will-eternal-4th-season-33122",
+    "title": "A Will Eternal 4th Season",
+    "time": "03:00 AM",
+    "episode": 18,
+    "poster": "https://s4.zanix.tr/poster/33122.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "da-xia-shou-mu-ren-777741",
+    "title": "Da Xia Shou Mu Ren",
+    "time": "03:00 AM",
+    "episode": 8,
+    "poster": "https://s4.zanix.tr/poster/777741.jpg",
+    "type": "ONA"
    }
   ]
  }
