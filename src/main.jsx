@@ -881,6 +881,47 @@ function WatchSkeleton() {
   );
 }
 
+function WatchFooter() {
+  return (
+    <footer className="kfooter watch-footer">
+      <div className="kf-inner">
+        <div className="kf-brand">
+          <a className="kf-logo" href="/">
+            <img src="/kitsune-logo.png" alt="" width="46" height="48" />
+            <span>Kitsune<b>wave</b></span>
+          </a>
+          <p>Follow the fox-fire to your next favorite anime. Stream, track and wander — one tail at a time.</p>
+        </div>
+        <nav className="kf-col" aria-label="Watch footer pages">
+          <h4>Wander</h4>
+          <a href="/">Home</a>
+          <a href="/movie.html">Movies</a>
+          <a href="/news.html">News</a>
+          <a href="/library.html">My library</a>
+        </nav>
+        <nav className="kf-col" aria-label="Watch footer lists">
+          <h4>Quick lists</h4>
+          <a href="/?list=top-airing">Top airing</a>
+          <a href="/?list=most-popular">Most popular</a>
+          <a href="/?list=new-episodes">New episodes</a>
+          <a href="/?list=completed">Just completed</a>
+        </nav>
+        <div className="kf-az">
+          <h4>Anime A-Z</h4>
+          <div className="kf-az-grid">
+            {"ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("").map((letter) => (
+              <a className="kf-letter" href={`/?list=az-list%2F${letter.toLowerCase()}`} key={letter}>{letter}</a>
+            ))}
+          </div>
+        </div>
+      </div>
+      <div className="kf-bottom">
+        <span>© {new Date().getFullYear()} Kitsunewave · For personal use</span>
+      </div>
+    </footer>
+  );
+}
+
 function SearchResults({ keyword, onClose }) {
   const [data, setData] = useState(null);
   const [error, setError] = useState("");
@@ -1899,6 +1940,7 @@ function Detail() {
         <AnimeExtras animeId={id} />
         </div>
       </main>
+      <WatchFooter />
     </>
   );
 }
@@ -2021,6 +2063,32 @@ function Watch() {
         list.findIndex((candidate) => candidate.id === item.id) === index,
     )
     .slice(0, 10);
+  const textList = (value) => {
+    if (Array.isArray(value)) {
+      return value
+        .map((item) => (typeof item === "string" ? item : item?.name || item?.title || ""))
+        .map((item) => item.trim())
+        .filter(Boolean);
+    }
+    if (typeof value === "string") {
+      return value.split(/\s*[|,]\s*/).map((item) => item.trim()).filter(Boolean);
+    }
+    return [];
+  };
+  const synonyms = textList(anime?.synonyms);
+  const genres = textList(anime?.genres);
+  const studios = textList(anime?.studios);
+  const producers = textList(anime?.producers);
+  const aired = anime?.aired
+    ? [anime.aired.from, anime.aired.to || "?"].filter(Boolean).join(" to ")
+    : "";
+  const episodeSummary = anime?.episodes
+    ? [
+        anime.episodes.sub && `SUB ${anime.episodes.sub}`,
+        anime.episodes.dub && `DUB ${anime.episodes.dub}`,
+        anime.episodes.eps && `TOTAL ${anime.episodes.eps}`,
+      ].filter(Boolean).join(" · ")
+    : "";
   return (
     <>
       <Header back hideBack />
@@ -2033,24 +2101,6 @@ function Watch() {
           <>
             <div className="watch-layout">
               <aside className="episode-sidebar">
-                <div className="watch-selectors">
-                  <button
-                    className={`watch-select${language === "sub" ? " active" : ""}`}
-                    type="button"
-                    onClick={() => changeLanguage("sub")}
-                  >
-                    SUB
-                  </button>
-                  {hasDub && (
-                    <button
-                      className={`watch-select${language === "dub" ? " active" : ""}`}
-                      type="button"
-                      onClick={() => changeLanguage("dub")}
-                    >
-                      DUB
-                    </button>
-                  )}
-                </div>
                 <div className="episode-heading">
                   <span className="section-kicker">
                     {language.toUpperCase()} episodes
@@ -2073,7 +2123,8 @@ function Watch() {
               </aside>
               <section className="watch-main">
                 <div className="player-notice">
-                  You are watching <strong>{anime.title}</strong>. If the
+                  You are watching <strong>{anime.title}</strong>
+                  {selected?.episodeNumber ? ` · Episode ${selected.episodeNumber}` : ""}. If the
                   current server does not work, try another server below.
                 </div>
                 <div className="watch-player">
@@ -2092,7 +2143,31 @@ function Watch() {
                   )}
                 </div>
                 <div className="server-list">
-                  {Object.entries(serverGroups).map(([type, group]) => (
+                  <div className="server-language-switcher" role="tablist" aria-label="Audio language">
+                    <button
+                      className={`server-language-button${language === "sub" ? " active" : ""}`}
+                      type="button"
+                      role="tab"
+                      aria-selected={language === "sub"}
+                      onClick={() => changeLanguage("sub")}
+                    >
+                      SUB
+                    </button>
+                    {hasDub && (
+                      <button
+                        className={`server-language-button${language === "dub" ? " active" : ""}`}
+                        type="button"
+                        role="tab"
+                        aria-selected={language === "dub"}
+                        onClick={() => changeLanguage("dub")}
+                      >
+                        DUB
+                      </button>
+                    )}
+                  </div>
+                  {Object.entries(serverGroups)
+                    .filter(([type]) => type === language)
+                    .map(([type, group]) => (
                     <div className={`server-row server-row-${type}`} key={type}>
                       <strong className="server-label">
                         {type === "sub" ? "CC" : "🎙"}{" "}
@@ -2155,10 +2230,18 @@ function Watch() {
                   {anime.type || "Anime"} · {anime.status || "Available"}
                 </div>
                 <h2>{anime.title || "Untitled"}</h2>
+                {anime.japanese && anime.japanese !== anime.title && (
+                  <p className="watch-alt-title">{anime.japanese}</p>
+                )}
+                {synonyms.length > 0 && (
+                  <p className="watch-synonyms">{synonyms.join(" · ")}</p>
+                )}
                 <div className="meta">
                   {[
                     anime.type,
                     anime.status,
+                    anime.rating,
+                    anime.duration,
                     anime.MAL_score && `Score ${anime.MAL_score}`,
                   ]
                     .filter(Boolean)
@@ -2172,9 +2255,39 @@ function Watch() {
                 </div>
               </div>
             </section>
+            <section className="watch-anime-context" aria-label="Anime information">
+              <div className="watch-context-header">
+                <div>
+                  <span className="section-kicker">The complete picture</span>
+                  <h2>More about this anime</h2>
+                </div>
+                {genres.length > 0 && (
+                  <div className="watch-context-tags">
+                    {genres.map((genre) => <span key={genre}>{genre}</span>)}
+                  </div>
+                )}
+              </div>
+              <div className="watch-fact-grid">
+                {[
+                  ["Premiered", anime.premiered],
+                  ["Aired", aired],
+                  ["Episodes", episodeSummary],
+                  ["Rating", anime.rating],
+                  ["Duration", anime.duration],
+                  ["Studios", studios.join(", ")],
+                  ["Producers", producers.join(", ")],
+                ].filter(([, value]) => value).map(([label, value]) => (
+                  <div className="watch-fact" key={label}>
+                    <small>{label}</small>
+                    <strong>{value}</strong>
+                  </div>
+                ))}
+              </div>
+            </section>
           </>
         )}
       </main>
+      {anime && !error && <WatchFooter />}
     </>
   );
 }
