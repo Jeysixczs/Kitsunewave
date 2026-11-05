@@ -94,7 +94,7 @@ function AuthModal({ onClose }) {
     if (result.info) setInfo(result.info);
   };
 
-  const title = mode === "signup" ? "Create your account" : mode === "reset" ? "Reset password" : "Welcome back";
+  const title = mode === "signup" ? "Create your account" : mode === "reset" ? "Reset password" : "Welcome";
   const action = mode === "signup" ? "Create account" : mode === "reset" ? "Send reset link" : "Sign in";
 
   return createPortal(
@@ -102,6 +102,14 @@ function AuthModal({ onClose }) {
       <div className="auth-backdrop" onClick={onClose} />
       <form className="auth-card" onSubmit={submit}>
         <button type="button" className="menu-close auth-close" aria-label="Close" onClick={onClose}>×</button>
+        <div className="auth-brand">
+          <span className="auth-brand-mark"><img src="/kitsune-logo.png" alt="" width="46" height="48" /></span>
+          <span className="auth-brand-name">Kitsune<b>wave</b></span>
+        </div>
+        <div className="auth-intro">
+          <span className="auth-eyebrow">Your anime sanctuary</span>
+          <p>Keep your watchlist close and let every story find its way back to you.</p>
+        </div>
         <h2>{title}</h2>
         <p className="auth-sub">
           Save your watch list, bookmarks, watched anime and where you left off — on every device.

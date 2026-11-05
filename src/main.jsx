@@ -8,6 +8,45 @@ import { accountsEnabled, changePassword, clearHistory, openAuth, recordWatch, s
 const signOutAndGoHome = () => signOut().then(() => { location.href = "/"; });
 
 const API = "/api";
+const REQUEST_CACHE_STORAGE = "kitsune:api-cache:v1";
+const requestCache = new Map();
+const requestInflight = new Map();
+let storedCacheLoaded = false;
+
+function requestCacheTtl(path) {
+  if (path === "/home" || path.startsWith("/schedules")) return 60_000;
+  if (path.startsWith("/anime/") || path.startsWith("/episodes/")) return 10 * 60_000;
+  if (path === "/genres" || path === "/filter/options") return 60 * 60_000;
+  return 30_000;
+}
+
+function canPersistRequest(path) {
+  return !path.startsWith("/suggestion") && !path.startsWith("/random");
+}
+
+function loadStoredRequestCache() {
+  if (storedCacheLoaded) return;
+  storedCacheLoaded = true;
+  try {
+    const stored = JSON.parse(localStorage.getItem(REQUEST_CACHE_STORAGE) || "{}");
+    Object.entries(stored).forEach(([path, entry]) => {
+      if (entry?.data !== undefined && entry.staleUntil > Date.now()) requestCache.set(path, entry);
+    });
+  } catch {
+    // Browser storage is optional; the in-memory cache still works.
+  }
+}
+
+function persistRequestCache(path, entry) {
+  if (!canPersistRequest(path)) return;
+  try {
+    const stored = JSON.parse(localStorage.getItem(REQUEST_CACHE_STORAGE) || "{}");
+    stored[path] = entry;
+    localStorage.setItem(REQUEST_CACHE_STORAGE, JSON.stringify(stored));
+  } catch {
+    // Browser storage is optional; the in-memory cache still works.
+  }
+}
 
 function autoplayUrl(url, muted = false) {
   if (!url) return "";
@@ -24,12 +63,41 @@ function autoplayUrl(url, muted = false) {
 }
 
 async function request(path) {
-  const response = await fetch(`${API}${path}`, { headers: { "X-Kitsune-Client": "web" } });
-  const body = await response.json();
-  if (!response.ok || body.success === false) {
-    throw new Error(body.message || `HTTP ${response.status}`);
+  loadStoredRequestCache();
+  const now = Date.now();
+  const cached = requestCache.get(path);
+  if (cached && cached.staleUntil > now) {
+    if (cached.expiresAt <= now && !requestInflight.has(path)) refreshRequest(path).catch(() => {});
+    return cached.data;
   }
-  return body.data;
+
+  const existing = requestInflight.get(path);
+  if (existing) return existing;
+  return refreshRequest(path);
+}
+
+async function refreshRequest(path) {
+  const existing = requestInflight.get(path);
+  if (existing) return existing;
+  const promise = (async () => {
+    const response = await fetch(`${API}${path}`, { headers: { "X-Kitsune-Client": "web" } });
+    const body = await response.json();
+    if (!response.ok || body.success === false) {
+      throw new Error(body.message || `HTTP ${response.status}`);
+    }
+    const expiresAt = Date.now() + requestCacheTtl(path);
+    const entry = { data: body.data, expiresAt, staleUntil: expiresAt + 24 * 60 * 60_000 };
+    requestCache.set(path, entry);
+    persistRequestCache(path, entry);
+    return body.data;
+  })();
+
+  requestInflight.set(path, promise);
+  try {
+    return await promise;
+  } finally {
+    requestInflight.delete(path);
+  }
 }
 
 function embeddedServers(servers) {
@@ -517,6 +585,8 @@ function ListResults({ title, query }) {
 
 const BROWSE_LISTS = [
   ["Most favorite", "most-favorite"], ["Top upcoming", "top-upcoming"],
+  ["Recently added", "recently-added"], ["Recently updated", "recently-updated"],
+  ["Completed", "completed"], ["Events", "events"],
   ["Subbed anime", "subbed-anime"], ["Dubbed anime", "dubbed-anime"],
   ["Movies", "movie"], ["TV series", "tv"], ["OVA", "ova"],
   ["ONA", "ona"], ["Specials", "special"],
@@ -1643,14 +1713,57 @@ function AnimeExtras({ animeId }) {
   useEffect(() => {
     request(`/characters/${encodeURIComponent(animeId)}?page=${page}`).then(setCharacters).catch(() => setCharacters({ response: [] }));
   }, [animeId, page]);
+  const openPerson = (item) => {
+    if (!item?.id) return;
+    request(`/character/${encodeURIComponent(item.id)}`).then(setCharacter).catch(() => setCharacter(null));
+  };
+  const bioText = character?.bio ? character.bio.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim() : "";
   return <>
     {schedule && <section className="detail-section"><h2>Next episode</h2><p>{schedule.episode ? `Episode ${schedule.episode}` : "New episode"}{schedule.airingAt ? ` airs ${new Date(schedule.airingAt).toLocaleString()}` : ""}</p></section>}
-    {characters?.response?.length > 0 && <section className="detail-section"><h2>Characters</h2>
-      <div className="characters-grid">{characters.response.map((item) => <button className="character-card" type="button" key={item.id} onClick={() => request(`/character/${encodeURIComponent(item.id)}`).then(setCharacter).catch(() => setCharacter(null))}>
-        {item.imageUrl && <img src={item.imageUrl} alt="" loading="lazy" />}<span><strong>{item.name}</strong><small>{item.role}</small></span>
-      </button>)}</div>
-      <Pagination pageInfo={characters.pageInfo} onPageChange={setPage} />
-      {character && <div className="character-profile"><strong>{character.name || character.title || "Character"}</strong><p>{character.description || character.about || "No biography available."}</p></div>}
+    {characters?.response?.length > 0 && <section className="detail-section cast-section">
+      <div className="cast-heading">
+        <div><span className="section-kicker">The ensemble</span><h2>Characters & voice cast</h2></div>
+       
+      </div>
+      <div className="cast-board">
+        <div className="cast-list">
+          {characters.response.map((item, index) => <article className={`character-card${character?.id === item.id ? " selected" : ""}`} key={item.id}>
+            <button className="character-person" type="button" onClick={() => openPerson(item)}>
+              <span className="character-number">{String(index + 1).padStart(2, "0")}</span>
+              {item.imageUrl ? <img className="character-image" src={item.imageUrl} alt="" loading="lazy" /> : <span className="character-image character-image-empty">?</span>}
+              <span className="character-info"><strong>{item.name || "Unknown character"}</strong><small>{item.role || "Character"}</small></span>
+              <span className="character-chevron" aria-hidden="true">↗</span>
+            </button>
+            {item.voiceActors?.length > 0 && <div className="voice-list">
+              <span className="voice-label">Voiced by</span>
+              {item.voiceActors.map((actor) => <button className="voice-actor" type="button" key={actor.id || actor.name} onClick={() => openPerson(actor)}>
+                {actor.imageUrl ? <img className="voice-image" src={actor.imageUrl} alt="" loading="lazy" /> : <span className="voice-image voice-image-empty">?</span>}
+                <span><b>{actor.name || "Unknown actor"}</b><small>{actor.cast || "Voice actor"}</small></span>
+              </button>)}
+            </div>}
+          </article>)}
+          <Pagination pageInfo={characters.pageInfo} onPageChange={setPage} />
+        </div>
+        <aside className={`character-profile${character ? " is-open" : ""}`}>
+          {character ? <>
+            <button className="profile-close" type="button" aria-label="Close profile" onClick={() => setCharacter(null)}>×</button>
+            <div className="character-profile-head">
+              {character.imageUrl ? <img className="character-image" src={character.imageUrl} alt="" loading="lazy" /> : <span className="character-image character-image-empty">?</span>}
+              <div><span className="profile-type">{character.type || "Character"}</span><strong>{character.name || character.title || "Character"}</strong>{character.japanese && <small>{character.japanese}</small>}</div>
+            </div>
+            <p>{bioText || character.description || character.about || "No biography available."}</p>
+            {character.voiceActors?.length > 0 && <div className="profile-section"><span className="voice-label">Voice actors</span>{character.voiceActors.map((actor) => <button className="voice-actor" type="button" key={actor.id || actor.name} onClick={() => openPerson(actor)}>
+              {actor.imageUrl && <img className="voice-image" src={actor.imageUrl} alt="" loading="lazy" />}<span><b>{actor.name || "Unknown actor"}</b><small>{actor.language || actor.cast || "Voice actor"}</small></span>
+            </button>)}</div>}
+            {(character.animeAppearances?.length > 0 || character.voiceActingRoles?.length > 0) && <div className="profile-section profile-links">
+              <span className="voice-label">{character.voiceActingRoles?.length ? "Voice acting roles" : "Anime appearances"}</span>
+              {(character.animeAppearances || character.voiceActingRoles?.map((role) => ({ ...role.anime, role: role.character?.name }))).slice(0, 6).map((appearance) => <a className="character-appearance" key={appearance.id} href={`/detail.html?id=${encodeURIComponent(appearance.id || "")}`}>
+                {appearance.poster && <img src={appearance.poster} alt="" loading="lazy" />}<span><b>{appearance.title || "Anime"}</b><small>{appearance.role || appearance.type || "Appearance"}</small></span>
+              </a>)}
+            </div>}
+          </> : <div className="profile-empty"><span className="profile-empty-icon">✦</span><strong>Select a character</strong><p>Explore their story, voice actors and anime appearances.</p></div>}
+        </aside>
+      </div>
     </section>}
   </>;
 }
@@ -1745,41 +1858,46 @@ function Detail() {
             </div>
           </div>
         </section>
-        <section className="detail-facts">
-          <div className="detail-fact-group">
-            <h2>Anime information</h2>
+        <div className="detail-content-container">
+        <section className="detail-facts detail-dashboard">
+          <div className="detail-fact-group fact-primary">
+            <div className="fact-heading">
+              <span className="section-kicker">At a glance</span>
+              <h2>Anime information</h2>
+            </div>
             <div className="detail-fact-grid">
-              <div>
+              <div className="fact-item">
                 <strong>Japanese</strong>
                 <span>{anime.japanese || "Not available"}</span>
               </div>
-              <div>
+              <div className="fact-item">
                 <strong>Premiered</strong>
                 <span>{anime.premiered || "Not available"}</span>
               </div>
-              <div>
+              <div className="fact-item">
                 <strong>Episodes</strong>
                 <span>
                   SUB {anime.episodes?.sub || 0} · DUB{" "}
                   {anime.episodes?.dub || 0}
                 </span>
               </div>
-              <div>
+              <div className="fact-item">
                 <strong>Studios</strong>
                 <span>{anime.studios?.join(", ") || "Not available"}</span>
               </div>
-            </div>
-          </div>
-          <div className="detail-fact-group">
-            <h2>Genres</h2>
-            <div className="detail-tags">
-              {(anime.genres || ["Not available"]).map((genre) => (
-                <span key={genre}>{genre}</span>
-              ))}
+              <div className="fact-item fact-genres">
+                <strong>Genres</strong>
+                <div className="detail-tags">
+                  {(anime.genres || ["Not available"]).map((genre) => (
+                    <span key={genre}>{genre}</span>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </section>
         <AnimeExtras animeId={id} />
+        </div>
       </main>
     </>
   );
