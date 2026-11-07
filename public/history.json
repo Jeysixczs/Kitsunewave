@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-07T12:40:04.421Z",
+ "updated": "2026-11-07T21:36:05.078Z",
  "data": {
   "2026-10-12": [
    {
@@ -3159,6 +3159,110 @@
     "episode": 21,
     "poster": "https://s4.zanix.tr/poster/756099.jpg",
     "type": "ONA"
+   },
+   {
+    "id": "romeria-senki-maou-wo-taoshita-nochi-mo-jinrui-yabasou-dakara-guntai-soshiki-shita-18813",
+    "title": "Romelia War Chronicle",
+    "time": "01:00 PM",
+    "episode": 6,
+    "poster": "https://s4.zanix.tr/poster/18813.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "tenshou-shita-dai-seijo-wa-seijo-de-aru-koto-wo-hita-kakusu-19381",
+    "title": "A Tale of the Secret Saint",
+    "time": "02:00 PM",
+    "episode": 7,
+    "poster": "https://s4.zanix.tr/poster/19381.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "yasei-no-last-boss-ga-arawareta-2nd-season-20075",
+    "title": "A Wild Last Boss Appeared! Season 2",
+    "time": "02:30 PM",
+    "episode": 7,
+    "poster": "https://s4.zanix.tr/poster/20075.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "black-clover-season-2-19706",
+    "title": "Black Clover Season 2",
+    "time": "03:00 PM",
+    "episode": 6,
+    "poster": "https://s4.zanix.tr/poster/19706.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "cardfight-vanguard-divinez-parallactic-fate-757599",
+    "title": "CARDFIGHT!! VANGUARD Divinez: Parallactic Fate",
+    "time": "03:30 PM",
+    "episode": 1,
+    "poster": "https://s4.zanix.tr/poster/757599.jpg?v=1792977811",
+    "type": "TV"
+   },
+   {
+    "id": "vertex-force-20442",
+    "title": "Renmei Kuugun Koukuu Mahou Ongakutai Luminous Witches",
+    "time": "03:30 PM",
+    "episode": 6,
+    "poster": "https://s4.zanix.tr/poster/20442.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "kyoufu-collector-20046",
+    "title": "Horror Collector",
+    "time": "03:45 PM",
+    "episode": 5,
+    "poster": "https://s4.zanix.tr/poster/8500cd4427ccbc38d536e34f1014924f.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "magical-explorer-eroge-no-yuujin-chara-ni-tensei-shitakedo-game-chishiki-tsukatte-jiyuu-ni-ikiru-17575",
+    "title": "Magical Explorer",
+    "time": "04:00 PM",
+    "episode": 7,
+    "poster": "https://s4.zanix.tr/poster/17575.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "yani-neko-mini-758332",
+    "title": "Yani Neko Mini",
+    "time": "04:00 PM",
+    "episode": 22,
+    "poster": "https://s4.zanix.tr/poster/758332.jpg?v=1791656028",
+    "type": "ONA"
+   },
+   {
+    "id": "seitokai-ni-mo-ana-wa-aru-19574",
+    "title": "Even the Student Council Has Its Holes!",
+    "time": "04:30 PM",
+    "episode": 6,
+    "poster": "https://s4.zanix.tr/poster/19574.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "ranma1-2-2024-season-3-20452",
+    "title": "Ranma ½ (2024) Season 3",
+    "time": "04:56 PM",
+    "episode": 6,
+    "poster": "https://s4.zanix.tr/poster/20452.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "uchi-no-ko-no-tame-naraba-ore-wa-moshikashitara-maou-mo-taoseru-kamo-shirenai-33441",
+    "title": "Uchi no Ko no Tame naraba, Ore wa Moshikashitara Maou mo Taoseru kamo Shirenai.",
+    "time": "05:30 PM",
+    "episode": 6,
+    "poster": "https://s4.zanix.tr/poster/33441.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "koupen-chan-758398",
+    "title": "Koupen-chan",
+    "time": "12:00 AM",
+    "episode": 83,
+    "poster": "https://s4.zanix.tr/poster/758398.jpg",
+    "type": "TV_SHORT"
    }
   ]
  }
