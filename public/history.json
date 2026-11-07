@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-06T22:51:38.651Z",
+ "updated": "2026-11-07T05:12:47.326Z",
  "data": {
   "2026-10-12": [
    {
@@ -2988,6 +2988,120 @@
     "time": "01:26 PM",
     "episode": 6,
     "poster": "https://s4.zanix.tr/poster/769200.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "toaru-anbu-no-item-19305",
+    "title": "A Certain Dark Item",
+    "time": "02:30 PM",
+    "episode": 5,
+    "poster": "https://s4.zanix.tr/poster/19305.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "kusuriya-no-hitorigoto-3rd-season-19700",
+    "title": "The Apothecary Diaries Season 3",
+    "time": "03:00 PM",
+    "episode": 6,
+    "poster": "https://s4.zanix.tr/poster/19700.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "hotaru-no-yomeiri-20207",
+    "title": "Nijiiro Hotaru: Eien no Natsuyasumi",
+    "time": "03:30 PM",
+    "episode": 5,
+    "poster": "https://s4.zanix.tr/poster/20207.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "tougen-anki-nikko-kegon-falls-arc-33554",
+    "title": "Tougen Anki: Nikko Kegon Falls Arc",
+    "time": "03:30 PM",
+    "episode": 6,
+    "poster": "https://s4.zanix.tr/poster/33554.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "uchi-no-otouto-domo-ga-sumimasen-20047",
+    "title": "Uchi no Maid ga Uzasugiru!: Uchi no Maid wa Yappari Mou Honto Uzainda naa...",
+    "time": "04:00 PM",
+    "episode": 18,
+    "poster": "https://s4.zanix.tr/poster/20047.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "tokyo-revengers-santen-sensou-hen-18338",
+    "title": "Tokyo Revengers: War of the Three Titan Arc",
+    "time": "05:53 PM",
+    "episode": 6,
+    "poster": "https://s4.zanix.tr/poster/18338.jpg",
+    "type": "TV"
+   }
+  ],
+  "2026-11-07": [
+   {
+    "id": "rilakkuma-758475",
+    "title": "RILAKKUMA",
+    "time": "01:26 AM",
+    "episode": 31,
+    "poster": "https://s4.zanix.tr/poster/33c14ab38a8923e563e17b79e41693ba.jpg",
+    "type": "TV_SHORT"
+   },
+   {
+    "id": "nezumi-kun-no-chokki-tv-2nd-season-759930",
+    "title": "Nezumi-kun no Chokki (TV) 2nd Season",
+    "time": "01:30 AM",
+    "episode": 6,
+    "poster": "https://s4.zanix.tr/poster/759930.jpg?v=1791632131",
+    "type": "TV_SHORT"
+   },
+   {
+    "id": "keroro-gunsou-767640",
+    "title": "KERORO☆",
+    "time": "01:30 AM",
+    "episode": 6,
+    "poster": "https://s4.zanix.tr/poster/acd68d4e896712014a986280ede87989.jpg?v=1791645343",
+    "type": "TV"
+   },
+   {
+    "id": "a-good-day-to-ascend-32868",
+    "title": "A Good Day to Ascend",
+    "time": "02:00 AM",
+    "episode": 19,
+    "poster": "https://s4.zanix.tr/poster/32868.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "soul-land-2-the-peerless-tang-clan-14582",
+    "title": "Soul Land 2: The Peerless Tang Clan",
+    "time": "03:00 AM",
+    "episode": 178,
+    "poster": "https://s4.zanix.tr/poster/14582.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "dawang-raoming-3-776942",
+    "title": "Da Wang Rao Ming 3",
+    "time": "03:00 AM",
+    "episode": 8,
+    "poster": "https://s4.zanix.tr/poster/776942.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "koupen-chan-758398",
+    "title": "Koupen-chan",
+    "time": "12:00 AM",
+    "episode": 84,
+    "poster": "https://s4.zanix.tr/poster/758398.jpg",
+    "type": "TV_SHORT"
+   },
+   {
+    "id": "star-detective-precure-20026",
+    "title": "Star Detective Precure!",
+    "time": "12:30 AM",
+    "episode": 40,
+    "poster": "https://s4.zanix.tr/poster/20026.jpg",
     "type": "TV"
    }
   ]
