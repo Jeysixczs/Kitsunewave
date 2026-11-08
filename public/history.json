@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-08T12:57:25.577Z",
+ "updated": "2026-11-08T21:49:43.778Z",
  "data": {
   "2026-10-12": [
    {
@@ -3377,6 +3377,140 @@
     "episode": 2857,
     "poster": "https://s4.zanix.tr/poster/2034.jpg?v=1791628204",
     "type": "TV"
+   },
+   {
+    "id": "umayuru-full-gate-758303",
+    "title": "Umayuru: Full Gate!",
+    "time": "01:00 PM",
+    "episode": 7,
+    "poster": "https://s4.zanix.tr/poster/758303.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "reborn-as-a-space-mercenary-i-woke-up-piloting-the-strongest-starship-19289",
+    "title": "Yahari Ore no Seishun Love Comedy wa Machigatteiru. OVA",
+    "time": "01:30 PM",
+    "episode": 6,
+    "poster": "https://s4.zanix.tr/poster/19289.jpg?v=1791629192",
+    "type": "TV"
+   },
+   {
+    "id": "ojisan-wa-kawaii-mono-ga-osuki-19991",
+    "title": "Ore no Imouto ga Konnani Kawaii Wake ga Nai. Specials",
+    "time": "02:00 PM",
+    "episode": 6,
+    "poster": "https://s4.zanix.tr/poster/19991.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "mahou-no-shimai-luluttolilly-part-2-20427",
+    "title": "Magical Sisters Lulutto Lilly Part 2",
+    "time": "02:30 PM",
+    "episode": 6,
+    "poster": "https://s4.zanix.tr/poster/20427.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "saikyou-tank-no-meikyuu-kouryaku-tairyoku-9999-no-rare-skill-mochi-tank-yuusha-party-wo-tsuihou-sareru-33830",
+    "title": "Saikyou Tank no Meikyuu Kouryaku: Tairyoku 9999 no Rare Skill-mochi Tank, Yuusha Party wo Tsuihou sareru",
+    "time": "03:00 PM",
+    "episode": 6,
+    "poster": "https://s4.zanix.tr/poster/33830.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "dragon-ball-super-beerus-20298",
+    "title": "Dragon Ball Super: Beerus",
+    "time": "03:16 PM",
+    "episode": 5,
+    "poster": "https://s4.zanix.tr/poster/20298.jpg?v=1791629530",
+    "type": "TV"
+   },
+   {
+    "id": "tensei-kizoku-kantei-skill-de-nariagaru-3rd-season-19176",
+    "title": "As a Reincarnated Aristocrat, I'll Use My Appraisal Skill to Rise in the World Season 3",
+    "time": "03:30 PM",
+    "episode": 7,
+    "poster": "https://s4.zanix.tr/poster/19176.jpg?v=1791628406",
+    "type": "TV"
+   },
+   {
+    "id": "shinja-zero-no-megami-sama-to-hajimeru-isekai-kouryaku-20203",
+    "title": "Hitoribocchi no Isekai Kouryaku",
+    "time": "03:30 PM",
+    "episode": 5,
+    "poster": "https://s4.zanix.tr/poster/20203.jpg?v=1792950175",
+    "type": "TV"
+   },
+   {
+    "id": "yowaki-max-reijou-nano-ni-ratsuwan-konyakusha-sama-no-kake-ni-notte-shimatta-19958",
+    "title": "Otome Game no Hametsu Flag shika Nai Akuyaku Reijou ni Tensei shiteshimatta... X",
+    "time": "03:30 PM",
+    "episode": 6,
+    "poster": "https://s4.zanix.tr/poster/19958.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "temppal-item-no-chikara-755734",
+    "title": "Kizoku Tensei: Megumareta Umare kara Saikyou no Chikara wo Eru",
+    "time": "03:30 PM",
+    "episode": 7,
+    "poster": "https://s4.zanix.tr/poster/755734.jpg?v=1791629188",
+    "type": "ONA"
+   },
+   {
+    "id": "hotel-inhumans-2nd-season-19903",
+    "title": "Hotel Inhumans Season 2",
+    "time": "03:45 PM",
+    "episode": 6,
+    "poster": "https://s4.zanix.tr/poster/19903.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "yahari-ore-no-seishun-love-comedy-wa-machigatteiru-ova-33831",
+    "title": "Yahari Ore no Seishun Love Comedy wa Machigatteiru. OVA",
+    "time": "04:00 PM",
+    "episode": 6,
+    "poster": "https://s4.zanix.tr/poster/33831.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "mouse-cursor-de-genjitsu-wo-sousa-dekiru-you-ni-natta-node-onnanoko-wo-ippai-click-shimasu-20295",
+    "title": "Shin no Nakama ja Nai to Yuusha no Party wo Oidasareta node, Henkyou de Slow Life suru Koto ni Shima",
+    "time": "05:00 PM",
+    "episode": 5,
+    "poster": "https://s4.zanix.tr/poster/20295.jpg?v=1792381179",
+    "type": "TV_SHORT"
+   },
+   {
+    "id": "kanojo-no-tomodachi-756160",
+    "title": "Yahari Ore no Seishun Love Comedy wa Machigatteiru. OVA",
+    "time": "05:05 PM",
+    "episode": 6,
+    "poster": "https://s4.zanix.tr/poster/756160.jpg",
+    "type": "TV_SHORT"
+   },
+   {
+    "id": "my-girlfriend-s-friend-mini-anime-778978",
+    "title": "My Girlfriend's Friend Mini Anime",
+    "time": "05:17 PM",
+    "episode": 6,
+    "poster": "https://s4.zanix.tr/poster/778978.jpg",
+    "type": "TV_SHORT"
+   },
+   {
+    "id": "dark-summoner-to-dekiteiru-20386",
+    "title": "Dark Summoner to Dekiteiru",
+    "time": "05:20 PM",
+    "episode": 6,
+    "poster": "https://s4.zanix.tr/poster/20386.jpg?v=1791658313",
+    "type": "TV_SHORT"
+   },
+   {
+    "id": "anime-218217",
+    "title": "I’m Dating a Dark Summoner Omake Shorts",
+    "time": "07:00 PM",
+    "episode": 6
    }
   ]
  }
