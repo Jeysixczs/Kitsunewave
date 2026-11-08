@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-08T05:07:20.892Z",
+ "updated": "2026-11-08T12:57:25.577Z",
  "data": {
   "2026-10-12": [
    {
@@ -3263,6 +3263,120 @@
     "episode": 83,
     "poster": "https://s4.zanix.tr/poster/758398.jpg",
     "type": "TV_SHORT"
+   },
+   {
+    "id": "little-shark-s-day-out-season-2-758418",
+    "title": "Little Shark's Day Out Season 2",
+    "time": "11:00 PM",
+    "episode": 31,
+    "poster": "https://s4.zanix.tr/poster/758418.jpg",
+    "type": "TV_SHORT"
+   },
+   {
+    "id": "yuruyuru-zukan-756211",
+    "title": "Shizukanaru Don: Yakuza Side Story",
+    "time": "11:00 PM",
+    "episode": 6,
+    "poster": "https://s4.zanix.tr/poster/756211.jpg",
+    "type": "TV_SHORT"
+   },
+   {
+    "id": "raccoon-dog-fox-780340",
+    "title": "Raccoon Dog & Fox",
+    "time": "11:00 PM",
+    "episode": 6,
+    "poster": "https://s4.zanix.tr/poster/780340.jpg",
+    "type": "TV_SHORT"
+   }
+  ],
+  "2026-11-08": [
+   {
+    "id": "punirunes-puni-4-768682",
+    "title": "Punirunes Puni 4",
+    "time": "01:16 AM",
+    "episode": 6,
+    "poster": "https://s4.zanix.tr/poster/768682.jpg",
+    "type": "TV_SHORT"
+   },
+   {
+    "id": "onegai-aipri-20282",
+    "title": "Onegai AiPri",
+    "time": "01:30 AM",
+    "episode": 32,
+    "poster": "https://s4.zanix.tr/poster/20282.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "pop-pap-polters-778977",
+    "title": "Pop Pap Polters",
+    "time": "02:00 AM",
+    "episode": 6,
+    "poster": "https://s4.zanix.tr/poster/778977.jpg",
+    "type": "TV_SHORT"
+   },
+   {
+    "id": "wushen-zhuzai-da-wei-pian-16593",
+    "title": "Wushen Zhuzai: Da Wei Pian",
+    "time": "03:00 AM",
+    "episode": 430,
+    "poster": "https://s4.zanix.tr/poster/16593.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "dou-po-cangqiong-nian-fan-4-19768",
+    "title": "Dou Po Cangqiong: Nian Fan 4",
+    "time": "03:00 AM",
+    "episode": 60,
+    "poster": "https://s4.zanix.tr/poster/19768.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "blue-box-season-2-19516",
+    "title": "Blue Box Season 2",
+    "time": "08:30 AM",
+    "episode": 5,
+    "poster": "https://s4.zanix.tr/poster/19516.jpg?v=1791628397",
+    "type": "TV"
+   },
+   {
+    "id": "aoashi-2nd-season-19578",
+    "title": "Aoashi Season 2",
+    "time": "09:00 AM",
+    "episode": 6,
+    "poster": "https://s4.zanix.tr/poster/19578.jpg?v=1791628397",
+    "type": "TV"
+   },
+   {
+    "id": "mission-yozakura-family-season-2-part-2-756624",
+    "title": "Mission: Yozakura Family Season 2 Part 2",
+    "time": "09:00 AM",
+    "episode": 5,
+    "poster": "https://s4.zanix.tr/poster/756624.jpg?v=1792313172",
+    "type": "TV"
+   },
+   {
+    "id": "diamond-no-ace-act-ii-second-season-part-2-756625",
+    "title": "Diamond no Ace: Act II Second Season",
+    "time": "09:30 AM",
+    "episode": 5,
+    "poster": "https://s4.zanix.tr/poster/756625.jpg?v=1792313172",
+    "type": "TV"
+   },
+   {
+    "id": "holo-no-graffiti-758388",
+    "title": "Holo no Graffiti",
+    "time": "10:00 AM",
+    "episode": 391,
+    "poster": "https://s4.zanix.tr/poster/758388.jpg?v=1791628740",
+    "type": "ONA"
+   },
+   {
+    "id": "sazae-san-2034",
+    "title": "Mrs. Sazae",
+    "time": "10:30 AM",
+    "episode": 2857,
+    "poster": "https://s4.zanix.tr/poster/2034.jpg?v=1791628204",
+    "type": "TV"
    }
   ]
  }
