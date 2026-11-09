@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-09T05:19:15.386Z",
+ "updated": "2026-11-09T15:35:08.014Z",
  "data": {
   "2026-10-12": [
    {
@@ -3537,6 +3537,38 @@
     "episode": 6,
     "poster": "https://s4.zanix.tr/poster/782754.jpg",
     "type": "ONA"
+   },
+   {
+    "id": "hotaru-no-yomeiri-choitashi-784440",
+    "title": "Hotaru no Yomeiri: Choitashi",
+    "time": "10:00 AM",
+    "episode": 5,
+    "poster": "https://s4.zanix.tr/poster/784440.jpg?v=1793071112",
+    "type": "ONA"
+   },
+   {
+    "id": "doumo-suki-na-hito-ni-horegusuri-wo-irai-sareta-majo-desu-20346",
+    "title": "I'm a Witch Who's Crush Requested a Love Potion",
+    "time": "01:30 PM",
+    "episode": 6,
+    "poster": "https://s4.zanix.tr/poster/20346.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "tensei-goblin-dakedo-shitsumon-aru-20431",
+    "title": "Kun Tun Tianxia Zhi Zhang Men Guilai",
+    "time": "02:00 PM",
+    "episode": 7,
+    "poster": "https://s4.zanix.tr/poster/20431.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "psyren-33518",
+    "title": "PSYREN",
+    "time": "03:00 PM",
+    "episode": 5,
+    "poster": "https://s4.zanix.tr/poster/33518.jpg",
+    "type": "TV"
    }
   ]
  }
