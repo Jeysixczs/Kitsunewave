@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-08T21:49:43.778Z",
+ "updated": "2026-11-09T05:19:15.386Z",
  "data": {
   "2026-10-12": [
    {
@@ -3511,6 +3511,32 @@
     "title": "I’m Dating a Dark Summoner Omake Shorts",
     "time": "07:00 PM",
     "episode": 6
+   }
+  ],
+  "2026-11-09": [
+   {
+    "id": "renegade-immortal-14557",
+    "title": "Renegade Immortal",
+    "time": "03:00 AM",
+    "episode": 166,
+    "poster": "https://s4.zanix.tr/poster/14557.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "yuusanchi-from-yuuhachi-757603",
+    "title": "YU-SANCHi! from YU-HACHi",
+    "time": "03:00 AM",
+    "episode": 11,
+    "poster": "https://s4.zanix.tr/poster/757603.jpg",
+    "type": "TV_SHORT"
+   },
+   {
+    "id": "maomao-no-hitorigoto-3rd-season-782754",
+    "title": "Maomao no Hitorigoto 3rd Season",
+    "time": "04:00 AM",
+    "episode": 6,
+    "poster": "https://s4.zanix.tr/poster/782754.jpg",
+    "type": "ONA"
    }
   ]
  }
