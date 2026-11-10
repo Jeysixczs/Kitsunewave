@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-09T15:35:08.014Z",
+ "updated": "2026-11-10T01:18:15.372Z",
  "data": {
   "2026-10-12": [
    {
@@ -3569,6 +3569,24 @@
     "episode": 5,
     "poster": "https://s4.zanix.tr/poster/33518.jpg",
     "type": "TV"
+   },
+   {
+    "id": "mahou-shoujo-ikusei-keikaku-restart-16899",
+    "title": "MAGICAL GIRL RAISING PROJECT restart",
+    "time": "06:00 PM",
+    "episode": 6,
+    "poster": "https://s4.zanix.tr/poster/16899.jpg",
+    "type": "TV"
+   }
+  ],
+  "2026-11-10": [
+   {
+    "id": "mofusand-758230",
+    "title": "mofusand animation",
+    "time": "12:00 AM",
+    "episode": 45,
+    "poster": "https://s4.zanix.tr/poster/758230.jpg",
+    "type": "ONA"
    }
   ]
  }
