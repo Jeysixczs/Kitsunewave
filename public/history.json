@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-10T01:18:15.372Z",
+ "updated": "2026-11-10T14:32:15.569Z",
  "data": {
   "2026-10-12": [
    {
@@ -3587,6 +3587,30 @@
     "episode": 45,
     "poster": "https://s4.zanix.tr/poster/758230.jpg",
     "type": "ONA"
+   },
+   {
+    "id": "jueshi-zhan-hun-2-771057",
+    "title": "Jueshi Zhan Hun 2",
+    "time": "03:00 AM",
+    "episode": 23,
+    "poster": "https://s4.zanix.tr/poster/771057.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "kyouran-reijou-nia-liston-20335",
+    "title": "Otome Game no Hametsu Flag shika Nai Akuyaku Reijou ni Tensei shiteshimatta... X",
+    "time": "01:26 PM",
+    "episode": 6,
+    "poster": "https://s4.zanix.tr/poster/20335.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "shiotaiou-no-satou-san-ga-ore-ni-dake-amai-20439",
+    "title": "The Cold Sato-san is Only Sweet to Me",
+    "time": "02:00 PM",
+    "episode": 6,
+    "poster": "https://s4.zanix.tr/poster/20439.jpg",
+    "type": "TV"
    }
   ]
  }
