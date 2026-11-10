@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-10T14:32:15.569Z",
+ "updated": "2026-11-10T22:57:57.729Z",
  "data": {
   "2026-10-12": [
    {
@@ -3610,6 +3610,62 @@
     "time": "02:00 PM",
     "episode": 6,
     "poster": "https://s4.zanix.tr/poster/20439.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "choujun-choujou-senpai-19948",
+    "title": "Super Psychic Policeman Chojo",
+    "time": "03:00 PM",
+    "episode": 6,
+    "poster": "https://s4.zanix.tr/poster/19948.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "battle-spirits-re-zekkai-no-ku-19424",
+    "title": "Naruto: Takigakure no Shitou - Ore ga Eiyuu Dattebayo!",
+    "time": "03:00 PM",
+    "episode": 6,
+    "poster": "https://s4.zanix.tr/poster/af2d4b6644dc7ab41135c9f49374f240.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "chitose-kun-wa-ramune-bin-no-naka-part-2-19838",
+    "title": "Chitose Is in the Ramune Bottle Part 2",
+    "time": "03:00 PM",
+    "episode": 5,
+    "poster": "https://s4.zanix.tr/poster/752bf884d2e0a73fc1724e791556e296.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "gensou-suikoden-19371",
+    "title": "Suikoden: The Anime",
+    "time": "03:30 PM",
+    "episode": 6,
+    "poster": "https://s4.zanix.tr/poster/19371.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "tsuihou-sareta-cheat-fuyo-majutsushi-wa-kimama-na-second-life-wo-ouka-suru-ore-wa-buki-dake-ja-naku-arayuru-mono-ni-kyouka-point-wo-fuyo-dekiru-shi-ore-no-ishi-de-itsudemo-kouka-wo-kaijo-dekiru-kedo-nokotta-hitotachi-daijoubu-20358",
+    "title": "Shin no Nakama ja Nai to Yuusha no Party wo Oidasareta node, Henkyou de Slow Life suru Koto ni Shima",
+    "time": "04:00 PM",
+    "episode": 6,
+    "poster": "https://s4.zanix.tr/poster/20358.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "sora-wa-akai-kawa-no-hotori-20381",
+    "title": "Ore no Imouto ga Konnani Kawaii Wake ga Nai. Specials",
+    "time": "05:35 PM",
+    "episode": 19,
+    "poster": "https://s4.zanix.tr/poster/20381.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "dark-machine-the-animation-18717",
+    "title": "DARK MACHINE -The Animation-",
+    "time": "05:45 PM",
+    "episode": 5,
+    "poster": "https://s4.zanix.tr/poster/18717.jpg",
     "type": "TV"
    }
   ]
