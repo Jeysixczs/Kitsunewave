@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-10T22:57:57.729Z",
+ "updated": "2026-11-11T05:17:03.079Z",
  "data": {
   "2026-10-12": [
    {
@@ -3667,6 +3667,32 @@
     "episode": 5,
     "poster": "https://s4.zanix.tr/poster/18717.jpg",
     "type": "TV"
+   },
+   {
+    "id": "chibi-godzilla-raids-again-season-4-780341",
+    "title": "Chibi Godzilla Raids Again Season 4",
+    "time": "11:06 PM",
+    "episode": 17,
+    "poster": "https://s4.zanix.tr/poster/780341.jpg",
+    "type": "TV_SHORT"
+   }
+  ],
+  "2026-11-11": [
+   {
+    "id": "a-will-eternal-4th-season-33122",
+    "title": "A Will Eternal 4th Season",
+    "time": "03:00 AM",
+    "episode": 19,
+    "poster": "https://s4.zanix.tr/poster/33122.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "da-xia-shou-mu-ren-777741",
+    "title": "Da Xia Shou Mu Ren",
+    "time": "03:00 AM",
+    "episode": 9,
+    "poster": "https://s4.zanix.tr/poster/777741.jpg",
+    "type": "ONA"
    }
   ]
  }
