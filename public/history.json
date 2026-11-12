@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12T00:13:53.400Z",
+ "updated": "2026-11-12T14:49:28.316Z",
  "data": {
   "2026-10-13": [
    {
@@ -3722,6 +3722,32 @@
     "time": "04:45 PM",
     "episode": 6,
     "poster": "https://s4.zanix.tr/poster/17860.jpg",
+    "type": "TV"
+   }
+  ],
+  "2026-11-12": [
+   {
+    "id": "petitcure-precure-fairies-season-4-778051",
+    "title": "PetitCure: Precure Fairies Season 4",
+    "time": "10:30 AM",
+    "episode": 7,
+    "poster": "https://s4.zanix.tr/poster/778051.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "sylvanian-families-freya-no-colorful-everyday-784439",
+    "title": "Sylvanian Families: Freya no Colorful Everyday",
+    "time": "11:19 AM",
+    "episode": 7,
+    "poster": "https://s4.zanix.tr/poster/784439.jpg?v=1793071116",
+    "type": "TV_SHORT"
+   },
+   {
+    "id": "fx-senshi-kurumi-chan-20275",
+    "title": "Mobile Suit Gundam: Char's Counterattack",
+    "time": "01:30 PM",
+    "episode": 7,
+    "poster": "https://s4.zanix.tr/poster/20275.jpg",
     "type": "TV"
    }
   ]
