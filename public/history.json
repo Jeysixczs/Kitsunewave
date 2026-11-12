@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12T14:49:28.316Z",
+ "updated": "2026-11-12T23:19:31.097Z",
  "data": {
   "2026-10-13": [
    {
@@ -3748,6 +3748,70 @@
     "time": "01:30 PM",
     "episode": 7,
     "poster": "https://s4.zanix.tr/poster/20275.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "girls-und-panzer-motto-love-love-sakusen-desu-19427",
+    "title": "Girls und Panzer: Motto Love Love Sakusen desu!",
+    "time": "03:30 PM",
+    "episode": 6,
+    "poster": "https://s4.zanix.tr/poster/19427.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "koori-no-jouheki-2nd-season-756509",
+    "title": "Hitsugi no Chaika: Avenging Battle",
+    "time": "03:56 PM",
+    "episode": 7,
+    "poster": "https://s4.zanix.tr/poster/756509.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "tetsuryou-meet-with-tetsudou-musume-19928",
+    "title": "Monster Musume no Iru Nichijou",
+    "time": "04:00 PM",
+    "episode": 6,
+    "poster": "https://s4.zanix.tr/poster/19928.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "yuusanchi-from-yuuhachi-757603",
+    "title": "YU-SANCHi! from YU-HACHi",
+    "time": "04:00 PM",
+    "episode": 12,
+    "poster": "https://s4.zanix.tr/poster/757603.jpg",
+    "type": "TV_SHORT"
+   },
+   {
+    "id": "rakuen-tsuihou-kokoro-no-resonance-16723",
+    "title": "Rakuen Tsuihou: Kokoro no Resonance",
+    "time": "04:00 PM",
+    "episode": 1,
+    "poster": "https://s4.zanix.tr/poster/16723.jpg?v=1792314607",
+    "type": "MOVIE"
+   },
+   {
+    "id": "kizu-darake-seijo-yori-houfuku-wo-komete-season2-754983",
+    "title": "Kizu darake Seijo yori Houfuku wo Komete",
+    "time": "04:00 PM",
+    "episode": 7,
+    "poster": "https://s4.zanix.tr/poster/754983.jpg",
+    "type": "TV_SHORT"
+   },
+   {
+    "id": "tsuihou-sareta-tensei-juukishi-wa-game-chishiki-de-musou-suru-18753",
+    "title": "The Exiled Heavy Knight Knows How to Game the System",
+    "time": "04:26 PM",
+    "episode": 20,
+    "poster": "https://s4.zanix.tr/poster/18753.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "hyouken-no-majutsushi-ga-sekai-wo-suberu-ii-755673",
+    "title": "Hyouken no Majutsushi ga Sekai wo Suberu",
+    "time": "05:28 PM",
+    "episode": 6,
+    "poster": "https://s4.zanix.tr/poster/755673.jpg",
     "type": "TV"
    }
   ]
