@@ -1,56 +1,6 @@
 {
- "updated": "2026-11-11T13:46:59.226Z",
+ "updated": "2026-11-12T00:13:53.400Z",
  "data": {
-  "2026-10-12": [
-   {
-    "id": "renegade-immortal-14557",
-    "title": "Renegade Immortal",
-    "time": "02:00 AM",
-    "episode": 162,
-    "poster": "https://s4.zanix.tr/poster/14557.jpg",
-    "type": "ONA"
-   },
-   {
-    "id": "yuusanchi-from-yuuhachi-757603",
-    "title": "Yuusanchi! from Yuuhachi",
-    "time": "02:00 AM",
-    "episode": 3,
-    "poster": "https://s4.zanix.tr/poster/757603.jpg",
-    "type": "TV_SHORT"
-   },
-   {
-    "id": "doumo-suki-na-hito-ni-horegusuri-wo-irai-sareta-majo-desu-20346",
-    "title": "Hello, I am a Witch and my Crush Wants me to Make a Love Potion!",
-    "time": "12:30 PM",
-    "episode": 2,
-    "poster": "https://s4.zanix.tr/poster/20346.jpg",
-    "type": "TV"
-   },
-   {
-    "id": "tensei-goblin-dakedo-shitsumon-aru-20431",
-    "title": "So What's Wrong with Getting Reborn as a Goblin?",
-    "time": "01:00 PM",
-    "episode": 3,
-    "poster": "https://s4.zanix.tr/poster/20431.jpg",
-    "type": "ONA"
-   },
-   {
-    "id": "psyren-33518",
-    "title": "PSYREN",
-    "time": "02:00 PM",
-    "episode": 2,
-    "poster": "https://s4.zanix.tr/poster/33518.jpg",
-    "type": "TV"
-   },
-   {
-    "id": "mahou-shoujo-ikusei-keikaku-restart-16899",
-    "title": "MAGICAL GIRL RAISING PROJECT restart",
-    "time": "05:00 PM",
-    "episode": 2,
-    "poster": "https://s4.zanix.tr/poster/16899.jpg",
-    "type": "TV"
-   }
-  ],
   "2026-10-13": [
    {
     "id": "wushen-zhuzai-da-wei-pian-16593",
@@ -3700,6 +3650,78 @@
     "time": "01:30 PM",
     "episode": 6,
     "poster": "https://s4.zanix.tr/poster/16300.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "gelpiyo-2-775486",
+    "title": "GelPiyo 2",
+    "time": "01:54 PM",
+    "episode": 4,
+    "poster": "https://s4.zanix.tr/poster/775486.jpg",
+    "type": "TV_SHORT"
+   },
+   {
+    "id": "sekai-saikyou-no-majo-hajimemashita-442584",
+    "title": "The World's Strongest Witch",
+    "time": "02:00 PM",
+    "episode": 6,
+    "poster": "https://s4.zanix.tr/poster/442584.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "sasaki-to-pii-chan-season-2-18107",
+    "title": "Sasaki and Peeps Season 2",
+    "time": "02:00 PM",
+    "episode": 6,
+    "poster": "https://s4.zanix.tr/poster/18107.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "magic-knight-rayearth-2026-18525",
+    "title": "Magic Knight Rayearth II",
+    "time": "03:46 PM",
+    "episode": 6,
+    "poster": "https://s4.zanix.tr/poster/18525.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "shin-tennis-no-ouji-sama-u-17-world-cup-kesshou-member-ketteisen-19859",
+    "title": "Shin Tennis no Oujisama: U-17 World Cup Semifinal",
+    "time": "04:00 PM",
+    "episode": 7,
+    "poster": "https://s4.zanix.tr/poster/627c39def67ff4d3bea42e967031741f.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "dali-si-rizhi-3-779723",
+    "title": "Da Li Si Rizhi 3rd Season",
+    "time": "04:00 PM",
+    "episode": 5,
+    "poster": "https://s4.zanix.tr/poster/779723.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "tensei-shitara-ken-deshita-2nd-season-16828",
+    "title": "Reincarnated as a Sword Season 2",
+    "time": "04:30 PM",
+    "episode": 7,
+    "poster": "https://s4.zanix.tr/poster/16828.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "jyu-u-mujin-dandivine-756213",
+    "title": "Baka to Test to Shoukanjuu Mini Anime",
+    "time": "04:30 PM",
+    "episode": 6,
+    "poster": "https://s4.zanix.tr/poster/756213.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "a-returner-s-magic-should-be-special-season-2-17860",
+    "title": "A Returner's Magic Should Be Special Season 2",
+    "time": "04:45 PM",
+    "episode": 6,
+    "poster": "https://s4.zanix.tr/poster/17860.jpg",
     "type": "TV"
    }
   ]
