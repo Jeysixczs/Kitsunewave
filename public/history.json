@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-13T05:42:22.811Z",
+ "updated": "2026-11-13T14:10:55.861Z",
  "data": {
   "2026-10-14": [
    {
@@ -3733,6 +3733,62 @@
     "episode": 20,
     "poster": "https://s4.zanix.tr/poster/759116.jpg",
     "type": "TV_SHORT"
+   },
+   {
+    "id": "steel-ball-run-jojo-s-bizarre-adventure-2nd-stage-755420",
+    "title": "STEEL BALL RUN JoJo's Bizarre Adventure 2nd STAGE",
+    "time": "09:00 AM",
+    "episode": 8,
+    "poster": "https://s4.zanix.tr/poster/755420.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "pan-dorobou-19650",
+    "title": "Peter Pan no Bouken",
+    "time": "10:40 AM",
+    "episode": 7,
+    "poster": "https://s4.zanix.tr/poster/19650.jpg",
+    "type": "TV_SHORT"
+   },
+   {
+    "id": "pok-mon-horizons-the-series-16809",
+    "title": "Pokémon Horizons: The Series",
+    "time": "10:55 AM",
+    "episode": 157,
+    "poster": "https://s4.zanix.tr/poster/16809.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "watame-did-borderline-nothing-wrong-759680",
+    "title": "Watame Did Borderline Nothing Wrong",
+    "time": "11:00 AM",
+    "episode": 88,
+    "poster": "https://s4.zanix.tr/poster/759680.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "beyblade-x-17103",
+    "title": "BEYBLADE X",
+    "time": "11:00 AM",
+    "episode": 140,
+    "poster": "https://s4.zanix.tr/poster/17103.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "demons-crest-20041",
+    "title": "Yao Shen Ji 7th Season",
+    "time": "01:00 PM",
+    "episode": 3,
+    "poster": "https://s4.zanix.tr/poster/20041.jpg?v=1792195039",
+    "type": "TV"
+   },
+   {
+    "id": "aoki-denshou-welsh-shedar-769200",
+    "title": "Welsh & Shedar",
+    "time": "01:26 PM",
+    "episode": 7,
+    "poster": "https://s4.zanix.tr/poster/769200.jpg",
+    "type": "TV"
    }
   ]
  }
