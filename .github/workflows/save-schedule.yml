@@ -30,5 +30,12 @@ jobs:
             echo "No changes"
           else
             git commit -m "chore: save anime schedule history"
-            git push
+            push_output="$(git push 2>&1)" || {
+              echo "$push_output"
+              if echo "$push_output" | grep -q "commit_refs_rules"; then
+                echo "::warning::Push blocked by repository rules; skipping failure."
+              else
+                exit 1
+              fi
+            }
           fi
