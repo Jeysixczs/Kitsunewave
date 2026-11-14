@@ -6,9 +6,9 @@ export default async function handler(req, res) {
     return res.status(403).json({ success: false, message: 'Forbidden' });
   }
 
-  const base = (process.env.UPSTREAM_API || '').replace(/\/+$/, '');
+  const base = (process.env.BASE_URL || '').replace(/\/+$/, '');
   if (!base) {
-    return res.status(500).json({ success: false, message: 'UPSTREAM_API is not set' });
+    return res.status(500).json({ success: false, message: 'BASE_URL is not set' });
   }
 
   // Rebuild the path from the original URL and drop the "path" param
@@ -16,7 +16,7 @@ export default async function handler(req, res) {
   const url = new URL(req.url, 'http://localhost');
   url.searchParams.delete('path');
   const rest = url.pathname.replace(/^\/api/, '');
-  const target = base + rest + (url.search || '');
+  const target = `${base}/api/v2${rest}${url.search || ''}`;
 
   try {
     const upstream = await fetch(target, { headers: { Accept: 'application/json' } });

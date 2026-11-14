@@ -89,8 +89,13 @@ export default async function handler(req, res) {
     return res.status(400).json({ success: false, message: 'Invalid article id' });
   }
 
+  const sourceBase = (process.env.NEWS_SOURCE_URL || '').replace(/\/+$/, '');
+  if (!sourceBase) {
+    return res.status(500).json({ success: false, message: 'NEWS_SOURCE_URL is not set' });
+  }
+
   try {
-    const upstream = await fetch(`https://www.animenewsnetwork.com/.${id}`, {
+    const upstream = await fetch(`${sourceBase}/.${id}`, {
       redirect: 'follow',
       headers: {
         'User-Agent':

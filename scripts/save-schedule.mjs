@@ -3,16 +3,22 @@
 //
 //   node scripts/save-schedule.mjs
 //
-// Env: UPSTREAM_API  base URL of the anime API (default https://kitsuneapi.vercel.app/api/v2)
+// Env: BASE_URL  base URL of the anime API
 //      DAYS_BACK     how many days back to request (default 7)
 //      KEEP_DAYS     days of history to keep in the file (default 30); older days are dropped
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import path from "node:path";
 
-const BASE = (process.env.UPSTREAM_API || "https://kitsuneapi.vercel.app/api/v2").replace(/\/+$/, "");
+const BASE = (process.env.BASE_URL || "").replace(/\/+$/, "");
+const API_BASE = `${BASE}/api/v2`;
 const DAYS_BACK = Number(process.env.DAYS_BACK || 7);
 const KEEP_DAYS = Number(process.env.KEEP_DAYS || 30);
 const FILE = path.join("public", "history.json");
+
+if (!BASE) {
+  console.error("BASE_URL is not set.");
+  process.exit(1);
+}
 
 const pad = (n) => String(n).padStart(2, "0");
 const iso = (d) => `${d.getUTCFullYear()}-${pad(d.getUTCMonth() + 1)}-${pad(d.getUTCDate())}`;
@@ -53,7 +59,7 @@ async function loadHistory() {
 const start = new Date();
 start.setUTCDate(start.getUTCDate() - DAYS_BACK);
 
-const urls = [`${BASE}/schedules`, `${BASE}/schedules?date=${iso(start)}`];
+const urls = [`${API_BASE}/schedules`, `${API_BASE}/schedules?date=${iso(start)}`];
 const results = await Promise.allSettled(urls.map(get));
 results.forEach((r, i) => r.status === "rejected" && console.warn("Failed:", r.reason.message));
 if (results.every((r) => r.status === "rejected")) {
@@ -106,7 +112,7 @@ for (let i = 0; i < ids.length; i += 4) {
   await Promise.all(
     ids.slice(i, i + 4).map(async (id) => {
       try {
-        const data = await get(`${BASE}/anime/${encodeURIComponent(id)}`);
+        const data = await get(`${API_BASE}/anime/${encodeURIComponent(id)}`);
         if (data.poster) info.set(id, { poster: data.poster, type: data.type });
       } catch (err) {
         console.warn("No poster for", id, "-", err.message);

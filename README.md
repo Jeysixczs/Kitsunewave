@@ -200,8 +200,11 @@ These environment variables are used by the serverless functions in production. 
 
 | Variable | Required | Description |
 | --- | :---: | --- |
-| `UPSTREAM_API` | Yes | Base URL of the anime API that `/api/proxy` forwards to. Without it the proxy returns `500 UPSTREAM_API is not set`. |
+| `BASE_URL` | Yes | Host-only base URL of the anime API. The server proxy appends `/api/v2`; without it the proxy returns `500 BASE_URL is not set`. |
+| `NEWS_SOURCE_URL` | Yes | Base URL used by the server-side news article scraper. |
 | `ALLOWED_ORIGINS` | No | Comma-separated list of extra origins allowed to call the API from a browser (for example `https://my-client.vercel.app,https://other.example.com`). `localhost` and `127.0.0.1` are always allowed. |
+
+For local development and Vercel, set `BASE_URL` to your API host; `/api/v2` is added automatically. Do not use a `VITE_` prefix; this keeps the API base URL out of browser code.
 
 Local `.env*` files are git-ignored.
 
@@ -227,6 +230,7 @@ Accounts use [Supabase](https://supabase.com) (email + password, optional Google
    | `VITE_SUPABASE_URL` | Supabase project URL |
    | `VITE_SUPABASE_ANON_KEY` | Public `anon` key (safe in the browser; RLS protects the data) |
    | `VITE_AUTH_GOOGLE` | `true` to show "Continue with Google" (enable the provider in Supabase first) |
+   | `VITE_NEWS_SOURCE_URL` | Public article source host used for relative article links |
 
 4. In **Authentication → URL Configuration** add your site URL (and `http://localhost:5173` for development) to the redirect URLs.
 
@@ -237,13 +241,13 @@ Without these variables the app still works; the Sign in button is hidden and li
 The browser never talks to the upstream API directly.
 
 ```text
-Browser ──► /api/<endpoint> ──► vercel.json rewrite ──► /api/proxy?path=<endpoint> ──► UPSTREAM_API/<endpoint>
+Browser ──► /api/<endpoint> ──► vercel.json rewrite ──► /api/proxy?path=<endpoint> ──► BASE_URL/api/v2/<endpoint>
 ```
 
 1. The frontend calls `/api/...` and adds an `X-Kitsune-Client: web` header to every request.
 2. `vercel.json` rewrites `/api/:path*` to `/api/proxy?path=:path*`.
 3. `api/proxy.js` only answers requests that look like they come from the site itself: the `X-Kitsune-Client` header, `Sec-Fetch-Site: same-origin`, or a matching `Referer` host. Typing an API URL into the address bar returns `403`.
-4. Allowed requests are forwarded to `UPSTREAM_API`. Responses are always JSON and are cached privately in the browser for 5 minutes (`Cache-Control: private, max-age=300`), so a shared CDN cache can't bypass the check above.
+4. Allowed requests are forwarded to `BASE_URL/api/v2`. Responses are always JSON and are cached privately in the browser for 5 minutes (`Cache-Control: private, max-age=300`), so a shared CDN cache can't bypass the check above.
 5. `GET /api/news-article?id=<id>` is handled by `api/news-article.js`, which accepts only a numeric article id, uses a fixed source host and extracts the article paragraphs.
 
 ### Endpoints used by the frontend
@@ -284,7 +288,7 @@ Browser ──► /api/<endpoint> ──► vercel.json rewrite ──► /api/p
 The project is set up for [Vercel](https://vercel.com):
 
 1. Import the repository in Vercel (it should detect **Vite** automatically).
-2. Add the `UPSTREAM_API` environment variable (and optionally `ALLOWED_ORIGINS`).
+2. Add the `BASE_URL` environment variable (and optionally `ALLOWED_ORIGINS`).
 3. Deploy. `vercel.json` takes care of the `/api` rewrite, and the `api/` folder is deployed as serverless functions.
 
 

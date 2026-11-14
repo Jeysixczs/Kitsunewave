@@ -8,6 +8,7 @@ import { accountsEnabled, changePassword, clearHistory, openAuth, recordWatch, s
 const signOutAndGoHome = () => signOut().then(() => { location.href = "/"; });
 
 const API = "/api";
+const NEWS_SOURCE_URL = (import.meta.env.VITE_NEWS_SOURCE_URL || "").replace(/\/+$/, "");
 const REQUEST_CACHE_STORAGE = "kitsune:api-cache:v1";
 const requestCache = new Map();
 const requestInflight = new Map();
@@ -729,7 +730,7 @@ function NewsDetail() {
     return () => { cancelled = true; };
   }, [article]);
   const source = article?.url
-    ? /^https?:/.test(article.url) ? article.url : `https://www.animenewsnetwork.com${article.url}`
+    ? /^https?:/.test(article.url) ? article.url : `${NEWS_SOURCE_URL}${article.url}`
     : "";
   return (
     <>

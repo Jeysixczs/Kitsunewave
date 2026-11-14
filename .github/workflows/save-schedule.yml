@@ -19,8 +19,8 @@ jobs:
       - name: Fetch schedule and merge into public/history.json
         run: node scripts/save-schedule.mjs
         env:
-          # Optional: add a repo secret named UPSTREAM_API to use your own API base URL
-          UPSTREAM_API: ${{ secrets.UPSTREAM_API }}
+          # Add a repo secret named BASE_URL containing the API host only.
+          BASE_URL: ${{ secrets.BASE_URL }}
       - name: Commit if changed
         run: |
           git config user.name "github-actions[bot]"

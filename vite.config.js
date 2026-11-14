@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite';
+import { defineConfig, loadEnv } from 'vite';
 import react from '@vitejs/plugin-react';
 import articleHandler from './api/news-article.js';
 
@@ -23,32 +23,36 @@ const newsArticleDev = () => ({
   },
 });
 
-export default defineConfig({
-  plugins: [react(), newsArticleDev()],
-  server: {
-    // Dev only: mirror the Vercel rewrite so "/api" works locally
-    proxy: {
-      '/api': {
-        target: 'https://kitsuneapi.vercel.app',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, '/api/v2'),
+export default defineConfig(({ mode }) => {
+  const env = loadEnv(mode, process.cwd(), '');
+
+  return {
+    plugins: [react(), newsArticleDev()],
+    server: {
+      // Dev only: mirror the Vercel rewrite so "/api" works locally
+      proxy: {
+        '/api': {
+          target: env.BASE_URL,
+          changeOrigin: true,
+          rewrite: (path) => path.replace(/^\/api/, '/api/v2'),
+        },
       },
     },
-  },
-  build: {
-    outDir: 'dist',
-    emptyOutDir: true,
-    rollupOptions: {
-      input: {
-        main: 'index.html',
-        detail: 'detail.html',
-        watch: 'watch.html',
-        news: 'news.html',
-        newsDetail: 'news-detail.html',
-        movie: 'movie.html',
-        library: 'library.html',
-        profile: 'profile.html',
+    build: {
+      outDir: 'dist',
+      emptyOutDir: true,
+      rollupOptions: {
+        input: {
+          main: 'index.html',
+          detail: 'detail.html',
+          watch: 'watch.html',
+          news: 'news.html',
+          newsDetail: 'news-detail.html',
+          movie: 'movie.html',
+          library: 'library.html',
+          profile: 'profile.html',
+        },
       },
     },
-  },
+  };
 });

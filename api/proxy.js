@@ -46,16 +46,16 @@ export default async function handler(req, res) {
     return articleHandler(req, res);
   }
 
-  const base = (process.env.UPSTREAM_API || '').replace(/\/+$/, '');
+  const base = (process.env.BASE_URL || '').replace(/\/+$/, '');
   if (!base) {
-    return res.status(500).json({ success: false, message: 'UPSTREAM_API is not set' });
+    return res.status(500).json({ success: false, message: 'BASE_URL is not set' });
   }
 
   const url = new URL(req.url, 'http://localhost');
   const pathParam = url.searchParams.get('path') || '';
   url.searchParams.delete('path');
   const rest = '/' + pathParam.replace(/^\/+/, '');
-  const target = base + rest + (url.search || '');
+  const target = `${base}/api/v2${rest}${url.search || ''}`;
 
   try {
     const upstream = await fetch(target, { headers: { Accept: 'application/json' } });
