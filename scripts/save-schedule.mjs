@@ -3,22 +3,17 @@
 //
 //   node scripts/save-schedule.mjs
 //
-// Env: BASE_URL  base URL of the anime API
+// Env: BASE_URL  base URL of the anime API (default https://kitsuneapi.vercel.app)
 //      DAYS_BACK     how many days back to request (default 7)
 //      KEEP_DAYS     days of history to keep in the file (default 30); older days are dropped
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import path from "node:path";
 
-const BASE = (process.env.BASE_URL || "").replace(/\/+$/, "");
+const BASE = (process.env.BASE_URL || "https://kitsuneapi.vercel.app").replace(/\/+$/, "");
 const API_BASE = `${BASE}/api/v2`;
 const DAYS_BACK = Number(process.env.DAYS_BACK || 7);
 const KEEP_DAYS = Number(process.env.KEEP_DAYS || 30);
 const FILE = path.join("public", "history.json");
-
-if (!BASE) {
-  console.error("BASE_URL is not set.");
-  process.exit(1);
-}
 
 const pad = (n) => String(n).padStart(2, "0");
 const iso = (d) => `${d.getUTCFullYear()}-${pad(d.getUTCMonth() + 1)}-${pad(d.getUTCDate())}`;
