@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-14T11:52:58.026Z",
+ "updated": "2026-11-14T13:11:11.476Z",
  "data": {
   "2026-10-15": [
    {
@@ -3738,6 +3738,144 @@
     "time": "05:53 PM",
     "episode": 7,
     "poster": "https://s4.zanix.tr/poster/18338.jpg",
+    "type": "TV"
+   }
+  ],
+  "2026-11-14": [
+   {
+    "id": "rilakkuma-758475",
+    "title": "RILAKKUMA",
+    "time": "01:26 AM",
+    "episode": 32,
+    "poster": "https://s4.zanix.tr/poster/33c14ab38a8923e563e17b79e41693ba.jpg",
+    "type": "TV_SHORT"
+   },
+   {
+    "id": "nezumi-kun-no-chokki-tv-2nd-season-759930",
+    "title": "Nezumi-kun no Chokki (TV) 2nd Season",
+    "time": "01:30 AM",
+    "episode": 7,
+    "poster": "https://s4.zanix.tr/poster/759930.jpg?v=1791632131",
+    "type": "TV_SHORT"
+   },
+   {
+    "id": "keroro-gunsou-767640",
+    "title": "KERORO☆",
+    "time": "01:30 AM",
+    "episode": 7,
+    "poster": "https://s4.zanix.tr/poster/acd68d4e896712014a986280ede87989.jpg?v=1791645343",
+    "type": "TV"
+   },
+   {
+    "id": "a-good-day-to-ascend-32868",
+    "title": "A Good Day to Ascend",
+    "time": "02:00 AM",
+    "episode": 20,
+    "poster": "https://s4.zanix.tr/poster/32868.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "soul-land-2-the-peerless-tang-clan-14582",
+    "title": "Soul Land 2: The Peerless Tang Clan",
+    "time": "03:00 AM",
+    "episode": 179,
+    "poster": "https://s4.zanix.tr/poster/14582.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "dawang-raoming-3-776942",
+    "title": "Da Wang Rao Ming 3",
+    "time": "03:00 AM",
+    "episode": 9,
+    "poster": "https://s4.zanix.tr/poster/776942.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "fanren-xiu-xian-zhuan-di-wu-ji-771523",
+    "title": "Fanren Xiu Xian Zhuan Di Wu Ji",
+    "time": "04:00 AM",
+    "episode": 24,
+    "poster": "https://s4.zanix.tr/poster/771523.jpg?v=1791628365",
+    "type": "ONA"
+   },
+   {
+    "id": "sirotan-20448",
+    "title": "Sirotan",
+    "time": "08:29 AM",
+    "episode": 7,
+    "poster": "https://s4.zanix.tr/poster/20448.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "shin-chan-846",
+    "title": "Shin Chan",
+    "time": "08:30 AM",
+    "episode": 1361,
+    "poster": "https://s4.zanix.tr/poster/846.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "doraemon-2005-4693",
+    "title": "Doraemon (2005)",
+    "time": "09:00 AM",
+    "episode": 941,
+    "poster": "https://s4.zanix.tr/poster/4693.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "the-vermilion-mask-19704",
+    "title": "The Vermilion Mask",
+    "time": "09:30 AM",
+    "episode": 6,
+    "poster": "https://s4.zanix.tr/poster/19704.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "case-closed-204",
+    "title": "Case Closed",
+    "time": "10:00 AM",
+    "episode": 1220,
+    "poster": "https://s4.zanix.tr/poster/204.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "marronnier-oukoku-no-shichinin-no-kishi-755733",
+    "title": "Digimon Xros Wars: Aku no Death General to Nanatsu no Oukoku",
+    "time": "10:25 AM",
+    "episode": 7,
+    "poster": "https://s4.zanix.tr/poster/c7d84ae0568e37cc77543ca7f8c5451d.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "beyond-time-s-gaze-2-756099",
+    "title": "Beyond Time's Gaze 2",
+    "time": "11:00 AM",
+    "episode": 22,
+    "poster": "https://s4.zanix.tr/poster/756099.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "romeria-senki-maou-wo-taoshita-nochi-mo-jinrui-yabasou-dakara-guntai-soshiki-shita-18813",
+    "title": "Romelia War Chronicle",
+    "time": "01:00 PM",
+    "episode": 7,
+    "poster": "https://s4.zanix.tr/poster/18813.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "koupen-chan-758398",
+    "title": "Koupen-chan",
+    "time": "12:00 AM",
+    "episode": 84,
+    "poster": "https://s4.zanix.tr/poster/758398.jpg",
+    "type": "TV_SHORT"
+   },
+   {
+    "id": "star-detective-precure-20026",
+    "title": "Star Detective Precure!",
+    "time": "12:30 AM",
+    "episode": 41,
+    "poster": "https://s4.zanix.tr/poster/20026.jpg",
     "type": "TV"
    }
   ]
