@@ -1,104 +1,6 @@
 {
- "updated": "2026-11-14T13:11:11.476Z",
+ "updated": "2026-11-15T13:39:10.894Z",
  "data": {
-  "2026-10-15": [
-   {
-    "id": "petitcure-precure-fairies-season-4-778051",
-    "title": "PetitCure: Precure Fairies Season 4",
-    "time": "09:30 AM",
-    "episode": 3,
-    "poster": "https://s4.zanix.tr/poster/778051.jpg",
-    "type": "ONA"
-   },
-   {
-    "id": "playing-sister-20344",
-    "title": "Playing Sister",
-    "time": "10:00 AM",
-    "episode": 2,
-    "poster": "https://s4.zanix.tr/poster/20344.jpg",
-    "type": "ONA"
-   },
-   {
-    "id": "fx-senshi-kurumi-chan-20275",
-    "title": "FX Fighter Kurumi-chan",
-    "time": "12:30 PM",
-    "episode": 3,
-    "poster": "https://s4.zanix.tr/poster/20275.jpg",
-    "type": "TV"
-   },
-   {
-    "id": "girls-und-panzer-motto-love-love-sakusen-desu-19427",
-    "title": "Girls und Panzer: Motto Love Love Sakusen desu!",
-    "time": "02:30 PM",
-    "episode": 2,
-    "poster": "https://s4.zanix.tr/poster/19427.jpg",
-    "type": "TV"
-   },
-   {
-    "id": "koori-no-jouheki-2nd-season-756509",
-    "title": "The Ramparts of Ice Season 2",
-    "time": "02:56 PM",
-    "episode": 3,
-    "poster": "https://s4.zanix.tr/poster/756509.jpg",
-    "type": "TV"
-   },
-   {
-    "id": "rascal-does-not-dream-of-a-dear-friend-19871",
-    "title": "Rascal Does Not Dream of a Dear Friend",
-    "time": "03:00 PM",
-    "episode": 1,
-    "poster": "https://s4.zanix.tr/poster/19871.jpg",
-    "type": "MOVIE"
-   },
-   {
-    "id": "tetsuryou-meet-with-tetsudou-musume-19928",
-    "title": "TETSURYO! Meet With Tetsudou Musume",
-    "time": "03:00 PM",
-    "episode": 2,
-    "poster": "https://s4.zanix.tr/poster/19928.jpg",
-    "type": "TV"
-   },
-   {
-    "id": "yuusanchi-from-yuuhachi-757603",
-    "title": "Yuusanchi! from Yuuhachi",
-    "time": "03:00 PM",
-    "episode": 4,
-    "poster": "https://s4.zanix.tr/poster/757603.jpg",
-    "type": "TV_SHORT"
-   },
-   {
-    "id": "bang-dream-ave-mujica-prima-aurora-19784",
-    "title": "BanG Dream! Ave Mujica: prima aurora",
-    "time": "03:00 PM",
-    "episode": 1,
-    "poster": "https://s4.zanix.tr/poster/26c1f37dc3b1f6d232cd8ef4ae482ea8.jpg",
-    "type": "MOVIE"
-   },
-   {
-    "id": "kizu-darake-seijo-yori-houfuku-wo-komete-season2-754983",
-    "title": "With Vengeance, Sincerely, Your Broken Saintess Season 2",
-    "time": "03:00 PM",
-    "episode": 3,
-    "poster": "https://s4.zanix.tr/poster/754983.jpg",
-    "type": "TV_SHORT"
-   },
-   {
-    "id": "tsuihou-sareta-tensei-juukishi-wa-game-chishiki-de-musou-suru-18753",
-    "title": "The Exiled Heavy Knight Knows How to Game the System",
-    "time": "03:26 PM",
-    "episode": 16,
-    "poster": "https://s4.zanix.tr/poster/18753.jpg",
-    "type": "TV"
-   },
-   {
-    "id": "hyouken-no-majutsushi-ga-sekai-wo-suberu-ii-755673",
-    "title": "The Iceblade Sorcerer Shall Rule the World II",
-    "time": "04:28 PM",
-    "episode": 2,
-    "poster": "https://s4.zanix.tr/poster/755673.jpg",
-    "type": "TV"
-   }
-  ],
   "2026-10-16": [
    {
     "id": "mazenchu-777744",
@@ -3876,6 +3778,208 @@
     "time": "12:30 AM",
     "episode": 41,
     "poster": "https://s4.zanix.tr/poster/20026.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "black-clover-season-2-19706",
+    "title": "Black Clover Season 2",
+    "time": "03:00 PM",
+    "episode": 7,
+    "poster": "https://s4.zanix.tr/poster/19706.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "cardfight-vanguard-divinez-parallactic-fate-757599",
+    "title": "CARDFIGHT!! VANGUARD Divinez: Parallactic Fate",
+    "time": "03:30 PM",
+    "episode": 2,
+    "poster": "https://s4.zanix.tr/poster/757599.jpg?v=1792977811",
+    "type": "TV"
+   },
+   {
+    "id": "vertex-force-20442",
+    "title": "Renmei Kuugun Koukuu Mahou Ongakutai Luminous Witches",
+    "time": "03:30 PM",
+    "episode": 7,
+    "poster": "https://s4.zanix.tr/poster/20442.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "zombie-sagashitemasu-19854",
+    "title": "#I'm Looking for Zombie",
+    "time": "03:30 PM",
+    "episode": 6,
+    "poster": "https://s4.zanix.tr/poster/19854.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "kyoufu-collector-20046",
+    "title": "Horror Collector",
+    "time": "03:45 PM",
+    "episode": 6,
+    "poster": "https://s4.zanix.tr/poster/8500cd4427ccbc38d536e34f1014924f.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "magical-explorer-eroge-no-yuujin-chara-ni-tensei-shitakedo-game-chishiki-tsukatte-jiyuu-ni-ikiru-17575",
+    "title": "Magical Explorer",
+    "time": "04:00 PM",
+    "episode": 8,
+    "poster": "https://s4.zanix.tr/poster/17575.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "seitokai-ni-mo-ana-wa-aru-19574",
+    "title": "Even the Student Council Has Its Holes!",
+    "time": "04:30 PM",
+    "episode": 7,
+    "poster": "https://s4.zanix.tr/poster/19574.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "ranma1-2-2024-season-3-20452",
+    "title": "Ranma ½ (2024) Season 3",
+    "time": "04:56 PM",
+    "episode": 7,
+    "poster": "https://s4.zanix.tr/poster/20452.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "uchi-no-ko-no-tame-naraba-ore-wa-moshikashitara-maou-mo-taoseru-kamo-shirenai-33441",
+    "title": "Uchi no Ko no Tame naraba, Ore wa Moshikashitara Maou mo Taoseru kamo Shirenai.",
+    "time": "05:30 PM",
+    "episode": 7,
+    "poster": "https://s4.zanix.tr/poster/33441.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "little-shark-s-day-out-season-2-758418",
+    "title": "Little Shark's Day Out Season 2",
+    "time": "11:00 PM",
+    "episode": 32,
+    "poster": "https://s4.zanix.tr/poster/758418.jpg",
+    "type": "TV_SHORT"
+   },
+   {
+    "id": "yuruyuru-zukan-756211",
+    "title": "Shizukanaru Don: Yakuza Side Story",
+    "time": "11:00 PM",
+    "episode": 7,
+    "poster": "https://s4.zanix.tr/poster/756211.jpg",
+    "type": "TV_SHORT"
+   },
+   {
+    "id": "raccoon-dog-fox-780340",
+    "title": "Raccoon Dog & Fox",
+    "time": "11:00 PM",
+    "episode": 7,
+    "poster": "https://s4.zanix.tr/poster/780340.jpg",
+    "type": "TV_SHORT"
+   }
+  ],
+  "2026-11-15": [
+   {
+    "id": "punirunes-puni-4-768682",
+    "title": "Punirunes Puni 4",
+    "time": "01:16 AM",
+    "episode": 7,
+    "poster": "https://s4.zanix.tr/poster/768682.jpg",
+    "type": "TV_SHORT"
+   },
+   {
+    "id": "onegai-aipri-20282",
+    "title": "Onegai AiPri",
+    "time": "01:30 AM",
+    "episode": 33,
+    "poster": "https://s4.zanix.tr/poster/20282.jpg",
+    "type": "TV"
+   },
+   {
+    "id": "pop-pap-polters-778977",
+    "title": "Pop Pap Polters",
+    "time": "02:00 AM",
+    "episode": 7,
+    "poster": "https://s4.zanix.tr/poster/778977.jpg",
+    "type": "TV_SHORT"
+   },
+   {
+    "id": "wushen-zhuzai-da-wei-pian-16593",
+    "title": "Wushen Zhuzai: Da Wei Pian",
+    "time": "03:00 AM",
+    "episode": 431,
+    "poster": "https://s4.zanix.tr/poster/16593.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "dou-po-cangqiong-nian-fan-4-19768",
+    "title": "Dou Po Cangqiong: Nian Fan 4",
+    "time": "03:00 AM",
+    "episode": 62,
+    "poster": "https://s4.zanix.tr/poster/19768.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "blue-box-season-2-19516",
+    "title": "Blue Box Season 2",
+    "time": "08:30 AM",
+    "episode": 6,
+    "poster": "https://s4.zanix.tr/poster/19516.jpg?v=1791628397",
+    "type": "TV"
+   },
+   {
+    "id": "aoashi-2nd-season-19578",
+    "title": "Aoashi Season 2",
+    "time": "09:00 AM",
+    "episode": 7,
+    "poster": "https://s4.zanix.tr/poster/19578.jpg?v=1791628397",
+    "type": "TV"
+   },
+   {
+    "id": "mission-yozakura-family-season-2-part-2-756624",
+    "title": "Mission: Yozakura Family Season 2 Part 2",
+    "time": "09:00 AM",
+    "episode": 6,
+    "poster": "https://s4.zanix.tr/poster/756624.jpg?v=1792313172",
+    "type": "TV"
+   },
+   {
+    "id": "diamond-no-ace-act-ii-second-season-part-2-756625",
+    "title": "Diamond no Ace: Act II Second Season",
+    "time": "09:30 AM",
+    "episode": 6,
+    "poster": "https://s4.zanix.tr/poster/756625.jpg?v=1792313172",
+    "type": "TV"
+   },
+   {
+    "id": "holo-no-graffiti-758388",
+    "title": "Holo no Graffiti",
+    "time": "10:00 AM",
+    "episode": 392,
+    "poster": "https://s4.zanix.tr/poster/758388.jpg?v=1791628740",
+    "type": "ONA"
+   },
+   {
+    "id": "sazae-san-2034",
+    "title": "Mrs. Sazae",
+    "time": "10:30 AM",
+    "episode": 2858,
+    "poster": "https://s4.zanix.tr/poster/2034.jpg?v=1791628204",
+    "type": "TV"
+   },
+   {
+    "id": "umayuru-full-gate-758303",
+    "title": "Umayuru: Full Gate!",
+    "time": "01:00 PM",
+    "episode": 8,
+    "poster": "https://s4.zanix.tr/poster/758303.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "reborn-as-a-space-mercenary-i-woke-up-piloting-the-strongest-starship-19289",
+    "title": "Yahari Ore no Seishun Love Comedy wa Machigatteiru. OVA",
+    "time": "01:30 PM",
+    "episode": 7,
+    "poster": "https://s4.zanix.tr/poster/19289.jpg?v=1791629192",
     "type": "TV"
    }
   ]
