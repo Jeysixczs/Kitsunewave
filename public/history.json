@@ -1,48 +1,6 @@
 {
- "updated": "2026-11-17T15:41:23.243Z",
+ "updated": "2026-11-18T00:43:33.515Z",
  "data": {
-  "2026-10-18": [
-   {
-    "id": "punirunes-puni-4-768682",
-    "title": "Punirunes Puni 4",
-    "time": "12:16 AM",
-    "episode": 3,
-    "poster": "https://s4.zanix.tr/poster/768682.jpg",
-    "type": "TV_SHORT"
-   },
-   {
-    "id": "onegai-aipri-20282",
-    "title": "Onegai AiPri",
-    "time": "12:30 AM",
-    "episode": 29,
-    "poster": "https://s4.zanix.tr/poster/20282.jpg",
-    "type": "TV"
-   },
-   {
-    "id": "pop-pap-polters-778977",
-    "title": "Pop Pap Polters",
-    "time": "01:00 AM",
-    "episode": 3,
-    "poster": "https://s4.zanix.tr/poster/778977.jpg",
-    "type": "TV_SHORT"
-   },
-   {
-    "id": "wushen-zhuzai-da-wei-pian-16593",
-    "title": "Wushen Zhuzai: Da Wei Pian",
-    "time": "02:00 AM",
-    "episode": 425,
-    "poster": "https://s4.zanix.tr/poster/16593.jpg",
-    "type": "ONA"
-   },
-   {
-    "id": "dou-po-cangqiong-nian-fan-4-19768",
-    "title": "Dou Po Cangqiong: Nian Fan 4",
-    "time": "02:00 AM",
-    "episode": 57,
-    "poster": "https://s4.zanix.tr/poster/19768.jpg",
-    "type": "ONA"
-   }
-  ],
   "2026-10-19": [
    {
     "id": "doumo-suki-na-hito-ni-horegusuri-wo-irai-sareta-majo-desu-20346",
