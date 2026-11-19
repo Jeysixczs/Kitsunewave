@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-19T00:00:51.132Z",
+ "updated": "2026-11-19T15:26:17.859Z",
  "data": {
   "2026-10-20": [
    {
@@ -3840,6 +3840,40 @@
     "time": "04:45 PM",
     "episode": 7,
     "poster": "https://s4.zanix.tr/poster/17860.jpg",
+    "type": "TV"
+   }
+  ],
+  "2026-11-19": [
+   {
+    "id": "da-xia-shou-mu-ren-777741",
+    "title": "The Guardian of Daxia",
+    "time": "03:00 AM",
+    "episode": 18,
+    "poster": "https://s4.zanix.tr/poster/777741.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "petitcure-precure-fairies-season-4-778051",
+    "title": "PetitCure: Precure Fairies Season 4",
+    "time": "10:30 AM",
+    "episode": 8,
+    "poster": "https://s4.zanix.tr/poster/778051.jpg",
+    "type": "ONA"
+   },
+   {
+    "id": "sylvanian-families-freya-no-colorful-everyday-784439",
+    "title": "Sylvanian Families: Freya no Colorful Everyday",
+    "time": "11:19 AM",
+    "episode": 8,
+    "poster": "https://s4.zanix.tr/poster/784439.jpg?v=1793071116",
+    "type": "TV_SHORT"
+   },
+   {
+    "id": "fx-senshi-kurumi-chan-20275",
+    "title": "Mobile Suit Gundam: Char's Counterattack",
+    "time": "01:30 PM",
+    "episode": 8,
+    "poster": "https://s4.zanix.tr/poster/20275.jpg",
     "type": "TV"
    }
   ]
